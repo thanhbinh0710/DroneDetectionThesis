@@ -1,0 +1,69 @@
+# FREE BACKGROUND AUDIO SOURCES
+
+## 1. Freesound.org
+Website: https://freesound.org/
+- Search terms: "traffic", "wind", "rain", "city", "nature", "birds", "machinery"
+- Filter by: License (Creative Commons), Format (WAV), Duration (5-30s)
+- Examples:
+  * City traffic: https://freesound.org/search/?q=city+traffic&f=type:wav
+  * Wind noise: https://freesound.org/search/?q=wind+noise&f=type:wav
+  * Birds: https://freesound.org/search/?q=birds+chirping&f=type:wav
+
+## 2. BBC Sound Effects
+Website: https://sound-effects.bbcrewind.co.uk/
+- Free for research and education
+- Categories: Nature, Transport, Industry, Weather
+- High quality professional recordings
+
+## 3. ESC-50 Dataset (Environmental Sound Classification)
+GitHub: https://github.com/karolpiczak/ESC-50
+- 50 classes of environmental sounds
+- 2000 audio clips (40 per class)
+- Useful classes:
+  * Dog barking
+  * Rain
+  * Wind
+  * Airplane
+  * Helicopter
+  * Car horn
+  * Engine
+
+## 4. UrbanSound8K Dataset
+Website: https://urbansounddataset.weill.cornell.edu/urbansound8k.html
+- 8732 labeled sound excerpts (<=4s)
+- 10 classes: air_conditioner, car_horn, children_playing, dog_bark, drilling, 
+              engine_idling, gun_shot, jackhammer, siren, street_music
+
+## 5. AudioSet (Google)
+Website: https://research.google.com/audioset/
+- Ontology of 632 audio event classes
+- Can download specific classes via YouTube IDs
+
+## 6. YouTube Audio Library
+Website: https://www.youtube.com/audiolibrary
+- Free royalty-free music and sound effects
+- Filter by category: Sound Effects → Ambience, Nature, Urban
+
+## 7. Record Your Own
+Use a microphone or smartphone to record:
+- ✓ Office ambient noise
+- ✓ Traffic from your window
+- ✓ Park/outdoor sounds
+- ✓ Fan, air conditioner
+- ✓ Rain, wind
+- ✓ Birds in your area
+
+## Recommended Download Strategy:
+1. Download 10 samples from 3 different sources (30 total)
+2. Convert to WAV if needed: `ffmpeg -i input.mp3 output.wav`
+3. Resample to 44100 Hz: `ffmpeg -i input.wav -ar 44100 output.wav`
+4. Rename to BACKGROUND_001.wav, BACKGROUND_002.wav, etc.
+5. Run: `python scripts/add_background_samples.py`
+
+## Quality Checklist:
+- [ ] Format: WAV (not MP3, not FLAC)
+- [ ] Sample Rate: 44100 Hz
+- [ ] Duration: 5-30 seconds
+- [ ] Volume: Normalized (not too quiet or too loud)
+- [ ] Variety: Different types of non-drone sounds
+- [ ] No copyright issues (CC license or public domain)
