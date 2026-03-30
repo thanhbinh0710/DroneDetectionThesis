@@ -26,7 +26,7 @@ class ResultPanel(QFrame):
         
         # Confidence
         conf_layout = QVBoxLayout()
-        lbl_conf_title = QLabel("Độ tin cậy (Confidence)")
+        lbl_conf_title = QLabel("Confidence")
         lbl_conf_title.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.lbl_confidence = QLabel("0.72")
         self.lbl_confidence.setObjectName("ConfidenceValue")
@@ -61,7 +61,7 @@ class SystemResultWidget(QFrame):
         layout.setContentsMargins(20, 20, 20, 20)
         
         # Title
-        lbl_title = QLabel("KẾT QUẢ PHÁT HIỆN")
+        lbl_title = QLabel("DETECTION RESULT")
         lbl_title.setObjectName("SystemResultTitle")
         lbl_title.setAlignment(Qt.AlignmentFlag.AlignCenter)
         layout.addWidget(lbl_title)
@@ -73,7 +73,7 @@ class SystemResultWidget(QFrame):
         layout.addWidget(self.lbl_status)
         
         # Confidence
-        lbl_conf_title = QLabel("Độ tin cậy (Confidence)")
+        lbl_conf_title = QLabel("Confidence")
         lbl_conf_title.setAlignment(Qt.AlignmentFlag.AlignCenter)
         lbl_conf_title.setObjectName("SystemConfTitle")
         

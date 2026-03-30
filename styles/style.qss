@@ -1,167 +1,206 @@
 /* styles/style.qss */
-/* Stylesheet for Audio-based Drone Detection System */
+/* Acoustic Drone Detection System Stylesheet */
 
+
+/* ========== MAIN WINDOW ========== */
 QMainWindow {
-    background-color: #e8e8e8;
+    background-color: #f5f8fa;
 }
 
-/* --- SECTION TITLES --- */
-QLabel#SectionTitle {
-    font-family: 'Segoe UI', sans-serif;
-    font-size: 12px;
+/* ========== HEADER SECTION ========== */
+QLabel#HeaderTitle {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 24px;
     font-weight: bold;
-    color: #333;
+    color: #1a2332;
+    qproperty-alignment: AlignCenter;
 }
 
-/* --- BUTTONS --- */
-QPushButton {
-    background-color: #e0e0e0;
-    color: #333;
-    border: 1px solid #aaa;
-    border-radius: 3px;
-    padding: 8px;
-    font-size: 11px;
+QLabel#HeaderSubtitle {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 14px;
+    color: #4a5568;
 }
 
-QPushButton:hover {
-    background-color: #d0d0d0;
+/* ========== SEPARATOR LINE ========== */
+QFrame#SeparatorLine {
+    background-color: #cbd5e0;
+    border: none;
 }
 
-/* --- RESULT PANELS --- */
-QFrame#ResultsPanel {
-    background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-}
-
-QFrame#ResultPanel {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+/* ========== INFO CARDS ========== */
+QFrame#InfoCard {
+    background-color: #ffffff;
+    border: 1px solid #cbd5e0;
+    
     padding: 5px;
 }
 
-QLabel#ResultTitle {
-    font-family: 'Segoe UI', sans-serif;
-    font-size: 11px;
+QLabel#CardTitle {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 10px;
+    color: #4a5568;
     font-weight: bold;
-    color: #555;
+    qproperty-alignment: AlignCenter;
 }
 
+QLabel#CardValue {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: #1a2332;
+    qproperty-alignment: AlignCenter;
+}
+
+/* ========== STATUS PANEL (LEFT) ========== */
+QFrame#StatusPanel {
+    background-color: #ffffff;
+    border: 1px solid #cbd5e0;
+    
+}
+
+/* ========== CONFIDENCE PANEL ========== */
+QFrame#ConfidencePanel {
+    background-color: #ffffff;
+    border: 1px solid #cbd5e0;
+    
+}
+
+QLabel#PanelTitle {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: #1a2332;
+    qproperty-alignment: AlignCenter;
+}
+
+/* Status Labels */
 QLabel#StatusDrone {
-    background-color: #dc3545;
-    color: white;
-    border-radius: 3px;
-    padding: 5px;
+    background-color: #fed7d7;
+    color: #c53030;
+    border: 1px solid #fc8181;
+    
+    padding: 8px;
     font-weight: bold;
-    font-size: 13px;
-    min-height: 30px;
+    font-size: 30px;
+    max-height: 60px;
+    qproperty-alignment: AlignCenter;
 }
 
 QLabel#StatusNone {
-    background-color: #999;
-    color: white;
-    border-radius: 3px;
-    padding: 5px;
+    background-color: #ffffff;
+    color: #4a5568;
+    border: 1px solid #cbd5e0;
+    
+    padding: 8px;
     font-weight: bold;
-    font-size: 13px;
-    min-height: 30px;
+    font-size: 30px;
+    max-height: 60px;
+    qproperty-alignment: AlignCenter;
 }
 
 QLabel#ConfidenceValue {
-    font-family: 'Segoe UI', sans-serif;
-    font-size: 14px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 48px;
     font-weight: bold;
-    color: #333;
-    border: 1px solid #ccc;
-    padding: 5px;
-    background-color: white;
+    color: #c53030;
+    qproperty-alignment: AlignCenter;
 }
 
-/* --- SYSTEM RESULT --- */
-QFrame#SystemResultPanel {
-    background-color: white;
-    border: 2px solid #333;
-    border-radius: 8px;
-    padding: 15px;
+/* ========== GRAPH PANEL (RIGHT) ========== */
+QFrame#GraphPanel {
+    background-color: #ffffff;
+    border: 1px solid #cbd5e0;
+    
 }
 
-QLabel#SystemResultTitle {
-    font-family: 'Segoe UI', sans-serif;
-    font-size: 16px;
-    font-weight: bold;
-    color: #333;
+QLabel#GraphLegend {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 10px;
+    color: #4a5568;
+    margin-right: 10px;
 }
 
-QLabel#SystemStatusDrone {
-    background-color: #dc3545;
-    color: white;
+/* ========== BUTTONS ========== */
+QPushButton {
+    background-color: #2ba584;
+    color: #ffffff;
+    border: 2px solid #2ba584;
     border-radius: 5px;
-    padding: 15px;
-    font-weight: bold;
-    font-size: 24px;
-    min-height: 50px;
-}
-
-QLabel#SystemConfTitle {
-    font-family: 'Segoe UI', sans-serif;
-    font-size: 14px;
-    font-weight: bold;
-    color: #333;
-}
-
-QLabel#SystemConfValue {
-    font-family: 'Segoe UI', sans-serif;
-    font-size: 28px;
-    font-weight: bold;
-    color: #333;
-    border: 2px solid #333;
-    padding: 15px;
-    background-color: white;
-}
-
-/* --- DATE/TIME AND POSITION --- */
-QLabel#DateTimeValue {
-    font-family: 'Segoe UI', sans-serif;
-    font-size: 12px;
-    color: #333;
-    border: 1px solid #ccc;
-    padding: 5px;
-    background-color: white;
-}
-
-QLabel#PositionValue {
-    font-family: 'Segoe UI', sans-serif;
+    padding: 8px 12px;
+    font-family: 'Segoe UI', Arial, sans-serif;
     font-size: 11px;
-    color: #333;
-    border: 1px solid #ccc;
-    padding: 5px;
-    background-color: white;
+    font-weight: bold;
 }
 
-QLabel#ElevValue {
-    font-family: 'Segoe UI', sans-serif;
-    font-size: 12px;
-    color: #333;
-    border: 1px solid #ccc;
-    padding: 5px;
-    background-color: white;
-    min-width: 40px;
+QPushButton:hover {
+    background-color: #22a366;
+    border: 2px solid #22a366;
 }
 
-/* --- INPUTS --- */
+QPushButton:pressed {
+    background-color: #1d8a54;
+    border: 2px solid #1d8a54;
+}
+
+/* ========== INPUT FIELDS ========== */
 QLineEdit {
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    padding: 5px;
-    background-color: white;
+    background-color: #ffffff;
+    color: #1a2332;
+    border: 2px solid #cbd5e0;
+    border-radius: 5px;
+    padding: 6px;
+    font-family: 'Segoe UI', Arial, sans-serif;
     font-size: 11px;
 }
 
-/* --- LABELS --- */
+QLineEdit:focus {
+    border: 2px solid #2ba584;
+    background-color: #f9fafb;
+}
+
+/* ========== DEFAULT LABELS ========== */
 QLabel {
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Segoe UI', Arial, sans-serif;
     font-size: 11px;
-    color: #333;
+    color: #4a5568;
+}
+
+/* ========== FRAMES ========== */
+QFrame {
+    background-color: transparent;
+    border: none;
+}
+
+/* ========== SCROLLBARS ========== */
+QScrollBar:vertical {
+    background-color: #f5f8fa;
+    width: 12px;
+    border: none;
+}
+
+QScrollBar::handle:vertical {
+    background-color: #cbd5e0;
+    border-radius: 6px;
+    min-height: 20px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background-color: #a0aec0;
+}
+
+QScrollBar:horizontal {
+    background-color: #f5f8fa;
+    height: 12px;
+    border: none;
+}
+
+QScrollBar::handle:horizontal {
+    background-color: #cbd5e0;
+    border-radius: 6px;
+    min-width: 20px;
+}
+
+QScrollBar::handle:horizontal:hover {
+    background-color: #a0aec0;
 }

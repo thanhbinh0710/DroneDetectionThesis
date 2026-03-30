@@ -8,13 +8,12 @@ from PyQt6.QtCore import Qt
 
 # Import components
 from .threads import DataWorker
-from .ui.components import ResultPanel, SystemResultWidget
 
 class DashboardApp(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Hệ thống Phát hiện Drone - Phân tích Âm thanh")
-        self.resize(1000, 700)
+        self.setWindowTitle("Drone Detection System - Audio Analysis")
+        self.resize(900, 600)
         self.setup_ui()
         
         # Backend
@@ -31,133 +30,186 @@ class DashboardApp(QMainWindow):
         main_layout.setSpacing(15)
         main_layout.setContentsMargins(20, 20, 20, 20)
         
-        # === TITLE SECTION ===
-        title_label = QLabel("HỆ THỐNG PHÁT HIỆN DRONE BẰNG ÂM THANH")
-        title_label.setObjectName("SectionTitle")
-        title_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        title_font = title_label.font()
-        title_font.setPointSize(16)
-        title_font.setBold(True)
-        title_label.setFont(title_font)
-        main_layout.addWidget(title_label)
+        # === HEADER SECTION ===
+        header_layout = QHBoxLayout()
         
-        # === AUDIO RESULT PANEL ===
-        results_container = QFrame()
-        results_container.setObjectName("ResultsPanel")
-        results_layout = QVBoxLayout(results_container)
-        results_layout.setSpacing(10)
-        results_layout.setContentsMargins(20, 20, 20, 20)
+        title_label = QLabel("Drone Detection Dashboard")
+        title_label.setObjectName("HeaderTitle")
+        subtitle_label = QLabel("Drone Detection System using Audio Analysis")
+        subtitle_label.setObjectName("HeaderSubtitle")
         
-        # Audio detection result panel (centered)
-        self.result_audio = ResultPanel("Phát hiện từ Âm thanh (Audio Detection)")
-        results_layout.addWidget(self.result_audio, alignment=Qt.AlignmentFlag.AlignCenter)
+        title_vbox = QVBoxLayout()
+        title_vbox.addWidget(title_label)
+        title_vbox.addWidget(subtitle_label)
+        title_vbox.setSpacing(0)
         
-        main_layout.addWidget(results_container)
+        header_layout.addLayout(title_vbox)
+        header_layout.addStretch()
+        main_layout.addLayout(header_layout)
         
-        # === SYSTEM RESULT ===
-        self.system_result = SystemResultWidget()
-        main_layout.addWidget(self.system_result)
+        # === SEPARATOR LINE ===
+        separator = QFrame()
+        separator.setObjectName("SeparatorLine")
+        separator.setFixedHeight(2)
+        main_layout.addWidget(separator)
         
-        # === INFO SECTION ===
-        info_layout = QHBoxLayout()
+        # === INFO CARDS SECTION (4 cards) ===
+        cards_layout = QHBoxLayout()
+        cards_layout.setSpacing(15)
         
-        # Date/Time
-        datetime_frame = QFrame()
-        datetime_layout = QVBoxLayout(datetime_frame)
-        lbl_datetime_title = QLabel("Thời gian phát hiện")
-        self.lbl_datetime = QLabel("2024-01-01  00:00:00")
-        self.lbl_datetime.setObjectName("DateTimeValue")
-        datetime_layout.addWidget(lbl_datetime_title)
-        datetime_layout.addWidget(self.lbl_datetime)
         
-        # Audio Info
-        audio_info_frame = QFrame()
-        audio_info_layout = QVBoxLayout(audio_info_frame)
-        lbl_audio_info_title = QLabel("Thông tin âm thanh")
-        self.lbl_audio_info = QLabel("Tần số lấy mẫu: 44100 Hz")
-        self.lbl_audio_info.setObjectName("PositionValue")
-        audio_info_layout.addWidget(lbl_audio_info_title)
-        audio_info_layout.addWidget(self.lbl_audio_info)
         
-        # Detection count
-        count_frame = QFrame()
-        count_layout = QVBoxLayout(count_frame)
-        lbl_count_title = QLabel("Tổng số lần phát hiện")
-        self.lbl_detection_count = QLabel("0")
-        self.lbl_detection_count.setObjectName("ElevValue")
+        # Card 1: Time
+        time_card = self._create_info_card("TIME", "00:00:00")
+        self.lbl_time_display = time_card[1]
+        cards_layout.addWidget(time_card[0])
+        
+        # Card 2: Date
+        date_card = self._create_info_card("DATE", "Monday, March 30, 2026")
+        self.lbl_date_display = date_card[1]
+        cards_layout.addWidget(date_card[0])
+        
+        # Card 3: Sample Rate
+        sample_card = self._create_info_card("AUDIO SAMPLE RATE", "44100 Hz")
+        self.lbl_sample_rate = sample_card[1]
+        cards_layout.addWidget(sample_card[0])
+        
+        # Card 4: Detection Count
+        count_card = self._create_info_card("DETECTION COUNT", "0")
+        self.lbl_detection_count = count_card[1]
         self.detection_count = 0
-        count_layout.addWidget(lbl_count_title)
-        count_layout.addWidget(self.lbl_detection_count)
+        cards_layout.addWidget(count_card[0])
         
-        info_layout.addWidget(datetime_frame)
-        info_layout.addWidget(audio_info_frame)
-        info_layout.addWidget(count_frame)
-        info_layout.addStretch()
+        main_layout.addLayout(cards_layout)
         
-        main_layout.addLayout(info_layout)
+        # === MAIN CONTENT: 2 COLUMNS ===
+        content_layout = QHBoxLayout()
+        content_layout.setSpacing(15)
         
-        # === CONFIDENCE HISTORY GRAPH ===
-        graph_label = QLabel("Biểu đồ Độ tin cậy theo Thời gian")
-        graph_label.setObjectName("SectionTitle")
-        main_layout.addWidget(graph_label)
+        # LEFT COLUMN: Status and Confidence Panels
+        left_column_widget = QFrame()
+        left_column_widget.setMaximumWidth(280)
+        left_column_layout = QVBoxLayout(left_column_widget)
+        left_column_layout.setSpacing(12)
+        
+        # Panel 1: Status
+        status_panel = QFrame()
+        status_panel.setObjectName("StatusPanel")
+        status_layout = QVBoxLayout(status_panel)
+        status_layout.setContentsMargins(12, 12, 12, 12)
+        status_layout.setSpacing(8)
+        
+        lbl_status_title = QLabel("System Results")
+        lbl_status_title.setObjectName("PanelTitle")
+        status_layout.addWidget(lbl_status_title)
+        
+        # Status icon and text
+        self.lbl_status = QLabel("DRONE")
+        self.lbl_status.setObjectName("StatusDrone")
+        self.lbl_status.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        status_layout.addWidget(self.lbl_status)
+        
+        # Panel 2: Confidence
+        confidence_panel = QFrame()
+        confidence_panel.setObjectName("ConfidencePanel")
+        confidence_layout = QVBoxLayout(confidence_panel)
+        confidence_layout.setContentsMargins(12, 12, 12, 12)
+        confidence_layout.setSpacing(8)
+        
+        # Confidence
+        conf_title_label = QLabel("Confidence")
+        conf_title_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        conf_title_label.setObjectName("PanelTitle")
+        self.lbl_confidence = QLabel("0.00")
+        self.lbl_confidence.setObjectName("ConfidenceValue")
+        self.lbl_confidence.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        
+        confidence_layout.addWidget(conf_title_label)
+        confidence_layout.addWidget(self.lbl_confidence)
+        
+        # Add both panels to left column
+        left_column_layout.addWidget(status_panel, 1)
+        left_column_layout.addWidget(confidence_panel, 1)
+        
+        content_layout.addWidget(left_column_widget, 1)
+        
+        # RIGHT COLUMN: Confidence History Graph
+        right_panel = QFrame()
+        right_panel.setObjectName("GraphPanel")
+        right_layout = QVBoxLayout(right_panel)
+        right_layout.setContentsMargins(15, 15, 15, 15)
+        right_layout.setSpacing(10)
         
         self.graph = pg.PlotWidget()
-        self.graph.setBackground('w')
-        self.graph.showGrid(x=True, y=True, alpha=0.3)
-        self.graph.setLabel('bottom', 'Thời gian (giây)', **{'color': '#333', 'font-size': '10pt'})
-        self.graph.setLabel('left', 'Độ tin cậy', **{'color': '#333', 'font-size': '10pt'})
-        self.graph.setYRange(0, 1.0)
+        self.graph.setBackground('#ffffff')
+        self.graph.showGrid(x=True, y=True, alpha=0.2)
+        self.graph.setLabel('bottom', 'Time (seconds)', **{'color': '#4a5568', 'font-size': '10pt'})
+        self.graph.setLabel('left', 'Confidence (%)', **{'color': '#4a5568', 'font-size': '10pt'})
+        self.graph.setYRange(0, 100)
         self.graph.setXRange(0, 60)
         
         # Confidence history data
         self.confidence_history = []
         self.time_history = []
-        self.plot_line = self.graph.plot([], [], pen=pg.mkPen(color=(0, 120, 255), width=2))
+        self.plot_line = self.graph.plot([], [], pen=pg.mkPen(color=(43, 165, 132), width=2))
         
-        main_layout.addWidget(self.graph)
+        right_layout.addWidget(self.graph, 1)
+        right_layout.addWidget(QLabel("LIVE DATA"), 0)
+        
+        content_layout.addWidget(right_panel, 2)
+        
+        main_layout.addLayout(content_layout, 1)
+    
+    def _create_info_card(self, title, value):
+        """Create an info card with title and value"""
+        card = QFrame()
+        card.setObjectName("InfoCard")
+        layout = QVBoxLayout(card)
+        layout.setContentsMargins(12, 12, 12, 12)
+        layout.setSpacing(5)
+        
+        lbl_title = QLabel(title)
+        lbl_title.setObjectName("CardTitle")
+        
+        lbl_value = QLabel(value)
+        lbl_value.setObjectName("CardValue")
+        
+        layout.addWidget(lbl_title)
+        layout.addWidget(lbl_value)
+        
+        return card, lbl_value
 
     def update_dashboard(self, prediction_data):
-        """Update dashboard with new detection data from model predictions
+        """Update dashboard with new detection data from model predictions"""
+        from PyQt6.QtCore import QDateTime, QTime
         
-        Args:
-            prediction_data: Dict containing:
-                - confidence: float (0-1)
-                - status: str ('DRONE' or '-')
-                - source: str ('model' or 'simulated')
-                - file: str (audio filename)
-        """
-        from PyQt6.QtCore import QDateTime
-        
-        # Update datetime
+        # Update time
         now = QDateTime.currentDateTime()
-        self.lbl_datetime.setText(now.toString("yyyy-MM-dd  HH:mm:ss"))
+        self.lbl_time_display.setText(now.toString("HH:mm:ss"))
+        self.lbl_date_display.setText(now.toString("dddd, d MMMM yyyy"))
         
         # Get prediction data
         confidence = prediction_data['confidence']
         status = prediction_data['status']
-        source = prediction_data.get('source', 'unknown')
-        audio_file = prediction_data.get('file', 'N/A')
         
-        # Update audio info display
-        info_text = f"Sample Rate: 44100 Hz"
-        if source == 'model':
-            info_text += f" | File: {audio_file} | Source: ML Model"
+        # Update status label
+        self.lbl_status.setText(status)
+        if status == "DRONE":
+            self.lbl_status.setObjectName("StatusDrone")
         else:
-            info_text += f" | Source: Simulated"
-        self.lbl_audio_info.setText(info_text)
+            self.lbl_status.setObjectName("StatusNone")
+        self.lbl_status.style().unpolish(self.lbl_status)
+        self.lbl_status.style().polish(self.lbl_status)
         
-        # Update audio result panel
-        self.result_audio.update_result(status, confidence)
-        
-        # Update system result (same as audio since only one sensor)
-        self.system_result.update_result(status, confidence)
+        # Update confidence (display as decimal 0.00-1.00)
+        self.lbl_confidence.setText(f"{confidence:.2f}")
         
         # Update detection count
         if status == "DRONE":
             self.detection_count += 1
             self.lbl_detection_count.setText(str(self.detection_count))
         
-        # Update confidence history graph
+        # Update confidence history graph (use decimal 0.00-1.00)
         current_time = len(self.confidence_history)
         self.confidence_history.append(confidence)
         self.time_history.append(current_time)
@@ -166,7 +218,6 @@ class DashboardApp(QMainWindow):
         if len(self.confidence_history) > 60:
             self.confidence_history.pop(0)
             self.time_history.pop(0)
-            # Adjust time values
             self.time_history = [t - 1 for t in self.time_history]
         
         # Update plot
