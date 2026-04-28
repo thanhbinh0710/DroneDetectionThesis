@@ -1,22 +1,63 @@
 # src/app/hardware.py
-"""
-Audio Input Hardware Interface Module
-Placeholder for future real-time audio capture integration
-"""
+"""Audio input helpers for real-time streaming."""
 
-# TODO: Implement real-time audio input interfaces for drone detection
-# - Microphone capture using pyaudio or sounddevice
-# - Audio device selection and configuration
-# - Real-time audio stream processing
-# - Integration with audio preprocessing pipeline (processor.py)
-# - Buffer management for continuous detection
+import socket
 
-# Future features:
-# - Multi-channel audio support (for directional detection)
-# - Audio level monitoring and automatic gain control
-# - Background noise profiling and adaptive filtering
-# - Event-triggered recording
 
-# Note: Current system uses simulated data in DataWorker (threads.py)
-# This module will be expanded when integrating real microphone input
-# for live drone detection
+class UdpAudioSource:
+	def __init__(
+		self,
+		host="0.0.0.0",
+		port=5555,
+		chunk_frames=1024,
+		sample_rate=16000,
+		channels=1,
+		sample_width_bytes=2,
+		timeout_s=0.5,
+	):
+		self.host = host
+		self.port = port
+		self.chunk_frames = chunk_frames
+		self.sample_rate = sample_rate
+		self.channels = channels
+		self.sample_width_bytes = sample_width_bytes
+		self.timeout_s = timeout_s
+
+		self._socket = None
+		self._running = False
+		self._last_client_addr = None
+		self._display_host = socket.gethostbyname(socket.gethostname())
+
+	@property
+	def chunk_bytes(self):
+		return self.chunk_frames * self.channels * self.sample_width_bytes
+
+	def start(self):
+		if self._running:
+			return
+		self._socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+		self._socket.bind((self.host, self.port))
+		self._socket.settimeout(self.timeout_s)
+		self._running = True
+
+	def read_chunk(self):
+		if not self._running or self._socket is None:
+			return None
+		try:
+			data, addr = self._socket.recvfrom(self.chunk_bytes)
+			if data:
+				self._last_client_addr = addr
+			return data
+		except socket.timeout:
+			return None
+
+	def stop(self):
+		self._running = False
+		if self._socket is not None:
+			self._socket.close()
+			self._socket = None
+
+	def get_device_info(self):
+		if self._last_client_addr:
+			return f"{self._last_client_addr[0]}:{self._last_client_addr[1]}"
+		return f"{self._display_host}:{self.port}"

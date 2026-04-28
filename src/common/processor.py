@@ -17,6 +17,28 @@ def preprocess_audio(file_path, sr=44100):
     
     return y_trimmed
 
+
+def preprocess_pcm_audio(pcm, input_sr, target_sr=44100, trim_silence=False):
+    if isinstance(pcm, (bytes, bytearray, memoryview)):
+        y = np.frombuffer(pcm, dtype=np.int16)
+    else:
+        y = np.asarray(pcm, dtype=np.int16)
+
+    if y.size == 0:
+        return np.array([], dtype=np.float32)
+
+    y = y.astype(np.float32) / 32768.0
+
+    if input_sr != target_sr:
+        y = librosa.resample(y, orig_sr=input_sr, target_sr=target_sr)
+
+    y = librosa.util.normalize(y)
+
+    if trim_silence:
+        y, _ = librosa.effects.trim(y, top_db=20)
+
+    return y.astype(np.float32)
+
 def extract_mel_spectrogram(y, sr=44100):
     # 3. Phân đoạn và tính Mel-Spectrogram (Framing & Windowing) [cite: 12, 13, 14]
     # n_fft: Độ dài khung (Window length)
@@ -59,25 +81,25 @@ if __name__ == "__main__":
     project_root = os.path.abspath(os.path.join(script_dir, '..', '..'))  # Lên 2 cấp
     drone_dir = os.path.join(project_root, "data", "raw", "drone")
     
-    print(f"📂 Đường dẫn drone data: {drone_dir}\n")
+    print(f"Duong dan drone data: {drone_dir}\n")
     
     # Tìm tất cả file DRONE trong thư mục data/raw/drone
     drone_files = sorted(glob.glob(os.path.join(drone_dir, "DRONE_*.wav")))
     
     if not drone_files:
-        print(f"❌ Lỗi: Không tìm thấy file DRONE trong thư mục '{drone_dir}'")
+        print(f"Loi: Khong tim thay file DRONE trong thu muc '{drone_dir}'")
         print(f"   Vui lòng đặt file audio với tên dạng 'DRONE_001.wav', 'DRONE_002.wav', ...")
         print(f"   vào thư mục: data/raw/drone/")
         exit(1)
     
     # Hiển thị danh sách file tìm được
-    print(f"✓ Tìm thấy {len(drone_files)} file DRONE:")
+    print(f"Tim thay {len(drone_files)} file DRONE:")
     for idx, file in enumerate(drone_files, 1):
         print(f"  {idx}. {os.path.basename(file)}")
     
     # Lấy file đầu tiên để xử lý
     audio_path = drone_files[0]
-    print(f"\n→ Đang xử lý: {os.path.basename(audio_path)}\n")
+    print(f"\nDang xu ly: {os.path.basename(audio_path)}\n")
     
     # Bước tiền xử lý cơ bản
     y_clean = preprocess_audio(audio_path)

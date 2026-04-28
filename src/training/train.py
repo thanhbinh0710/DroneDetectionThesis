@@ -45,7 +45,7 @@ def load_processed_data(processed_dir):
     X = np.load(features_path)
     y = np.load(labels_path)
     
-    print(f"✓ Loaded processed data:")
+    print("Loaded processed data:")
     print(f"  - Features: {X.shape}")
     print(f"  - Labels: {y.shape}")
     
@@ -241,7 +241,7 @@ def plot_training_history(history, save_path=None):
     
     if save_path:
         plt.savefig(save_path, dpi=300, bbox_inches='tight')
-        print(f"\n✓ Training plots saved to: {save_path}")
+        print(f"\nTraining plots saved to: {save_path}")
     
     plt.show()
 
@@ -314,31 +314,31 @@ def main():
     model_save_path = os.path.join(project_root, "models", "drone_model_v1.keras")
     plot_save_path = os.path.join(project_root, "models", "training_history.png")
     
-    print(f"📂 Project root: {project_root}")
-    print(f"📂 Processed data: {processed_dir}")
-    print(f"💾 Model save path: {model_save_path}\n")
+    print(f"Project root: {project_root}")
+    print(f"Processed data: {processed_dir}")
+    print(f"Model save path: {model_save_path}\n")
     
     # 1. Load preprocessed data
     print("STEP 1: Loading preprocessed data...")
     try:
         X, y = load_processed_data(processed_dir)
     except FileNotFoundError as e:
-        print(f"\n❌ Error: {e}")
+        print(f"\nError: {e}")
         return
     
     # 2. Reshape data for CNN (add channel dimension)
     print("\nSTEP 2: Preparing data for CNN...")
     X = X.reshape(X.shape[0], X.shape[1], X.shape[2], 1)  # (n_samples, 128, 128, 1)
-    print(f"✓ Reshaped features: {X.shape}")
+    print(f"Reshaped features: {X.shape}")
     
     # 3. Split data into train/validation/test sets (70/15/15)
     print("\nSTEP 3: Splitting dataset...")
     X_train, X_temp, y_train, y_temp = train_test_split(X, y, test_size=0.3, random_state=42, stratify=y)
     X_val, X_test, y_val, y_test = train_test_split(X_temp, y_temp, test_size=0.5, random_state=42, stratify=y_temp)
     
-    print(f"✓ Train set: {X_train.shape[0]} samples")
-    print(f"✓ Validation set: {X_val.shape[0]} samples")
-    print(f"✓ Test set: {X_test.shape[0]} samples")
+    print(f"Train set: {X_train.shape[0]} samples")
+    print(f"Validation set: {X_val.shape[0]} samples")
+    print(f"Test set: {X_test.shape[0]} samples")
     
     # 4. Build model
     print("\nSTEP 4: Building CNN model...")
@@ -346,7 +346,7 @@ def main():
     print("\nModel Architecture:")
     model.summary()
     
-    print(f"\n📊 Total parameters: {model.count_params():,}")
+    print(f"\nTotal parameters: {model.count_params():,}")
     
     # 5. Train model
     print("\nSTEP 5: Training model...")
@@ -371,8 +371,8 @@ def main():
     print("\n" + "="*60)
     print("TRAINING SUMMARY")
     print("="*60)
-    print(f"✓ Model saved to: {model_save_path}")
-    print(f"✓ Training plots saved to: {plot_save_path}")
+    print(f"Model saved to: {model_save_path}")
+    print(f"Training plots saved to: {plot_save_path}")
     print(f"\nFinal Test Results:")
     print(f"  - Accuracy: {test_results['accuracy']:.4f}")
     print(f"  - Precision: {test_results['precision']:.4f}")

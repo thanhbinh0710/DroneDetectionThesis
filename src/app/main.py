@@ -69,9 +69,9 @@ class DashboardApp(QMainWindow):
         self.lbl_date_display = date_card[1]
         cards_layout.addWidget(date_card[0])
         
-        # Card 3: Sample Rate
-        sample_card = self._create_info_card("AUDIO SAMPLE RATE", "44100 Hz")
-        self.lbl_sample_rate = sample_card[1]
+        # Card 3: Audio Source
+        sample_card = self._create_info_card("AUDIO SOURCE", "UDP (waiting)")
+        self.lbl_audio_source = sample_card[1]
         cards_layout.addWidget(sample_card[0])
         
         # Card 4: Detection Count
@@ -191,6 +191,14 @@ class DashboardApp(QMainWindow):
         # Get prediction data
         confidence = prediction_data['confidence']
         status = prediction_data['status']
+        device_info = prediction_data.get('device_info')
+        sample_rate = prediction_data.get('sample_rate')
+        paused = prediction_data.get('paused', False)
+
+        if device_info and sample_rate:
+            self.lbl_audio_source.setText(f"UDP {device_info} | {sample_rate} Hz")
+        elif sample_rate:
+            self.lbl_audio_source.setText(f"UDP {sample_rate} Hz")
         
         # Update status label
         self.lbl_status.setText(status)
@@ -205,7 +213,7 @@ class DashboardApp(QMainWindow):
         self.lbl_confidence.setText(f"{confidence:.2f}")
         
         # Update detection count
-        if status == "DRONE":
+        if status == "DRONE" and not paused:
             self.detection_count += 1
             self.lbl_detection_count.setText(str(self.detection_count))
         

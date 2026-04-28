@@ -88,7 +88,7 @@ def load_metadata(metadata_path):
         raise FileNotFoundError(f"Metadata file not found: {metadata_path}")
     
     df = pd.read_csv(metadata_path, sep=';', encoding='utf-8-sig')
-    print(f"✓ Loaded metadata: {len(df)} files")
+    print(f"Loaded metadata: {len(df)} files")
     return df
 
 
@@ -132,7 +132,7 @@ def load_audio_dataset(data_dir, metadata_path, augment=False, augment_factor=3,
         filepath = os.path.join(data_dir, row['filename'])
         
         if not os.path.exists(filepath):
-            print(f"⚠️  Warning: File not found: {filepath}")
+            print(f"Warning: File not found: {filepath}")
             continue
         
         print(f"Processing [{idx+1}/{len(metadata)}]: {row['filename']}")
@@ -149,7 +149,7 @@ def load_audio_dataset(data_dir, metadata_path, augment=False, augment_factor=3,
             audio_segments = segment_audio(audio, sr=44100, 
                                           segment_duration=segment_duration, 
                                           overlap=segment_overlap)
-            print(f"  → Segmented into {len(audio_segments)} segments ({segment_duration}s each)")
+            print(f"  -> Segmented into {len(audio_segments)} segments ({segment_duration}s each)")
         else:
             # Xử lý toàn bộ file
             audio_segments = [audio]
@@ -189,9 +189,9 @@ def load_audio_dataset(data_dir, metadata_path, augment=False, augment_factor=3,
                         filenames.append(f"{row['filename']}_aug{aug_idx+1}")
         
         if augment and use_segmentation:
-            print(f"  → Generated {len(audio_segments) * augment_factor} augmented versions")
+            print(f"  -> Generated {len(audio_segments) * augment_factor} augmented versions")
     
-    print(f"\n✓ Total samples loaded: {len(features)}")
+    print(f"\nTotal samples loaded: {len(features)}")
     print(f"  - Original files: {len(metadata)}")
     if use_segmentation:
         print(f"  - After segmentation: {len([f for f in filenames if '_seg' in f and '_aug' not in f])}")
@@ -218,7 +218,7 @@ def save_processed_features(features, labels, output_dir):
     np.save(feature_path, features)
     np.save(label_path, labels)
     
-    print(f"\n✓ Saved {len(features)} samples to {output_dir}")
+    print(f"\nSaved {len(features)} samples to {output_dir}")
     print(f"  - Features: {feature_path} (shape: {features.shape})")
     print(f"  - Labels: {label_path} (shape: {labels.shape})")
 
@@ -235,18 +235,18 @@ if __name__ == "__main__":
     print("=" * 60)
     print("AUDIO DATA LOADER - DRONE DETECTION")
     print("=" * 60)
-    print(f"\n📂 Project root: {project_root}")
-    print(f"📂 Data directory: {data_dir}")
-    print(f"📄 Metadata file: {metadata_path}\n")
+    print(f"\nProject root: {project_root}")
+    print(f"Data directory: {data_dir}")
+    print(f"Metadata file: {metadata_path}\n")
     
     # Check if data directory exists
     if not os.path.exists(data_dir):
-        print(f"\n❌ Error: Data directory not found: {data_dir}")
+        print(f"\nError: Data directory not found: {data_dir}")
         print("   Please create the directory and add audio files (.wav)")
         exit(1)
     
     if not os.path.exists(metadata_path):
-        print(f"\n❌ Error: Metadata file not found: {metadata_path}")
+        print(f"\nError: Metadata file not found: {metadata_path}")
         print("   Please create metadata.csv with columns: filename, label, source, duration_sec, notes")
         exit(1)
     
@@ -269,7 +269,7 @@ if __name__ == "__main__":
     
     # Mode 4: CẢ SEGMENTATION VÀ AUGMENTATION (Tăng dữ liệu tối đa)
     print("\nLoading dataset with SEGMENTATION and AUGMENTATION...")
-    print("⚙️  Configuration:")
+    print("Configuration:")
     print("   - Segmentation: 1.0s segments with 50% overlap")
     print("   - Augmentation: 3 versions per segment\n")
     
@@ -296,9 +296,9 @@ if __name__ == "__main__":
             # Save processed features
             save_processed_features(X, y, output_dir)
         else:
-            print("\n⚠️  No audio files processed. Please check your data directory.")
+            print("\nWarning: No audio files processed. Please check your data directory.")
     
     except Exception as e:
-        print(f"\n❌ Error processing dataset: {str(e)}")
+        print(f"\nError processing dataset: {str(e)}")
         import traceback
         traceback.print_exc()
