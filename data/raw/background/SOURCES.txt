@@ -42,16 +42,16 @@ Website: https://research.google.com/audioset/
 ## 6. YouTube Audio Library
 Website: https://www.youtube.com/audiolibrary
 - Free royalty-free music and sound effects
-- Filter by category: Sound Effects → Ambience, Nature, Urban
+- Filter by category: Sound Effects -> Ambience, Nature, Urban
 
 ## 7. Record Your Own
 Use a microphone or smartphone to record:
-- ✓ Office ambient noise
-- ✓ Traffic from your window
-- ✓ Park/outdoor sounds
-- ✓ Fan, air conditioner
-- ✓ Rain, wind
-- ✓ Birds in your area
+- Office ambient noise
+- Traffic from your window
+- Park/outdoor sounds
+- Fan, air conditioner
+- Rain, wind
+- Birds in your area
 
 ## Recommended Download Strategy:
 1. Download 10 samples from 3 different sources (30 total)

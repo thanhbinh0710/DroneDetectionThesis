@@ -16,20 +16,20 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')
 def count_metadata_samples(metadata_path):
     """Đếm số lượng file gốc trong metadata.csv"""
     if not os.path.exists(metadata_path):
-        print(f"❌ Không tìm thấy file metadata: {metadata_path}")
+        print(f"Loi: Khong tim thay file metadata: {metadata_path}")
         return None
     
     df = pd.read_csv(metadata_path, sep=';', encoding='utf-8-sig')
     
     print("\n" + "="*70)
-    print("📊 THỐNG KÊ DỮ LIỆU GỐC (metadata.csv)")
+    print("THONG KE DU LIEU GOC (metadata.csv)")
     print("="*70)
     
     total = len(df)
     drone_count = len(df[df['label'].str.upper() == 'DRONE'])
     not_drone_count = len(df[df['label'].str.upper() == 'NOT_DRONE'])
     
-    print(f"\n✓ Tổng số file gốc: {total}")
+    print(f"\nTong so file goc: {total}")
     print(f"  • DRONE (máy bay không người lái): {drone_count} file")
     print(f"  • NOT_DRONE (không phải drone): {not_drone_count} file")
     print(f"  • Tỷ lệ: {drone_count}/{not_drone_count} (DRONE/NOT_DRONE)")
@@ -42,7 +42,7 @@ def count_processed_samples(processed_dir):
     labels_path = os.path.join(processed_dir, 'labels.npy')
     
     if not os.path.exists(features_path) or not os.path.exists(labels_path):
-        print("\n⚠️  Chưa có dữ liệu đã xử lý")
+        print("\nCanh bao: Chua co du lieu da xu ly")
         print(f"   Không tìm thấy: {processed_dir}")
         print(f"   Hãy chạy: python -m src.training.data_loader")
         return None
@@ -51,18 +51,18 @@ def count_processed_samples(processed_dir):
     labels = np.load(labels_path)
     
     print("\n" + "="*70)
-    print("📊 THỐNG KÊ DỮ LIỆU ĐÃ XỬ LÝ (features.npy & labels.npy)")
+    print("THONG KE DU LIEU DA XU LY (features.npy & labels.npy)")
     print("="*70)
     
     total = len(labels)
     drone_count = np.sum(labels == 1)
     not_drone_count = np.sum(labels == 0)
     
-    print(f"\n✓ Tổng số mẫu sau khi xử lý: {total}")
+    print(f"\nTong so mau sau khi xu ly: {total}")
     print(f"  • DRONE (label=1): {drone_count} mẫu")
     print(f"  • NOT_DRONE (label=0): {not_drone_count} mẫu")
     print(f"  • Tỷ lệ: {drone_count}/{not_drone_count} (DRONE/NOT_DRONE)")
-    print(f"\n📐 Kích thước dữ liệu:")
+    print(f"\nKich thuoc du lieu:")
     print(f"  • Features shape: {features.shape}")
     print(f"  • Labels shape: {labels.shape}")
     
@@ -80,15 +80,15 @@ def estimate_segmentation_info(metadata_df, processed_labels):
         factor = processed_count / original_count
         
         print("\n" + "="*70)
-        print("🔍 PHÂN TÍCH PHÂN ĐOẠN & TĂNG CƯỜNG DỮ LIỆU")
+        print("PHAN TICH PHAN DOAN VA TANG CUONG DU LIEU")
         print("="*70)
-        print(f"\n✓ Hệ số nhân: {factor:.2f}x")
+        print(f"\nHe so nhan: {factor:.2f}x")
         print(f"  • Ban đầu: {original_count} file")
         print(f"  • Sau xử lý: {processed_count} mẫu")
         print(f"  • Tăng thêm: {processed_count - original_count} mẫu")
         
         # Phân tích khả năng
-        print(f"\n📌 Phân tích:")
+        print("\nPhan tich:")
         if factor >= 10:
             print(f"  • Có thể đã sử dụng cả phân đoạn (segmentation) VÀ tăng cường dữ liệu (augmentation)")
         elif factor >= 2:
@@ -99,7 +99,7 @@ def estimate_segmentation_info(metadata_df, processed_labels):
 def check_audio_files(raw_dir):
     """Kiểm tra file audio thực tế trong thư mục"""
     print("\n" + "="*70)
-    print("📁 KIỂM TRA FILE AUDIO THỰC TẾ")
+    print("KIEM TRA FILE AUDIO THUC TE")
     print("="*70)
     
     drone_dir = os.path.join(raw_dir, 'drone')
@@ -108,11 +108,11 @@ def check_audio_files(raw_dir):
     drone_files = list(Path(drone_dir).glob('*.wav')) if os.path.exists(drone_dir) else []
     background_files = list(Path(background_dir).glob('*.wav')) if os.path.exists(background_dir) else []
     
-    print(f"\n✓ File audio trong thư mục:")
+    print("\nFile audio trong thu muc:")
     print(f"  • {drone_dir}")
-    print(f"    → {len(drone_files)} file .wav")
+    print(f"    -> {len(drone_files)} file .wav")
     print(f"  • {background_dir}")
-    print(f"    → {len(background_files)} file .wav")
+    print(f"    -> {len(background_files)} file .wav")
     print(f"\n  Tổng: {len(drone_files) + len(background_files)} file .wav")
 
 def main():
@@ -126,9 +126,9 @@ def main():
     raw_dir = os.path.join(project_root, 'data', 'raw')
     
     print("\n" + "="*70)
-    print("🔢 CÔNG CỤ THỐNG KÊ MẪU DỮ LIỆU - DRONE DETECTION")
+    print("CONG CU THONG KE MAU DU LIEU - DRONE DETECTION")
     print("="*70)
-    print(f"\n📂 Project: {project_root}")
+    print(f"\nProject: {project_root}")
     
     # 1. Kiểm tra file thực tế
     check_audio_files(raw_dir)
@@ -146,12 +146,12 @@ def main():
     
     # Tổng kết
     print("\n" + "="*70)
-    print("💡 HƯỚNG DẪN")
+    print("HUONG DAN")
     print("="*70)
     print("""
 Để xử lý lại dữ liệu với phân đoạn (segmentation), hãy chỉnh sửa:
   
-  📝 File: src/training/data_loader.py
+    File: src/training/data_loader.py
   
   Tìm đoạn code (ở cuối file) và thay đổi:
   
@@ -162,7 +162,7 @@ def main():
         augment=True,                     # Có tăng cường dữ liệu
         augment_factor=3,                 # Tạo 3 phiên bản augmented/mẫu
         target_length=128,                # Độ dài time-step
-        use_segmentation=True,            # ← BẬT PHÂN ĐOẠN
+        use_segmentation=True,            # BAT PHAN DOAN
         segment_duration=1.0,             # Độ dài mỗi đoạn (giây)
         segment_overlap=0.5               # Chồng lấp 50%
     )

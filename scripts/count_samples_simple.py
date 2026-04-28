@@ -11,7 +11,7 @@ def count_metadata():
     metadata_path = 'data/metadata.csv'
     
     if not os.path.exists(metadata_path):
-        print(f"❌ Không tìm thấy {metadata_path}")
+        print(f"Loi: Khong tim thay {metadata_path}")
         return
     
     with open(metadata_path, 'r', encoding='utf-8-sig') as f:
@@ -37,9 +37,9 @@ def count_metadata():
     total = drone_count + not_drone_count
     
     print("="*70)
-    print("📊 THỐNG KÊ DỮ LIỆU GỐC (metadata.csv)")
+    print("THONG KE DU LIEU GOC (metadata.csv)")
     print("="*70)
-    print(f"\n✓ Tổng số file gốc: {total}")
+    print(f"\nTong so file goc: {total}")
     print(f"  • DRONE: {drone_count} file")
     print(f"  • NOT_DRONE: {not_drone_count} file")
     print(f"  • Tỷ lệ: {drone_count}:{not_drone_count}")
@@ -55,7 +55,7 @@ def count_processed():
         labels_path = 'data/processed/labels.npy'
         
         if not os.path.exists(features_path):
-            print("\n⚠️  Chưa có dữ liệu đã xử lý")
+            print("\nCanh bao: Chua co du lieu da xu ly")
             print("   Hãy chạy: python -m src.training.data_loader")
             return
         
@@ -67,13 +67,13 @@ def count_processed():
         not_drone_count = int(np.sum(labels == 0))
         
         print("\n" + "="*70)
-        print("📊 THỐNG KÊ DỮ LIỆU ĐÃ XỬ LÝ (sau phân đoạn & tăng cường)")
+        print("THONG KE DU LIEU DA XU LY (sau phan doan va tang cuong)")
         print("="*70)
-        print(f"\n✓ Tổng số mẫu: {total}")
+        print(f"\nTong so mau: {total}")
         print(f"  • DRONE (label=1): {drone_count} mẫu")
         print(f"  • NOT_DRONE (label=0): {not_drone_count} mẫu")
         print(f"  • Tỷ lệ: {drone_count}:{not_drone_count}")
-        print(f"\n📐 Kích thước:")
+        print(f"\nKich thuoc:")
         print(f"  • Features: {features.shape}")
         print(f"  • Labels: {labels.shape}")
         
@@ -81,11 +81,11 @@ def count_processed():
         original = count_metadata()
         if original and original > 0:
             factor = total / original
-            print(f"\n🔍 Hệ số nhân dữ liệu: {factor:.1f}x")
+            print(f"\nHe so nhan du lieu: {factor:.1f}x")
             print(f"  • {total} mẫu từ {original} file gốc")
         
     except ImportError:
-        print("\n⚠️  Cần cài đặt numpy để đọc dữ liệu đã xử lý")
+        print("\nCanh bao: Can cai dat numpy de doc du lieu da xu ly")
         print("   Chạy: pip install numpy")
 
 def count_audio_files():
@@ -96,16 +96,16 @@ def count_audio_files():
     background_files = glob.glob('data/raw/background/*.wav')
     
     print("\n" + "="*70)
-    print("📁 FILE AUDIO THỰC TẾ")
+    print("FILE AUDIO THUC TE")
     print("="*70)
-    print(f"\n✓ Số file .wav:")
+    print(f"\nSo file .wav:")
     print(f"  • data/raw/drone/: {len(drone_files)} file")
     print(f"  • data/raw/background/: {len(background_files)} file")
     print(f"  • Tổng: {len(drone_files) + len(background_files)} file")
 
 if __name__ == "__main__":
     print("\n" + "="*70)
-    print("🔢 THỐNG KÊ MẪU DỮ LIỆU - DRONE DETECTION PROJECT")
+    print("THONG KE MAU DU LIEU - DRONE DETECTION PROJECT")
     print("="*70 + "\n")
     
     # 1. Đếm file thực tế
@@ -119,12 +119,12 @@ if __name__ == "__main__":
     count_processed()
     
     print("\n" + "="*70)
-    print("💡 LƯU Ý")
+    print("LUU Y")
     print("="*70)
     print("""
 Khi BẬT phân đoạn dữ liệu (segmentation):
   • Mỗi file audio sẽ được cắt thành nhiều đoạn nhỏ
-  • Ví dụ: 1 file 10 giây → 10 đoạn 1 giây (với overlap 50%)
+    • Vi du: 1 file 10 giay -> 10 doan 1 giay (voi overlap 50%)
   • Kết hợp tăng cường dữ liệu (augmentation): số mẫu tăng lên rất nhiều
 
 Để bật segmentation, chỉnh sửa src/training/data_loader.py:

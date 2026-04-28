@@ -31,7 +31,7 @@ def visualize_segmentation(audio_path, segment_duration=1.0, overlap=0.5, sr=441
     print("="*70)
     
     # Load audio
-    print(f"\n📂 Loading: {os.path.basename(audio_path)}")
+    print(f"\nLoading: {os.path.basename(audio_path)}")
     audio = preprocess_audio(audio_path, sr=sr)
     
     duration = len(audio) / sr
@@ -39,7 +39,7 @@ def visualize_segmentation(audio_path, segment_duration=1.0, overlap=0.5, sr=441
     print(f"   Samples: {len(audio)}")
     
     # Segment audio
-    print(f"\n✂️  Segmenting...")
+    print(f"\nSegmenting...")
     print(f"   Segment duration: {segment_duration}s")
     print(f"   Overlap: {overlap*100}%")
     
@@ -47,7 +47,7 @@ def visualize_segmentation(audio_path, segment_duration=1.0, overlap=0.5, sr=441
                             segment_duration=segment_duration, 
                             overlap=overlap)
     
-    print(f"\n✓ Created {len(segments)} segments")
+    print(f"\nCreated {len(segments)} segments")
     
     # Calculate time positions
     segment_samples = int(segment_duration * sr)
@@ -124,12 +124,12 @@ if __name__ == "__main__":
             audio_file = os.path.join(background_dir, bg_files[0])
     
     if audio_file is None:
-        print("❌ Error: No .wav files found in data/raw/drone/ or data/raw/background/")
+        print("Error: No .wav files found in data/raw/drone/ or data/raw/background/")
         print("   Please add some audio files to test segmentation.")
         exit(1)
     
     # Demo với các cấu hình khác nhau
-    print("\n🎵 Testing audio segmentation with different configurations...\n")
+    print("\nTesting audio segmentation with different configurations...\n")
     
     # Config 1: 1s segments, 50% overlap (RECOMMENDED)
     print("\n" + "█"*70)

@@ -6,7 +6,7 @@ Folder này lưu các đặc trưng đã được trích xuất từ `data/raw/d
 
 1. **Input**: File WAV 10 giây từ `data/raw/drone/DRONE_001.wav`
 2. **Processing** (bởi `processor.py`):
-   - Chuẩn hóa amplitude → [-1, 1]
+   - Chuẩn hóa amplitude -> [-1, 1]
    - Loại bỏ silence (threshold 20dB)
    - Cắt thành các đoạn 1 giây (sliding window)
    - Trích xuất mel-spectrogram (128 mel bands × 128 time steps)
@@ -38,7 +38,7 @@ Mỗi segment 1s sẽ được tăng cường thành nhiều phiên bản:
 - **Pitch shift**: ±2 to ±7 semitones
 - **Time shift**: ±20% to ±60% duration
 
-Ví dụ: 10s audio → 10 segments × 4 augmentations = 40 samples
+Vi du: 10s audio -> 10 segments x 4 augmentations = 40 samples
 
 ## Tự động tạo:
 

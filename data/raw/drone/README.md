@@ -28,11 +28,11 @@ Các file này sẽ được xử lý bởi `src/common/processor.py`:
 - Chuẩn hóa (normalization)
 - Loại bỏ khoảng lặng (silence removal)
 - Trích xuất mel-spectrogram (128 mel bands)
-- Cắt thành các đoạn 1 giây → lưu vào `data/processed/drone/`
+- Cat thanh cac doan 1 giay -> luu vao `data/processed/drone/`
 
 ## Hiện tại:
 
-- ✓ 30 files DRONE (DRONE_001.wav đến DRONE_030.wav)
+- 30 files DRONE (DRONE_001.wav den DRONE_030.wav)
 - Tổng cộng: ~300 giây audio drone
 
 ## Thêm file mới:
