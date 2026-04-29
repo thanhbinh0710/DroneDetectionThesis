@@ -20,6 +20,10 @@ class DataWorker(QThread):
         self.model = None
         self.audio_source = None
         self.audio_buffer = bytearray()
+        self.debug = os.environ.get("DRONE_DEBUG", "0") == "1"
+        self._last_debug_ts = 0.0
+        if self.debug:
+            print("Debug enabled: DRONE_DEBUG=1")
 
         self.source_sr = 16000
         self.target_sr = 44100
@@ -71,7 +75,7 @@ class DataWorker(QThread):
                 sample_rate=self.source_sr,
                 channels=1,
                 sample_width_bytes=2,
-                timeout_s=0.5,
+                timeout_s=0.05,
             )
             self.audio_source.start()
             print(f"UDP audio source listening on {self.audio_source.get_device_info()}")
@@ -87,13 +91,32 @@ class DataWorker(QThread):
         if self.audio_source:
             device_info = self.audio_source.get_device_info()
             sample_rate = self.audio_source.sample_rate
-            chunk = self.audio_source.read_chunk()
-            if chunk:
+            chunks = self.audio_source.read_available(max_reads=50)
+            for chunk in chunks:
                 self.audio_buffer.extend(chunk)
+            if self.debug:
+                now = time.time()
+                if now - self._last_debug_ts >= 1.0:
+                    total_bytes = sum(len(chunk) for chunk in chunks)
+                    print(
+                        "Debug UDP: packets={0}, bytes={1}, buffer={2}".format(
+                            len(chunks), total_bytes, len(self.audio_buffer)
+                        )
+                    )
+                    self._last_debug_ts = now
         else:
             return self._paused_prediction(device_info, sample_rate)
 
         if len(self.audio_buffer) < self.required_input_bytes:
+            if self.debug:
+                now = time.time()
+                if now - self._last_debug_ts >= 1.0:
+                    print(
+                        "Debug UDP: waiting for buffer, have={0} need={1}".format(
+                            len(self.audio_buffer), self.required_input_bytes
+                        )
+                    )
+                    self._last_debug_ts = now
             return self._paused_prediction(device_info, sample_rate)
 
         if self.model is None:

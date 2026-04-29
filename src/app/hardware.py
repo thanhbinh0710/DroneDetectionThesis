@@ -51,6 +51,21 @@ class UdpAudioSource:
 		except socket.timeout:
 			return None
 
+	def read_available(self, max_reads=50):
+		if not self._running or self._socket is None:
+			return []
+		chunks = []
+		for _ in range(max_reads):
+			try:
+				data, addr = self._socket.recvfrom(self.chunk_bytes)
+			except socket.timeout:
+				break
+			if not data:
+				break
+			self._last_client_addr = addr
+			chunks.append(data)
+		return chunks
+
 	def stop(self):
 		self._running = False
 		if self._socket is not None:
