@@ -7,7 +7,8 @@ from PyQt6.QtCore import QThread, pyqtSignal
 import sys
 
 # Add parent directory to path for imports
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
+
 
 class DataWorker(QThread):
     # Signal: emit prediction data for dashboard update
@@ -31,13 +32,13 @@ class DataWorker(QThread):
         self.hop_length = 512
         self.target_mel_length = 128
         self.required_target_samples = (
-            (self.target_mel_length - 1) * self.hop_length + self.n_fft
-        )
+            self.target_mel_length - 1
+        ) * self.hop_length + self.n_fft
         self.required_input_samples = int(
             np.ceil(self.required_target_samples * self.source_sr / self.target_sr)
         )
         self.required_input_bytes = self.required_input_samples * 2
-        
+
         # Load model and setup
         self._load_model()
         self._init_audio_source()
@@ -46,22 +47,26 @@ class DataWorker(QThread):
         """Load the trained CNN model"""
         try:
             import tensorflow as tf
-            
+
             # Get model path
             script_dir = os.path.dirname(os.path.abspath(__file__))
-            project_root = os.path.abspath(os.path.join(script_dir, '../..'))
-            model_path = os.path.join(project_root, 'models', 'drone_model_v1.keras')
-            
+            project_root = os.path.abspath(os.path.join(script_dir, "../.."))
+            model_path = os.path.join(project_root, "models", "drone_model_v1.keras")
+
             if os.path.exists(model_path):
                 self.model = tf.keras.models.load_model(model_path)
-                print(f"Model loaded from: {model_path}")
+                print(f"✓ Model loaded successfully from: {model_path}")
             else:
-                print(f"Warning: Model not found at: {model_path}")
-                print("   Using simulated predictions instead")
+                print(f"✗ ERROR: Model not found at: {model_path}")
+                print(f"   Expected path: {model_path}")
+                print(
+                    "   USING SIMULATED PREDICTIONS - no real detections are running!"
+                )
                 self.model = None
         except Exception as e:
-            print(f"Warning: Error loading model: {e}")
-            print("   Using simulated predictions instead")
+            print(f"✗ ERROR: Failed to load model: {e}")
+            print(f"   Error type: {type(e).__name__}")
+            print("   USING SIMULATED PREDICTIONS - no real detections are running!")
             self.model = None
 
     def _init_audio_source(self):
@@ -78,7 +83,9 @@ class DataWorker(QThread):
                 timeout_s=0.05,
             )
             self.audio_source.start()
-            print(f"UDP audio source listening on {self.audio_source.get_device_info()}")
+            print(
+                f"UDP audio source listening on {self.audio_source.get_device_info()}"
+            )
         except Exception as e:
             print(f"Warning: Error initializing UDP source: {e}")
             self.audio_source = None
@@ -99,12 +106,11 @@ class DataWorker(QThread):
                 if now - self._last_debug_ts >= 1.0:
                     total_bytes = sum(len(chunk) for chunk in chunks)
                     print(
-                        "Debug UDP: packets={0}, bytes={1}, buffer={2}".format(
-                            len(chunks), total_bytes, len(self.audio_buffer)
-                        )
+                        f"[UDP] packets={len(chunks)}, bytes={total_bytes}, buffer_size={len(self.audio_buffer)}/{self.required_input_bytes}"
                     )
                     self._last_debug_ts = now
         else:
+            print("✗ Audio source not initialized!")
             return self._paused_prediction(device_info, sample_rate)
 
         if len(self.audio_buffer) < self.required_input_bytes:
@@ -112,23 +118,26 @@ class DataWorker(QThread):
                 now = time.time()
                 if now - self._last_debug_ts >= 1.0:
                     print(
-                        "Debug UDP: waiting for buffer, have={0} need={1}".format(
-                            len(self.audio_buffer), self.required_input_bytes
-                        )
+                        f"[BUFFER] Waiting for data: have {len(self.audio_buffer)} bytes, need {self.required_input_bytes} bytes"
                     )
                     self._last_debug_ts = now
             return self._paused_prediction(device_info, sample_rate)
 
         if self.model is None:
+            if self.debug:
+                print("[MODEL] No model loaded - using SIMULATED predictions")
             return self._simulate_prediction(device_info, sample_rate)
 
         try:
-            from src.common.processor import preprocess_pcm_audio, extract_mel_spectrogram
+            from src.common.processor import (
+                preprocess_pcm_audio,
+                extract_mel_spectrogram,
+            )
             from src.training.data_loader import pad_or_truncate_spectrogram
 
-            window_bytes = self.audio_buffer[-self.required_input_bytes:]
+            window_bytes = self.audio_buffer[-self.required_input_bytes :]
             if len(self.audio_buffer) > self.required_input_bytes * 2:
-                self.audio_buffer = self.audio_buffer[-self.required_input_bytes:]
+                self.audio_buffer = self.audio_buffer[-self.required_input_bytes :]
 
             audio = preprocess_pcm_audio(
                 window_bytes,
@@ -137,6 +146,8 @@ class DataWorker(QThread):
                 trim_silence=False,
             )
             if audio.size == 0:
+                if self.debug:
+                    print("[AUDIO] Preprocessed audio is empty!")
                 return self._paused_prediction(device_info, sample_rate)
 
             mel_spec = extract_mel_spectrogram(audio, sr=self.target_sr)
@@ -150,53 +161,74 @@ class DataWorker(QThread):
             prediction = self.model.predict(X, verbose=0)[0][0]
 
             return {
-                'confidence': float(prediction),
-                'status': 'DRONE' if prediction > 0.5 else '-',
-                'source': 'udp',
-                'file': 'UDP',
-                'device_info': device_info,
-                'sample_rate': sample_rate,
-                'paused': False,
+                "confidence": float(prediction),
+                "status": "DRONE" if prediction > 0.5 else "-",
+                "source": "real_model",
+                "file": "UDP",
+                "device_info": device_info,
+                "sample_rate": sample_rate,
+                "paused": False,
             }
         except Exception as e:
-            print(f"Warning: Prediction error: {e}")
+            print(f"✗ ERROR in prediction: {e}")
+            import traceback
+
+            traceback.print_exc()
             return self._paused_prediction(device_info, sample_rate)
 
     def _paused_prediction(self, device_info, sample_rate):
         return {
-            'confidence': 0.0,
-            'status': 'PAUSED',
-            'source': 'udp',
-            'file': 'UDP',
-            'device_info': device_info,
-            'sample_rate': sample_rate,
-            'paused': True,
+            "confidence": 0.0,
+            "status": "PAUSED",
+            "source": "udp",
+            "file": "UDP",
+            "device_info": device_info,
+            "sample_rate": sample_rate,
+            "paused": True,
         }
 
     def _simulate_prediction(self, device_info=None, sample_rate=None):
         """Simulate prediction when model is not available"""
         confidence = random.uniform(0.60, 0.95)
         return {
-            'confidence': confidence,
-            'status': 'DRONE' if confidence > 0.65 else '-',
-            'source': 'simulated',
-            'file': 'N/A',
-            'device_info': device_info or 'N/A',
-            'sample_rate': sample_rate or self.source_sr,
-            'paused': False,
+            "confidence": confidence,
+            "status": "DRONE" if confidence > 0.65 else "-",
+            "source": "simulated",
+            "file": "N/A",
+            "device_info": device_info or "N/A",
+            "sample_rate": sample_rate or self.source_sr,
+            "paused": False,
         }
 
     def run(self):
         self.is_running = True
         while self.is_running:
-            # Get prediction (real or simulated)
-            prediction = self._get_prediction()
-            
-            # Emit signal with prediction data
-            self.data_signal.emit(prediction)
-            time.sleep(0.5)
-            
-            self.counter += 1
+            try:
+                # Get prediction (real or simulated)
+                prediction = self._get_prediction()
+
+                # Emit signal with prediction data
+                self.data_signal.emit(prediction)
+                time.sleep(0.5)
+
+                self.counter += 1
+            except Exception as e:
+                print(f"✗ CRITICAL ERROR in worker thread: {e}")
+                import traceback
+
+                traceback.print_exc()
+                # Continue running even if there's an error
+                time.sleep(1.0)
+
+    def stop(self):
+        """Stop the worker thread gracefully"""
+        self.is_running = False
+        if self.audio_source:
+            try:
+                self.audio_source.stop()
+            except Exception as e:
+                print(f"Error stopping audio source: {e}")
+        self.wait()  # Wait for thread to finish
 
     def stop(self):
         self.is_running = False
