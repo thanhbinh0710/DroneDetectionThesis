@@ -254,23 +254,22 @@ def train_model(model, X_train, y_train, X_val, y_val, model_save_path, epochs=5
     print("TRAINING STARTED")
     print("="*60)
     
-    # Compute class weights to balance imbalanced data
-    classes = np.unique(y_train)
-    class_weight_array = compute_class_weight('balanced', classes=classes, y=y_train)
-    class_weight_dict = dict(zip(classes, class_weight_array))
+    # Temporarily disable class weight calculation
+    # classes = np.unique(y_train)
+    # class_weight_array = compute_class_weight('balanced', classes=classes, y=y_train)
+    # class_weight_dict = dict(zip(classes, class_weight_array))
+    # 
+    # print(f"\nClass weights (balancing imbalanced data):")
+    # print(f"  - Class 0 (NOT_DRONE): {class_weight_dict[0]:.4f}")
+    # print(f"  - Class 1 (DRONE): {class_weight_dict[1]:.4f}")
+    # print(f"  - Ratio: {class_weight_dict[1]/class_weight_dict[0]:.2f}x\n")
     
-    print(f"\nClass weights (balancing imbalanced data):")
-    print(f"  - Class 0 (NOT_DRONE): {class_weight_dict[0]:.4f}")
-    print(f"  - Class 1 (DRONE): {class_weight_dict[1]:.4f}")
-    print(f"  - Ratio: {class_weight_dict[1]/class_weight_dict[0]:.2f}x\n")
-    
-    # Train model with class weights
     history = model.fit(
         X_train, y_train,
         validation_data=(X_val, y_val),
         epochs=epochs,
         batch_size=batch_size,
-        class_weight=class_weight_dict,
+        # class_weight=class_weight_dict,
         callbacks=callbacks,
         verbose=1
     )
