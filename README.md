@@ -68,7 +68,7 @@ Ung dung lang nghe UDP tren port 5555 va nhan raw PCM tu thiet bi:
 - Sample rate: 16000 Hz
 - Packet size: 1024 frames (2048 bytes)
 
-Trong `src/app/threads.py`, audio duoc buffer de tao cua so du lieu, sau do resample ve 44100 Hz cho pipeline mel-spectrogram. Neu khong co du lieu, dashboard hien "PAUSED".
+Trong `src/app/threads.py`, audio duoc buffer de tao cua so du lieu, sau do duoc xu ly o 16000 Hz cho pipeline mel-spectrogram. Neu khong co du lieu, dashboard hien "PAUSED".
 
 File `udp_test2` la script UDP test de tham khao giao thuc va kiem tra stream tu mach.
 
@@ -91,7 +91,7 @@ background/city_traffic_01.wav;NOT_DRONE;freesound;15;City traffic
 
 ### Tien xu ly
 
-1. Load audio WAV (mau 44100 Hz trong tap train)
+1. Load audio WAV (mau 16000 Hz trong tap train)
 2. Normalize amplitude ve [-1, 1]
 3. Silence removal (top_db=20)
 4. Mel-spectrogram (n_fft=2048, hop_length=512, n_mels=128)

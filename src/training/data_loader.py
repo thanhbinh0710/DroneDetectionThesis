@@ -16,7 +16,7 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../.
 from src.common.processor import preprocess_audio, extract_mel_spectrogram, add_noise, pitch_shift, time_shift
 
 
-def segment_audio(audio, sr=44100, segment_duration=1.0, overlap=0.5):
+def segment_audio(audio, sr=16000, segment_duration=1.0, overlap=0.5):
     """
     Cắt audio thành các đoạn nhỏ với sliding window
     
@@ -146,7 +146,7 @@ def load_audio_dataset(data_dir, metadata_path, augment=False, augment_factor=3,
         # Decide whether to segment or process whole file
         if use_segmentation:
             # Cắt audio thành các đoạn nhỏ
-            audio_segments = segment_audio(audio, sr=44100, 
+            audio_segments = segment_audio(audio, sr=16000, 
                                           segment_duration=segment_duration, 
                                           overlap=segment_overlap)
             print(f"  -> Segmented into {len(audio_segments)} segments ({segment_duration}s each)")
@@ -175,7 +175,7 @@ def load_audio_dataset(data_dir, metadata_path, augment=False, augment_factor=3,
                 for aug_idx in range(augment_factor):
                     # Apply random augmentation
                     audio_aug = add_noise(audio_seg, noise_factor=np.random.uniform(0.0002, 0.001))
-                    audio_aug = pitch_shift(audio_aug, sr=44100, steps=np.random.randint(-4, 5))
+                    audio_aug = pitch_shift(audio_aug, sr=16000, steps=np.random.randint(-4, 5))
                     audio_aug = time_shift(audio_aug, shift_max=0.4)
                     
                     mel_spec_aug = extract_mel_spectrogram(audio_aug)

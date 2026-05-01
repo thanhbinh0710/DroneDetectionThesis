@@ -27,7 +27,7 @@ class DataWorker(QThread):
             print("Debug enabled: DRONE_DEBUG=1")
 
         self.source_sr = 16000
-        self.target_sr = 44100
+        self.target_sr = 16000
         self.n_fft = 2048
         self.hop_length = 512
         self.target_mel_length = 128

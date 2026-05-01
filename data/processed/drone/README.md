@@ -27,7 +27,7 @@ features_drone.npy       # Shape: (N, 128, 128)
 - `n_fft`: 2048 (window size)
 - `hop_length`: 512 (overlap)
 - `n_mels`: 128 (số lượng mel filters)
-- `sr`: 44100 Hz
+- `sr`: 16000 Hz
 
 ## Augmentation:
 

@@ -56,13 +56,13 @@ Use a microphone or smartphone to record:
 ## Recommended Download Strategy:
 1. Download 10 samples from 3 different sources (30 total)
 2. Convert to WAV if needed: `ffmpeg -i input.mp3 output.wav`
-3. Resample to 44100 Hz: `ffmpeg -i input.wav -ar 44100 output.wav`
+3. Resample to 16000 Hz: `ffmpeg -i input.wav -ar 16000 output.wav`
 4. Rename to BACKGROUND_001.wav, BACKGROUND_002.wav, etc.
 5. Run: `python scripts/add_background_samples.py`
 
 ## Quality Checklist:
 - [ ] Format: WAV (not MP3, not FLAC)
-- [ ] Sample Rate: 44100 Hz
+- [ ] Sample Rate: 16000 Hz
 - [ ] Duration: 5-30 seconds
 - [ ] Volume: Normalized (not too quiet or too loud)
 - [ ] Variety: Different types of non-drone sounds

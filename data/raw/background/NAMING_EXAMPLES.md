@@ -148,7 +148,7 @@ Updated metadata saved: metadata.csv
 | **Format**      | `.wav` (bắt buộc)                                  |
 | **Location**    | `data/raw/background/` (bắt buộc)                  |
 | **Metadata**    | Phải có trong `metadata.csv` với label `NOT_DRONE` |
-| **Sample Rate** | 44100 Hz (khuyến nghị)                             |
+| **Sample Rate** | 16000 Hz (khuyến nghị)                             |
 | **Encoding**    | PCM 16-bit hoặc 24-bit                             |
 
 **Chon cach dat ten phu hop voi workflow cua ban!**
