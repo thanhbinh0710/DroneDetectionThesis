@@ -2,6 +2,7 @@
 import time
 import os
 import random
+from collections import deque
 import numpy as np
 from PyQt6.QtCore import QThread, pyqtSignal
 import sys
@@ -38,6 +39,11 @@ class DataWorker(QThread):
             np.ceil(self.required_target_samples * self.source_sr / self.target_sr)
         )
         self.required_input_bytes = self.required_input_samples * 2
+
+        # Sliding-window majority voting over the latest 3 inference segments
+        self.voting_window_size = 3
+        self.inference_interval_seconds = 0.5
+        self.voting_history = deque(maxlen=self.voting_window_size)
 
         # Load model and setup
         self._load_model()
@@ -176,6 +182,55 @@ class DataWorker(QThread):
             traceback.print_exc()
             return self._paused_prediction(device_info, sample_rate)
 
+    def _register_vote(self, prediction):
+        """Store a prediction and aggregate the latest 3 inference segments."""
+        raw_confidence = float(prediction["confidence"])
+        raw_status = prediction["status"]
+        is_drone = raw_status == "DRONE"
+
+        self.voting_history.append(
+            {
+                "is_drone": is_drone,
+                "confidence": raw_confidence,
+                "source": prediction.get("source", "unknown"),
+                "file": prediction.get("file", "UDP"),
+                "device_info": prediction.get("device_info"),
+                "sample_rate": prediction.get("sample_rate"),
+                "paused": prediction.get("paused", False),
+            }
+        )
+
+        window_votes = list(self.voting_history)
+        total_votes = len(window_votes)
+        drone_votes = sum(1 for item in window_votes if item["is_drone"])
+        drone_ratio = drone_votes / total_votes if total_votes else 0.0
+
+        # Fallback for short clips: with fewer than 3 segments, any positive vote wins.
+        if total_votes < self.voting_window_size:
+            aggregated_is_drone = drone_votes >= 1
+        else:
+            # Standard rule: 2 of 3 segments must vote DRONE.
+            aggregated_is_drone = drone_votes >= 2
+
+        aggregated_status = "DRONE" if aggregated_is_drone else "-"
+        aggregated_confidence = drone_ratio if aggregated_is_drone else 1.0 - drone_ratio
+
+        return {
+            "confidence": float(aggregated_confidence),
+            "status": aggregated_status,
+            "source": prediction.get("source", "unknown"),
+            "file": prediction.get("file", "UDP"),
+            "device_info": prediction.get("device_info"),
+            "sample_rate": prediction.get("sample_rate"),
+            "paused": prediction.get("paused", False),
+            "voting_window_size": self.voting_window_size,
+            "vote_count": total_votes,
+            "drone_votes": drone_votes,
+            "drone_ratio": float(drone_ratio),
+            "raw_confidence": raw_confidence,
+            "raw_status": raw_status,
+        }
+
     def _paused_prediction(self, device_info, sample_rate):
         return {
             "confidence": 0.0,
@@ -207,9 +262,12 @@ class DataWorker(QThread):
                 # Get prediction (real or simulated)
                 prediction = self._get_prediction()
 
+                if not prediction.get("paused", False):
+                    prediction = self._register_vote(prediction)
+
                 # Emit signal with prediction data
                 self.data_signal.emit(prediction)
-                time.sleep(0.5)
+                time.sleep(self.inference_interval_seconds)
 
                 self.counter += 1
             except Exception as e:
@@ -230,7 +288,4 @@ class DataWorker(QThread):
                 print(f"Error stopping audio source: {e}")
         self.wait()  # Wait for thread to finish
 
-    def stop(self):
-        self.is_running = False
-        if self.audio_source:
-            self.audio_source.stop()
+    
