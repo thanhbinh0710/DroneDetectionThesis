@@ -3,7 +3,7 @@ import librosa.display
 import numpy as np
 import matplotlib.pyplot as plt
 
-def preprocess_audio(file_path, sr=44100):
+def preprocess_audio(file_path, sr=16000):
     # 1. Tải và chuẩn hóa dữ liệu (Normalization)
     # Tự động resample về cùng một tỷ lệ lấy mẫu (Sample Rate)
     y, _ = librosa.load(file_path, sr=sr)
@@ -18,7 +18,7 @@ def preprocess_audio(file_path, sr=44100):
     return y_trimmed
 
 
-def preprocess_pcm_audio(pcm, input_sr, target_sr=44100, trim_silence=False):
+def preprocess_pcm_audio(pcm, input_sr, target_sr=16000, trim_silence=False):
     if isinstance(pcm, (bytes, bytearray, memoryview)):
         y = np.frombuffer(pcm, dtype=np.int16)
     else:
@@ -39,7 +39,7 @@ def preprocess_pcm_audio(pcm, input_sr, target_sr=44100, trim_silence=False):
 
     return y.astype(np.float32)
 
-def extract_mel_spectrogram(y, sr=44100):
+def extract_mel_spectrogram(y, sr=16000):
     # 3. Phân đoạn và tính Mel-Spectrogram (Framing & Windowing) [cite: 12, 13, 14]
     # n_fft: Độ dài khung (Window length)
     # hop_length: Độ chồng lấp (Overlap) [cite: 15]
@@ -114,7 +114,7 @@ if __name__ == "__main__":
     steps_1 = 2
     shift_max_1 = 0.2
     y_aug1 = add_noise(y_clean, noise_factor=noise_factor_1)
-    y_aug1 = pitch_shift(y_aug1, sr=44100, steps=steps_1)
+    y_aug1 = pitch_shift(y_aug1, sr=16000, steps=steps_1)
     y_aug1 = time_shift(y_aug1, shift_max=shift_max_1)
     mel_aug1 = extract_mel_spectrogram(y_aug1)
     
@@ -123,7 +123,7 @@ if __name__ == "__main__":
     steps_2 = 4
     shift_max_2 = 0.4
     y_aug2 = add_noise(y_clean, noise_factor=noise_factor_2)
-    y_aug2 = pitch_shift(y_aug2, sr=44100, steps=steps_2)
+    y_aug2 = pitch_shift(y_aug2, sr=16000, steps=steps_2)
     y_aug2 = time_shift(y_aug2, shift_max=shift_max_2)
     mel_aug2 = extract_mel_spectrogram(y_aug2)
     
@@ -132,7 +132,7 @@ if __name__ == "__main__":
     steps_3 = 7
     shift_max_3 = 0.6
     y_aug3 = add_noise(y_clean, noise_factor=noise_factor_3)
-    y_aug3 = pitch_shift(y_aug3, sr=44100, steps=steps_3)
+    y_aug3 = pitch_shift(y_aug3, sr=16000, steps=steps_3)
     y_aug3 = time_shift(y_aug3, shift_max=shift_max_3)
     mel_aug3 = extract_mel_spectrogram(y_aug3)
     
@@ -140,22 +140,22 @@ if __name__ == "__main__":
     plt.figure(figsize=(14, 10))
     
     plt.subplot(2, 2, 1)
-    librosa.display.specshow(mel_original, x_axis='time', y_axis='mel', sr=44100)
+    librosa.display.specshow(mel_original, x_axis='time', y_axis='mel', sr=16000)
     plt.title(f'Original Mel-Spectrogram ({os.path.basename(audio_path)})')
     plt.colorbar(format='%+2.0f dB')
     
     plt.subplot(2, 2, 2)
-    librosa.display.specshow(mel_aug1, x_axis='time', y_axis='mel', sr=44100)
+    librosa.display.specshow(mel_aug1, x_axis='time', y_axis='mel', sr=16000)
     plt.title(f'(noise={noise_factor_1}, steps={steps_1}, shift={shift_max_1})')
     plt.colorbar(format='%+2.0f dB')
     
     plt.subplot(2, 2, 3)
-    librosa.display.specshow(mel_aug2, x_axis='time', y_axis='mel', sr=44100)
+    librosa.display.specshow(mel_aug2, x_axis='time', y_axis='mel', sr=16000)
     plt.title(f'(noise={noise_factor_2}, steps={steps_2}, shift={shift_max_2})')
     plt.colorbar(format='%+2.0f dB')
     
     plt.subplot(2, 2, 4)
-    librosa.display.specshow(mel_aug3, x_axis='time', y_axis='mel', sr=44100)
+    librosa.display.specshow(mel_aug3, x_axis='time', y_axis='mel', sr=16000)
     plt.title(f'(noise={noise_factor_3}, steps={steps_3}, shift={shift_max_3})')
     plt.colorbar(format='%+2.0f dB')
     

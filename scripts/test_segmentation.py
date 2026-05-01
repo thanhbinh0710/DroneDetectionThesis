@@ -16,7 +16,7 @@ from src.training.data_loader import segment_audio
 from src.common.processor import preprocess_audio
 
 
-def visualize_segmentation(audio_path, segment_duration=1.0, overlap=0.5, sr=44100):
+def visualize_segmentation(audio_path, segment_duration=1.0, overlap=0.5, sr=16000):
     """
     Hiển thị cách audio được cắt thành các đoạn nhỏ
     

@@ -35,7 +35,7 @@ Bạn **KHÔNG** bắt buộc phải đặt tên theo pattern cố định. Có 
 **Yêu cầu:**
 
 - Format: WAV
-- Sample rate: 44100 Hz (giong DRONE samples)
+- Sample rate: 16000 Hz (giong DRONE samples)
 - Duration: 5-30 giay
 - Dat trong folder: `data/raw/background/`
 - Co trong `metadata.csv` voi label `NOT_DRONE`
