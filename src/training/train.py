@@ -51,11 +51,6 @@ def load_processed_data(processed_dir):
     X = np.load(features_path)
     y = np.load(labels_path)
     
-    # Load source file indices if available (for group-based splitting)
-    groups = None
-    if os.path.exists(source_indices_path):
-        groups = np.load(source_indices_path)
-    
     print("Loaded processed data:")
     print(f"  - Features: {X.shape}")
     print(f"  - Labels: {y.shape}")

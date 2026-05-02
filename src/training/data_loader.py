@@ -246,7 +246,7 @@ def save_processed_features(features, labels, output_dir, source_file_indices=No
 
     np.save(feature_path, features)
     np.save(label_path, labels)
-
+    
     print(f"\nSaved {len(features)} samples to {output_dir}")
     print(f"  - Features: {feature_path} (shape: {features.shape})")
     print(f"  - Labels: {label_path} (shape: {labels.shape})")
@@ -302,8 +302,8 @@ if __name__ == "__main__":
     #                                       augment=True, 
     #                                       augment_factor=3)
     
-    # Mode 2: Có segmentation, không augmentation (KHUYẾN NGHỊ cho file audio dài)
-    print("\nLoading dataset with SEGMENTATION only (NO AUGMENTATION)...")
+    # Mode 4: CẢ SEGMENTATION VÀ AUGMENTATION (Tăng dữ liệu tối đa)
+    print("\nLoading dataset with SEGMENTATION and AUGMENTATION...")
     print("Configuration:")
     print("   - Segmentation: 1.0s segments with 50% overlap")
     print("   - Augmentation: DISABLED\n")
