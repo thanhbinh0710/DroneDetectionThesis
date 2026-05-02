@@ -211,12 +211,7 @@ def load_audio_dataset(data_dir, metadata_path, augment=False, augment_factor=3,
     if augment:
         print(f"  - After augmentation: {len(features)}")
     
-    # Convert lists to numpy arrays with explicit dtypes
-    features_np = np.array(features, dtype=np.float32)
-    labels_np = np.array(labels, dtype=np.int64)
-    source_file_indices_np = np.array(source_file_indices, dtype=np.int32)
-
-    return features_np, labels_np, filenames, source_file_indices_np
+    return np.array(features), np.array(labels), filenames, np.array(source_file_indices)
 
 
 def save_processed_features(features, labels, output_dir, source_file_indices=None):
@@ -234,19 +229,9 @@ def save_processed_features(features, labels, output_dir, source_file_indices=No
     feature_path = os.path.join(output_dir, 'features.npy')
     label_path = os.path.join(output_dir, 'labels.npy')
     
-    # Ensure numpy arrays and expected dtype
-    features = np.asarray(features, dtype=np.float32)
-    labels = np.asarray(labels)
-
-    # Desired feature shape: (N, 20, 128)
-    if features.ndim == 3:
-        # If axes are swapped (N, 128, 20), transpose to (N,20,128)
-        if features.shape[1] == 128 and features.shape[2] == 20:
-            features = features.transpose(0, 2, 1)
-
     np.save(feature_path, features)
     np.save(label_path, labels)
-
+    
     print(f"\nSaved {len(features)} samples to {output_dir}")
     print(f"  - Features: {feature_path} (shape: {features.shape})")
     print(f"  - Labels: {label_path} (shape: {labels.shape})")

@@ -213,7 +213,7 @@ class DataWorker(QThread):
             aggregated_is_drone = drone_votes >= 2
 
         aggregated_status = "DRONE" if aggregated_is_drone else "-"
-        aggregated_confidence = drone_ratio
+        aggregated_confidence = drone_ratio if aggregated_is_drone else 1.0 - drone_ratio
 
         return {
             "confidence": float(aggregated_confidence),
