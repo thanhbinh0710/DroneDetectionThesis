@@ -162,9 +162,9 @@ class DashboardApp(QMainWindow):
             "bottom", "Time (seconds)", **{"color": "#4a5568", "font-size": "10pt"}
         )
         self.graph.setLabel(
-            "left", "Confidence (%)", **{"color": "#4a5568", "font-size": "10pt"}
+            "left", "Confidence", **{"color": "#4a5568", "font-size": "10pt"}
         )
-        self.graph.setYRange(0, 100)
+        self.graph.setYRange(0, 1)
         self.graph.setXRange(0, 60)
 
         # Confidence history data
