@@ -257,22 +257,31 @@ def train_model(model, X_train, y_train, X_val, y_val, model_save_path, epochs=5
     print("TRAINING STARTED")
     print("="*60)
     
-    # Temporarily disable class weight calculation
-    # classes = np.unique(y_train)
-    # class_weight_array = compute_class_weight('balanced', classes=classes, y=y_train)
-    # class_weight_dict = dict(zip(classes, class_weight_array))
-    # 
-    # print(f"\nClass weights (balancing imbalanced data):")
-    # print(f"  - Class 0 (NOT_DRONE): {class_weight_dict[0]:.4f}")
-    # print(f"  - Class 1 (DRONE): {class_weight_dict[1]:.4f}")
-    # print(f"  - Ratio: {class_weight_dict[1]/class_weight_dict[0]:.2f}x\n")
+    # Calculate class weights with custom lighter ratio (1.3x instead of fully balanced)
+    classes = np.unique(y_train)
+    class_weight_balanced = compute_class_weight('balanced', classes=classes, y=y_train)
+    # Reduce the imbalance ratio from fully balanced to 1.3x
+    # balanced_ratio = class_weight_balanced[1] / class_weight_balanced[0]
+    # target_ratio = 1.3
+    # scale_factor = target_ratio / balanced_ratio
+    # class_weight_dict = {0: class_weight_balanced[0] * scale_factor, 1: class_weight_balanced[1] / scale_factor}
+    # Simpler approach: use a custom ratio directly
+    class_0_count = np.sum(y_train == 0)
+    class_1_count = np.sum(y_train == 1)
+    # Set weight ratio to 1.3x (lighter than balanced)
+    class_weight_dict = {0: 1.0, 1: 1.3 * (class_0_count / class_1_count)}
+    
+    print(f"\nClass weights (custom ratio 1.3x):")
+    print(f"  - Class 0 (NOT_DRONE): {class_weight_dict[0]:.4f}")
+    print(f"  - Class 1 (DRONE): {class_weight_dict[1]:.4f}")
+    print(f"  - Ratio: {class_weight_dict[1]/class_weight_dict[0]:.2f}x\n")
     
     history = model.fit(
         X_train, y_train,
         validation_data=(X_val, y_val),
         epochs=epochs,
         batch_size=batch_size,
-        # class_weight=class_weight_dict,
+        class_weight=class_weight_dict,
         callbacks=callbacks,
         verbose=1
     )

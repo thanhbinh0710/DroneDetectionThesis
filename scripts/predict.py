@@ -54,7 +54,7 @@ def predict_file(audio_path, model_path):
 
     # 4. CNN Dự đoán từng giây
     y_pred_proba = model.predict(X, verbose=0).flatten()
-    y_pred = (y_pred_proba > 0.5).astype(int)
+    y_pred = (y_pred_proba > 0.4).astype(int)
 
     print(f"Tổng số phân đoạn cắt được: {len(segments)}")
     print(f"Kết quả dự đoán gốc (Từng giây): {y_pred}\n")

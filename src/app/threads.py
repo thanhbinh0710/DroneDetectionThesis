@@ -168,7 +168,7 @@ class DataWorker(QThread):
 
             return {
                 "confidence": float(prediction),
-                "status": "DRONE" if prediction > 0.5 else "-",
+                "status": "DRONE" if prediction > 0.4 else "-",
                 "source": "real_model",
                 "file": "UDP",
                 "device_info": device_info,
