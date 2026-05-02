@@ -50,6 +50,7 @@ def load_processed_data(processed_dir):
     
     X = np.load(features_path)
     y = np.load(labels_path)
+    groups = np.load(source_indices_path) if os.path.exists(source_indices_path) else None
     
     print("Loaded processed data:")
     print(f"  - Features: {X.shape}")
