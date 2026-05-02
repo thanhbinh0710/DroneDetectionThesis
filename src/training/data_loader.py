@@ -16,7 +16,7 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../.
 from src.common.processor import preprocess_audio, extract_mel_spectrogram, add_noise, pitch_shift, time_shift
 
 
-def segment_audio(audio, sr=44100, segment_duration=1.0, overlap=0.5):
+def segment_audio(audio, sr=16000, segment_duration=1.0, overlap=0.5):
     """
     Cắt audio thành các đoạn nhỏ với sliding window
     
@@ -46,6 +46,15 @@ def segment_audio(audio, sr=44100, segment_duration=1.0, overlap=0.5):
         # Chỉ thêm nếu đoạn cuối dài hơn 50% độ dài segment
         segment = audio[-segment_samples:]  # Lấy từ cuối
         segments.append(segment)
+
+    # Đảm bảo luôn có ít nhất một segment: pad ngắn thành đúng độ dài segment
+    if len(segments) == 0:
+        if len(audio) >= segment_samples:
+            segments.append(audio[:segment_samples])
+        else:
+            pad_width = segment_samples - len(audio)
+            seg = np.pad(audio, (0, pad_width), mode='constant', constant_values=0)
+            segments.append(seg)
     
     return segments
 
@@ -88,7 +97,7 @@ def load_metadata(metadata_path):
         raise FileNotFoundError(f"Metadata file not found: {metadata_path}")
     
     df = pd.read_csv(metadata_path, sep=';', encoding='utf-8-sig')
-    print(f"✓ Loaded metadata: {len(df)} files")
+    print(f"Loaded metadata: {len(df)} files")
     return df
 
 
@@ -111,12 +120,14 @@ def load_audio_dataset(data_dir, metadata_path, augment=False, augment_factor=3,
         X: Feature array - mel-spectrograms, shape (n_samples, 128, target_length)
         y: Label array - 1 for DRONE, 0 for NOT_DRONE
         filenames: List of processed filenames
+        source_file_indices: Array mapping each sample to its source file index in metadata
     """
     metadata = load_metadata(metadata_path)
     
     features = []
     labels = []
     filenames = []
+    source_file_indices = []  # Track which original file each sample came from
     
     print(f"\n{'='*60}")
     print("PROCESSING AUDIO FILES")
@@ -132,7 +143,7 @@ def load_audio_dataset(data_dir, metadata_path, augment=False, augment_factor=3,
         filepath = os.path.join(data_dir, row['filename'])
         
         if not os.path.exists(filepath):
-            print(f"⚠️  Warning: File not found: {filepath}")
+            print(f"Warning: File not found: {filepath}")
             continue
         
         print(f"Processing [{idx+1}/{len(metadata)}]: {row['filename']}")
@@ -146,10 +157,10 @@ def load_audio_dataset(data_dir, metadata_path, augment=False, augment_factor=3,
         # Decide whether to segment or process whole file
         if use_segmentation:
             # Cắt audio thành các đoạn nhỏ
-            audio_segments = segment_audio(audio, sr=44100, 
+            audio_segments = segment_audio(audio, sr=16000, 
                                           segment_duration=segment_duration, 
                                           overlap=segment_overlap)
-            print(f"  → Segmented into {len(audio_segments)} segments ({segment_duration}s each)")
+            print(f"  -> Segmented into {len(audio_segments)} segments ({segment_duration}s each)")
         else:
             # Xử lý toàn bộ file
             audio_segments = [audio]
@@ -165,6 +176,7 @@ def load_audio_dataset(data_dir, metadata_path, augment=False, augment_factor=3,
             # Add segment sample
             features.append(mel_spec)
             labels.append(label)
+            source_file_indices.append(idx)  # Track source file index
             if use_segmentation and len(audio_segments) > 1:
                 filenames.append(f"{row['filename']}_seg{seg_idx+1}")
             else:
@@ -175,7 +187,7 @@ def load_audio_dataset(data_dir, metadata_path, augment=False, augment_factor=3,
                 for aug_idx in range(augment_factor):
                     # Apply random augmentation
                     audio_aug = add_noise(audio_seg, noise_factor=np.random.uniform(0.0002, 0.001))
-                    audio_aug = pitch_shift(audio_aug, sr=44100, steps=np.random.randint(-4, 5))
+                    audio_aug = pitch_shift(audio_aug, sr=16000, steps=np.random.randint(-4, 5))
                     audio_aug = time_shift(audio_aug, shift_max=0.4)
                     
                     mel_spec_aug = extract_mel_spectrogram(audio_aug)
@@ -183,25 +195,31 @@ def load_audio_dataset(data_dir, metadata_path, augment=False, augment_factor=3,
                     
                     features.append(mel_spec_aug)
                     labels.append(label)
+                    source_file_indices.append(idx)  # Same source file for augmented versions
                     if use_segmentation and len(audio_segments) > 1:
                         filenames.append(f"{row['filename']}_seg{seg_idx+1}_aug{aug_idx+1}")
                     else:
                         filenames.append(f"{row['filename']}_aug{aug_idx+1}")
         
         if augment and use_segmentation:
-            print(f"  → Generated {len(audio_segments) * augment_factor} augmented versions")
+            print(f"  -> Generated {len(audio_segments) * augment_factor} augmented versions")
     
-    print(f"\n✓ Total samples loaded: {len(features)}")
+    print(f"\nTotal samples loaded: {len(features)}")
     print(f"  - Original files: {len(metadata)}")
     if use_segmentation:
         print(f"  - After segmentation: {len([f for f in filenames if '_seg' in f and '_aug' not in f])}")
     if augment:
         print(f"  - After augmentation: {len(features)}")
     
-    return np.array(features), np.array(labels), filenames
+    # Convert lists to numpy arrays with explicit dtypes
+    features_np = np.array(features, dtype=np.float32)
+    labels_np = np.array(labels, dtype=np.int64)
+    source_file_indices_np = np.array(source_file_indices, dtype=np.int32)
+
+    return features_np, labels_np, filenames, source_file_indices_np
 
 
-def save_processed_features(features, labels, output_dir):
+def save_processed_features(features, labels, output_dir, source_file_indices=None):
     """
     Save processed mel-spectrogram features to disk
     
@@ -209,18 +227,35 @@ def save_processed_features(features, labels, output_dir):
         features: Feature array (mel-spectrograms)
         labels: Label array (1=DRONE, 0=NOT_DRONE)
         output_dir: Output directory (e.g., data/processed/)
+        source_file_indices: Array mapping each sample to its source file index
     """
     os.makedirs(output_dir, exist_ok=True)
     
     feature_path = os.path.join(output_dir, 'features.npy')
     label_path = os.path.join(output_dir, 'labels.npy')
     
+    # Ensure numpy arrays and expected dtype
+    features = np.asarray(features, dtype=np.float32)
+    labels = np.asarray(labels)
+
+    # Desired feature shape: (N, 20, 128)
+    if features.ndim == 3:
+        # If axes are swapped (N, 128, 20), transpose to (N,20,128)
+        if features.shape[1] == 128 and features.shape[2] == 20:
+            features = features.transpose(0, 2, 1)
+
     np.save(feature_path, features)
     np.save(label_path, labels)
-    
-    print(f"\n✓ Saved {len(features)} samples to {output_dir}")
+
+    print(f"\nSaved {len(features)} samples to {output_dir}")
     print(f"  - Features: {feature_path} (shape: {features.shape})")
     print(f"  - Labels: {label_path} (shape: {labels.shape})")
+    
+    # Save source file indices if provided
+    if source_file_indices is not None:
+        source_path = os.path.join(output_dir, 'source_file_indices.npy')
+        np.save(source_path, source_file_indices)
+        print(f"  - Source file indices: {source_path} (shape: {source_file_indices.shape})")
 
 
 if __name__ == "__main__":
@@ -235,18 +270,18 @@ if __name__ == "__main__":
     print("=" * 60)
     print("AUDIO DATA LOADER - DRONE DETECTION")
     print("=" * 60)
-    print(f"\n📂 Project root: {project_root}")
-    print(f"📂 Data directory: {data_dir}")
-    print(f"📄 Metadata file: {metadata_path}\n")
+    print(f"\nProject root: {project_root}")
+    print(f"Data directory: {data_dir}")
+    print(f"Metadata file: {metadata_path}\n")
     
     # Check if data directory exists
     if not os.path.exists(data_dir):
-        print(f"\n❌ Error: Data directory not found: {data_dir}")
+        print(f"\nError: Data directory not found: {data_dir}")
         print("   Please create the directory and add audio files (.wav)")
         exit(1)
     
     if not os.path.exists(metadata_path):
-        print(f"\n❌ Error: Metadata file not found: {metadata_path}")
+        print(f"\nError: Metadata file not found: {metadata_path}")
         print("   Please create metadata.csv with columns: filename, label, source, duration_sec, notes")
         exit(1)
     
@@ -267,17 +302,16 @@ if __name__ == "__main__":
     #                                       augment=True, 
     #                                       augment_factor=3)
     
-    # Mode 4: CẢ SEGMENTATION VÀ AUGMENTATION (Tăng dữ liệu tối đa)
-    print("\nLoading dataset with SEGMENTATION and AUGMENTATION...")
-    print("⚙️  Configuration:")
+    # Mode 2: Có segmentation, không augmentation (KHUYẾN NGHỊ cho file audio dài)
+    print("\nLoading dataset with SEGMENTATION only (NO AUGMENTATION)...")
+    print("Configuration:")
     print("   - Segmentation: 1.0s segments with 50% overlap")
-    print("   - Augmentation: 3 versions per segment\n")
+    print("   - Augmentation: DISABLED\n")
     
     try:
-        X, y, filenames = load_audio_dataset(
+        X, y, filenames, source_file_indices = load_audio_dataset(
             data_dir, metadata_path, 
-            augment=True, 
-            augment_factor=3,
+            augment=False, 
             use_segmentation=True,
             segment_duration=1.0,
             segment_overlap=0.5
@@ -293,12 +327,12 @@ if __name__ == "__main__":
             print(f"  - DRONE: {np.sum(y == 1)}")
             print(f"  - NOT_DRONE: {np.sum(y == 0)}")
             
-            # Save processed features
-            save_processed_features(X, y, output_dir)
+            # Save processed features with source file indices
+            save_processed_features(X, y, output_dir, source_file_indices)
         else:
-            print("\n⚠️  No audio files processed. Please check your data directory.")
+            print("\nWarning: No audio files processed. Please check your data directory.")
     
     except Exception as e:
-        print(f"\n❌ Error processing dataset: {str(e)}")
+        print(f"\nError processing dataset: {str(e)}")
         import traceback
         traceback.print_exc()

@@ -1,6 +1,6 @@
 # Ví dụ đặt tên file Background Audio
 
-## ❓ Có bắt buộc phải đặt tên "BACKGROUND_001.wav" không?
+## Co bat buoc phai dat ten "BACKGROUND_001.wav" khong?
 
 **TRẢ LỜI: KHÔNG!** Bạn có thể đặt bất kỳ tên nào miễn là:
 
@@ -10,19 +10,19 @@
 
 ---
 
-## ✅ Các cách đặt tên HỢP LỆ:
+## Cac cach dat ten hop le:
 
 ### Cách 1: Tên mô tả chi tiết (KHUYẾN NGHỊ)
 
 ```
-city_traffic_downtown.wav       ← Rõ ràng, dễ hiểu
-rain_heavy_outdoor.wav          ← Mô tả chính xác
-bird_sparrow_morning.wav        ← Chi tiết loại chim
-wind_strong_forest.wav          ← Cụ thể môi trường
-airplane_boeing737_takeoff.wav  ← Rất chi tiết
-construction_jackhammer.wav     ← Rõ nguồn gốc
-office_keyboard_typing.wav      ← Mô tả hoạt động
-highway_traffic_night.wav       ← Thêm ngữ cảnh thời gian
+city_traffic_downtown.wav       <- Ro rang, de hieu
+rain_heavy_outdoor.wav          <- Mo ta chinh xac
+bird_sparrow_morning.wav        <- Chi tiet loai chim
+wind_strong_forest.wav          <- Cu the moi truong
+airplane_boeing737_takeoff.wav  <- Rat chi tiet
+construction_jackhammer.wav     <- Ro nguon goc
+office_keyboard_typing.wav      <- Mo ta hoat dong
+highway_traffic_night.wav       <- Them ngu canh thoi gian
 ```
 
 ### Cách 2: Pattern số thứ tự đơn giản
@@ -56,15 +56,15 @@ youtube_rain_sound_hd.wav
 
 ---
 
-## ❌ Tên file NÊN TRÁNH:
+## Ten file nen tranh:
 
 ```
-❌ file #1.wav              ← Có ký tự đặc biệt #
-❌ background;noise.wav     ← Có dấu chấm phẩy ;
-❌ âm thanh gió.wav         ← Có dấu cách và tiếng Việt (nên dùng: am_thanh_gio.wav)
-❌ traffic&wind.wav         ← Có ký tự &
-❌ noise@50hz.wav           ← Có ký tự @
-❌ file%.wav                ← Có ký tự %
+file #1.wav              <- Co ky tu dac biet #
+background;noise.wav     <- Co dau cham phay ;
+am thanh gio.wav         <- Co dau cach va tieng Viet (nen dung: am_thanh_gio.wav)
+traffic&wind.wav         <- Co ky tu &
+noise@50hz.wav           <- Co ky tu @
+file%.wav                <- Co ky tu %
 ```
 
 **Lý do tránh:**
@@ -75,7 +75,7 @@ youtube_rain_sound_hd.wav
 
 ---
 
-## 📋 Ví dụ metadata.csv với tên tùy ý:
+## Vi du metadata.csv voi ten tuy y:
 
 ```csv
 filename;label;source;duration_sec;notes
@@ -93,7 +93,7 @@ background/highway_traffic_night.wav;NOT_DRONE;freesound;22;Highway at night
 
 ---
 
-## 🔧 Script tự động cập nhật metadata
+## Script tu dong cap nhat metadata
 
 Khi bạn chạy:
 
@@ -106,7 +106,7 @@ Script sẽ **TỰ ĐỘNG** tìm TẤT CẢ file `.wav` trong `data/raw/backgro
 **Ví dụ output:**
 
 ```
-✓ Found 8 background audio files:
+Found 8 background audio files:
   1. city_traffic_downtown.wav     (2.34 MB)
   2. rain_heavy_outdoor.wav        (3.12 MB)
   3. bird_sparrow_morning.wav      (1.56 MB)
@@ -116,31 +116,31 @@ Script sẽ **TỰ ĐỘNG** tìm TẤT CẢ file `.wav` trong `data/raw/backgro
   7. office_keyboard_typing.wav    (3.45 MB)
   8. highway_traffic_night.wav     (2.90 MB)
 
-📝 Adding 8 new NOT_DRONE entries to metadata...
-✓ Updated metadata saved: metadata.csv
+Adding 8 new NOT_DRONE entries to metadata...
+Updated metadata saved: metadata.csv
 ```
 
 ---
 
-## 💡 Khuyến nghị:
+## Khuyen nghi:
 
 ### Dùng tên MÔ TẢ khi:
 
-- ✅ Dataset nhỏ (< 100 files)
-- ✅ Muốn dễ dàng identify file
-- ✅ Chia sẻ dataset với người khác
-- ✅ Tạo báo cáo, presentation
+- Dataset nho (< 100 files)
+- Muon de dang identify file
+- Chia se dataset voi nguoi khac
+- Tao bao cao, presentation
 
 ### Dùng tên SỐ THỨ TỰ khi:
 
-- ✅ Dataset lớn (> 100 files)
-- ✅ Tự động download/generate hàng loạt
-- ✅ Chỉ cần tracking đơn giản
-- ✅ Dùng script automation
+- Dataset lon (> 100 files)
+- Tu dong download/generate hang loat
+- Chi can tracking don gian
+- Dung script automation
 
 ---
 
-## 🎯 TÓM LẠI:
+## Tom lai:
 
 | Tiêu chí        | Yêu cầu                                            |
 | --------------- | -------------------------------------------------- |
@@ -148,7 +148,7 @@ Script sẽ **TỰ ĐỘNG** tìm TẤT CẢ file `.wav` trong `data/raw/backgro
 | **Format**      | `.wav` (bắt buộc)                                  |
 | **Location**    | `data/raw/background/` (bắt buộc)                  |
 | **Metadata**    | Phải có trong `metadata.csv` với label `NOT_DRONE` |
-| **Sample Rate** | 44100 Hz (khuyến nghị)                             |
+| **Sample Rate** | 16000 Hz (khuyến nghị)                             |
 | **Encoding**    | PCM 16-bit hoặc 24-bit                             |
 
-✨ **Chọn cách đặt tên phù hợp với workflow của bạn!**
+**Chon cach dat ten phu hop voi workflow cua ban!**

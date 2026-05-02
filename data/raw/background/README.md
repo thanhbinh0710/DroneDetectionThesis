@@ -18,32 +18,32 @@ Folder này chứa các audio samples cho class **NOT_DRONE** (background noise)
 
 ## Quy tắc đặt tên file:
 
-### ✅ TÙY Ý - Có thể đặt bất kỳ tên nào!
+### TUY Y - Co the dat bat ky ten nao
 
 Bạn **KHÔNG** bắt buộc phải đặt tên theo pattern cố định. Có thể đặt tên mô tả rõ ràng:
 
 **Ví dụ tên file hợp lệ:**
 
-- ✓ `city_traffic_01.wav` - Rõ ràng, dễ hiểu
-- ✓ `rain_sound.wav` - Mô tả nội dung
-- ✓ `bird_chirping_park.wav` - Chi tiết nguồn gốc
-- ✓ `wind_noise_outdoor.wav` - Cụ thể môi trường
-- ✓ `airplane_passing.wav` - Tên mô tả
-- ✓ `BACKGROUND_001.wav` - Pattern số thứ tự (nếu muốn)
-- ✓ `NON_DRONE_001.wav` - Pattern khác (nếu muốn)
+- `city_traffic_01.wav` - Ro rang, de hieu
+- `rain_sound.wav` - Mo ta noi dung
+- `bird_chirping_park.wav` - Chi tiet nguon goc
+- `wind_noise_outdoor.wav` - Cu the moi truong
+- `airplane_passing.wav` - Ten mo ta
+- `BACKGROUND_001.wav` - Pattern so thu tu (neu muon)
+- `NON_DRONE_001.wav` - Pattern khac (neu muon)
 
 **Yêu cầu:**
 
-- ✅ Format: WAV
-- ✅ Sample rate: 44100 Hz (giống DRONE samples)
-- ✅ Duration: 5-30 giây
-- ✅ Đặt trong folder: `data/raw/background/`
-- ✅ Có trong `metadata.csv` với label `NOT_DRONE`
+- Format: WAV
+- Sample rate: 16000 Hz (giong DRONE samples)
+- Duration: 5-30 giay
+- Dat trong folder: `data/raw/background/`
+- Co trong `metadata.csv` voi label `NOT_DRONE`
 
 **Lưu ý:**
 
-- ⚠️ Tránh ký tự đặc biệt: `#`, `%`, `&`, `@`, dấu cách → dùng `_` thay thế
-- ⚠️ Không dùng dấu chấm phẩy `;` trong tên file
+- Tranh ky tu dac biet: `#`, `%`, `&`, `@`, dau cach -> dung `_` thay the
+- Khong dung dau cham phay `;` trong ten file
 
 ## Cập nhật metadata
 

@@ -5,10 +5,14 @@ Train CNN models from preprocessed mel-spectrograms for drone sound classificati
 """
 
 import os
+os.environ["TF_ENABLE_ONEDNN_OPTS"] = "0"
+os.environ["TF_CPP_MIN_LOG_LEVEL"] = "2"
+
 import sys
 import numpy as np
 import matplotlib.pyplot as plt
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import train_test_split, GroupShuffleSplit
+from sklearn.utils.class_weight import compute_class_weight
 
 # TensorFlow/Keras imports
 import tensorflow as tf
@@ -32,9 +36,11 @@ def load_processed_data(processed_dir):
     Returns:
         X: Feature array (mel-spectrograms) - shape: (n_samples, 128, 128)
         y: Labels (1=DRONE, 0=NOT_DRONE)
+        groups: Source file index for each sample (for group-based splitting)
     """
     features_path = os.path.join(processed_dir, 'features.npy')
     labels_path = os.path.join(processed_dir, 'labels.npy')
+    source_indices_path = os.path.join(processed_dir, 'source_file_indices.npy')
     
     if not os.path.exists(features_path) or not os.path.exists(labels_path):
         raise FileNotFoundError(
@@ -45,11 +51,88 @@ def load_processed_data(processed_dir):
     X = np.load(features_path)
     y = np.load(labels_path)
     
-    print(f"✓ Loaded processed data:")
+    # Load source file indices if available (for group-based splitting)
+    groups = None
+    if os.path.exists(source_indices_path):
+        groups = np.load(source_indices_path)
+    
+    print("Loaded processed data:")
     print(f"  - Features: {X.shape}")
     print(f"  - Labels: {y.shape}")
+    if groups is not None:
+        print(f"  - Source file indices: {groups.shape}")
     
-    return X, y
+    return X, y, groups
+
+
+def split_by_groups(X, y, groups, train_size=0.7, val_size=0.15, test_size=0.15, random_state=42):
+    """
+    Split dataset by groups to ensure all segments from the same source file
+    stay in the same split (train/val/test).
+    
+    Args:
+        X: Features array
+        y: Labels array
+        groups: Source file group indices for each sample
+        train_size: Proportion for training (default: 0.7)
+        val_size: Proportion for validation (default: 0.15)
+        test_size: Proportion for testing (default: 0.15)
+        random_state: Random seed for reproducibility
+        
+    Returns:
+        X_train, X_val, X_test, y_train, y_val, y_test: Split datasets
+    """
+    if groups is None:
+        # Fall back to random split if groups not available
+        print("\nWarning: No group information available. Using random split.")
+        print("Note: This may cause data leakage if segments from the same file are split between sets.")
+        X_train, X_temp, y_train, y_temp = train_test_split(
+            X, y, test_size=(1-train_size), random_state=random_state, stratify=y
+        )
+        X_val, X_test, y_val, y_test = train_test_split(
+            X_temp, y_temp, test_size=test_size/(val_size+test_size), 
+            random_state=random_state, stratify=y_temp
+        )
+        return X_train, X_val, X_test, y_train, y_val, y_test
+    
+    # Group-based splitting: keep all segments from same file together
+    print("\nPerforming GROUP-BASED split (by source files):")
+    print(f"  - Train/Val/Test split: {train_size:.0%} / {val_size:.0%} / {test_size:.0%}")
+    print(f"  - Unique source files: {len(np.unique(groups))}")
+    
+    # First split: train vs temporary holdout (val + test)
+    train_gss = GroupShuffleSplit(
+        n_splits=1,
+        train_size=train_size,
+        random_state=random_state,
+    )
+    train_idx, temp_idx = next(train_gss.split(X, y, groups))
+
+    # Second split: validation vs test from the holdout set
+    temp_groups = groups[temp_idx]
+    temp_relative_test_size = test_size / (val_size + test_size)
+    val_test_gss = GroupShuffleSplit(
+        n_splits=1,
+        test_size=temp_relative_test_size,
+        random_state=random_state + 1,
+    )
+    val_rel_idx, test_rel_idx = next(val_test_gss.split(X[temp_idx], y[temp_idx], temp_groups))
+    val_idx = temp_idx[val_rel_idx]
+    test_idx = temp_idx[test_rel_idx]
+
+    X_train, y_train = X[train_idx], y[train_idx]
+    X_val, y_val = X[val_idx], y[val_idx]
+    X_test, y_test = X[test_idx], y[test_idx]
+
+    train_groups = np.unique(groups[train_idx])
+    val_groups = np.unique(groups[val_idx])
+    test_groups = np.unique(groups[test_idx])
+
+    print(f"  - Train files: {len(train_groups)}, samples: {len(train_idx)}")
+    print(f"  - Val files: {len(val_groups)}, samples: {len(val_idx)}")
+    print(f"  - Test files: {len(test_groups)}, samples: {len(test_idx)}")
+    
+    return X_train, X_val, X_test, y_train, y_val, y_test
 
 
 def build_model(input_shape=(128, 128, 1)):
@@ -174,12 +257,22 @@ def train_model(model, X_train, y_train, X_val, y_val, model_save_path, epochs=5
     print("TRAINING STARTED")
     print("="*60)
     
-    # Train model
+    # Temporarily disable class weight calculation
+    # classes = np.unique(y_train)
+    # class_weight_array = compute_class_weight('balanced', classes=classes, y=y_train)
+    # class_weight_dict = dict(zip(classes, class_weight_array))
+    # 
+    # print(f"\nClass weights (balancing imbalanced data):")
+    # print(f"  - Class 0 (NOT_DRONE): {class_weight_dict[0]:.4f}")
+    # print(f"  - Class 1 (DRONE): {class_weight_dict[1]:.4f}")
+    # print(f"  - Ratio: {class_weight_dict[1]/class_weight_dict[0]:.2f}x\n")
+    
     history = model.fit(
         X_train, y_train,
         validation_data=(X_val, y_val),
         epochs=epochs,
         batch_size=batch_size,
+        # class_weight=class_weight_dict,
         callbacks=callbacks,
         verbose=1
     )
@@ -241,7 +334,7 @@ def plot_training_history(history, save_path=None):
     
     if save_path:
         plt.savefig(save_path, dpi=300, bbox_inches='tight')
-        print(f"\n✓ Training plots saved to: {save_path}")
+        print(f"\nTraining plots saved to: {save_path}")
     
     plt.show()
 
@@ -314,31 +407,34 @@ def main():
     model_save_path = os.path.join(project_root, "models", "drone_model_v1.keras")
     plot_save_path = os.path.join(project_root, "models", "training_history.png")
     
-    print(f"📂 Project root: {project_root}")
-    print(f"📂 Processed data: {processed_dir}")
-    print(f"💾 Model save path: {model_save_path}\n")
+    print(f"Project root: {project_root}")
+    print(f"Processed data: {processed_dir}")
+    print(f"Model save path: {model_save_path}\n")
     
     # 1. Load preprocessed data
     print("STEP 1: Loading preprocessed data...")
     try:
-        X, y = load_processed_data(processed_dir)
+        X, y, groups = load_processed_data(processed_dir)
     except FileNotFoundError as e:
-        print(f"\n❌ Error: {e}")
+        print(f"\nError: {e}")
         return
     
     # 2. Reshape data for CNN (add channel dimension)
     print("\nSTEP 2: Preparing data for CNN...")
     X = X.reshape(X.shape[0], X.shape[1], X.shape[2], 1)  # (n_samples, 128, 128, 1)
-    print(f"✓ Reshaped features: {X.shape}")
+    print(f"Reshaped features: {X.shape}")
     
-    # 3. Split data into train/validation/test sets (70/15/15)
+    # 3. Split data into train/validation/test sets (70/15/15) by groups
     print("\nSTEP 3: Splitting dataset...")
-    X_train, X_temp, y_train, y_temp = train_test_split(X, y, test_size=0.3, random_state=42, stratify=y)
-    X_val, X_test, y_val, y_test = train_test_split(X_temp, y_temp, test_size=0.5, random_state=42, stratify=y_temp)
+    X_train, X_val, X_test, y_train, y_val, y_test = split_by_groups(
+        X, y, groups, 
+        train_size=0.7, val_size=0.15, test_size=0.15, 
+        random_state=42
+    )
     
-    print(f"✓ Train set: {X_train.shape[0]} samples")
-    print(f"✓ Validation set: {X_val.shape[0]} samples")
-    print(f"✓ Test set: {X_test.shape[0]} samples")
+    print(f"Train set: {X_train.shape[0]} samples")
+    print(f"Validation set: {X_val.shape[0]} samples")
+    print(f"Test set: {X_test.shape[0]} samples")
     
     # 4. Build model
     print("\nSTEP 4: Building CNN model...")
@@ -346,7 +442,7 @@ def main():
     print("\nModel Architecture:")
     model.summary()
     
-    print(f"\n📊 Total parameters: {model.count_params():,}")
+    print(f"\nTotal parameters: {model.count_params():,}")
     
     # 5. Train model
     print("\nSTEP 5: Training model...")
@@ -371,8 +467,8 @@ def main():
     print("\n" + "="*60)
     print("TRAINING SUMMARY")
     print("="*60)
-    print(f"✓ Model saved to: {model_save_path}")
-    print(f"✓ Training plots saved to: {plot_save_path}")
+    print(f"Model saved to: {model_save_path}")
+    print(f"Training plots saved to: {plot_save_path}")
     print(f"\nFinal Test Results:")
     print(f"  - Accuracy: {test_results['accuracy']:.4f}")
     print(f"  - Precision: {test_results['precision']:.4f}")

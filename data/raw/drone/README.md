@@ -5,7 +5,7 @@ Folder này chứa các audio samples của tiếng drone từ GitHub hoặc ngu
 ## Đặc điểm file audio:
 
 - **Format**: WAV
-- **Sample Rate**: 44100 Hz
+- **Sample Rate**: 16000 Hz
 - **Duration**: 10 giây (hoặc dài hơn)
 - **Loại âm thanh**: Tiếng drone bay (propeller noise, motor sound)
 
@@ -28,19 +28,19 @@ Các file này sẽ được xử lý bởi `src/common/processor.py`:
 - Chuẩn hóa (normalization)
 - Loại bỏ khoảng lặng (silence removal)
 - Trích xuất mel-spectrogram (128 mel bands)
-- Cắt thành các đoạn 1 giây → lưu vào `data/processed/drone/`
+- Cat thanh cac doan 1 giay -> luu vao `data/processed/drone/`
 
 ## Hiện tại:
 
-- ✓ 30 files DRONE (DRONE_001.wav đến DRONE_030.wav)
+- 30 files DRONE (DRONE_001.wav den DRONE_030.wav)
 - Tổng cộng: ~300 giây audio drone
 
 ## Thêm file mới:
 
 1. Download/ghi âm file audio drone
-2. Convert sang WAV 44100 Hz (nếu cần):
+2. Convert sang WAV 16000 Hz (nếu cần):
    ```bash
-   ffmpeg -i input.mp4 -ar 44100 -ac 1 output.wav
+   ffmpeg -i input.mp4 -ar 16000 -ac 1 output.wav
    ```
 3. Đổi tên theo pattern: DRONE_031.wav, DRONE_032.wav, ...
 4. Copy vào folder này

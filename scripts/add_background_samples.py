@@ -30,7 +30,7 @@ def main():
     
     # Check if background folder exists
     if not os.path.exists(background_dir):
-        print(f"\n❌ Error: Background folder not found: {background_dir}")
+        print(f"\nError: Background folder not found: {background_dir}")
         print("   Please create the folder first and add audio files.")
         return
     
@@ -38,22 +38,22 @@ def main():
     background_files = sorted(glob.glob(os.path.join(background_dir, "*.wav")))
     
     if not background_files:
-        print(f"\n⚠️  Warning: No .wav files found in {background_dir}")
+        print(f"\nWarning: No .wav files found in {background_dir}")
         print("   Please add background audio files (BACKGROUND_001.wav, BACKGROUND_002.wav, ...)")
         return
     
-    print(f"\n✓ Found {len(background_files)} background audio files:")
+    print(f"\nFound {len(background_files)} background audio files:")
     for idx, fp in enumerate(background_files, 1):
         size_mb = os.path.getsize(fp) / (1024 * 1024)
         print(f"  {idx:2d}. {os.path.basename(fp):30s} ({size_mb:.2f} MB)")
     
     # Load existing metadata
     if not os.path.exists(metadata_path):
-        print(f"\n❌ Error: Metadata file not found: {metadata_path}")
+        print(f"\nError: Metadata file not found: {metadata_path}")
         return
     
     df = pd.read_csv(metadata_path, sep=';', encoding='utf-8-sig')
-    print(f"\n✓ Current metadata: {len(df)} entries")
+    print(f"\nCurrent metadata: {len(df)} entries")
     print(f"  - DRONE samples: {len(df[df['label'] == 'DRONE'])}")
     
     # Check for existing background entries
@@ -67,7 +67,7 @@ def main():
         
         # Check if already in metadata
         if filename_rel in df['filename'].values:
-            print(f"  ⚠️  Skipping (already exists): {filename_rel}")
+            print(f"  Warning: Skipping (already exists): {filename_rel}")
             continue
         
         new_entry = {
@@ -80,23 +80,23 @@ def main():
         new_entries.append(new_entry)
     
     if not new_entries:
-        print("\n✓ No new entries to add. All background files already in metadata.")
+        print("\nNo new entries to add. All background files already in metadata.")
         return
     
     # Add new entries to dataframe
     df_new = pd.DataFrame(new_entries)
     df_updated = pd.concat([df, df_new], ignore_index=True)
     
-    print(f"\n📝 Adding {len(new_entries)} new NOT_DRONE entries to metadata...")
+    print(f"\nAdding {len(new_entries)} new NOT_DRONE entries to metadata...")
     
     # Backup original metadata
     backup_path = metadata_path + ".backup"
     df.to_csv(backup_path, sep=';', index=False, encoding='utf-8-sig')
-    print(f"✓ Backup saved: {os.path.basename(backup_path)}")
+    print(f"Backup saved: {os.path.basename(backup_path)}")
     
     # Save updated metadata
     df_updated.to_csv(metadata_path, sep=';', index=False, encoding='utf-8-sig')
-    print(f"✓ Updated metadata saved: {os.path.basename(metadata_path)}")
+    print(f"Updated metadata saved: {os.path.basename(metadata_path)}")
     
     # Summary
     print("\n" + "="*70)
@@ -110,16 +110,16 @@ def main():
     not_drone_count = len(df_updated[df_updated['label'] == 'NOT_DRONE'])
     
     if drone_count != not_drone_count:
-        print(f"\n⚠️  WARNING: Imbalanced dataset!")
+        print(f"\nWARNING: Imbalanced dataset!")
         print(f"   For best results, try to have equal numbers of DRONE and NOT_DRONE samples.")
         if drone_count > not_drone_count:
             print(f"   Add {drone_count - not_drone_count} more NOT_DRONE samples.")
         else:
             print(f"   You have {not_drone_count - drone_count} more NOT_DRONE than DRONE samples.")
     else:
-        print(f"\n✓ Dataset is balanced! ({drone_count} samples per class)")
+        print(f"\nDataset is balanced! ({drone_count} samples per class)")
     
-    print("\n✓ Done! You can now run: python -m src.training.data_loader")
+    print("\nDone! You can now run: python -m src.training.data_loader")
     print("="*70)
 
 
