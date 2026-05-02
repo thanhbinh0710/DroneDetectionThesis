@@ -5,6 +5,9 @@ Train CNN models from preprocessed mel-spectrograms for drone sound classificati
 """
 
 import os
+os.environ["TF_ENABLE_ONEDNN_OPTS"] = "0"
+os.environ["TF_CPP_MIN_LOG_LEVEL"] = "2"
+
 import sys
 import numpy as np
 import matplotlib.pyplot as plt
