@@ -9,7 +9,7 @@ import sys
 
 # Configure which model to load here
 # Example: "drone_model_20260507_143000.keras"
-MODEL_FILENAME = "drone_model_v1.keras"
+MODEL_FILENAME = "drone_model_20260509_065114.keras"
 
 # Add parent directory to path for imports
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
@@ -65,9 +65,9 @@ class DataWorker(QThread):
 
             if os.path.exists(model_path):
                 self.model = tf.keras.models.load_model(model_path)
-                print(f"✓ Model loaded successfully from: {model_path}")
+                print(f"Model loaded successfully from: {model_path}")
             else:
-                print(f"✗ ERROR: Model not found at: {model_path}")
+                print(f"ERROR: Model not found at: {model_path}")
                 print(f"   Expected path: {model_path}")
                 print(
                     "   USING SIMULATED PREDICTIONS - no real detections are running!"
