@@ -84,12 +84,7 @@ class DashboardApp(QMainWindow):
         self.lbl_audio_source = sample_card[1]
         cards_layout.addWidget(sample_card[0])
 
-        # Card 4: Model Status
-        model_card = self._create_info_card("MODEL STATUS", "Loading...")
-        self.lbl_model_status = model_card[1]
-        cards_layout.addWidget(model_card[0])
-
-        # Card 5: Detection Count
+        # Card 4: Detection Count
         count_card = self._create_info_card("DETECTION COUNT", "0")
         self.lbl_detection_count = count_card[1]
         self.detection_count = 0
@@ -221,17 +216,6 @@ class DashboardApp(QMainWindow):
             self.lbl_audio_source.setText(f"UDP {device_info} | {sample_rate} Hz")
         elif sample_rate:
             self.lbl_audio_source.setText(f"UDP {sample_rate} Hz")
-
-        # Update model status indicator
-        if source == "real_model":
-            self.lbl_model_status.setText("✓ REAL MODEL")
-            self.lbl_model_status.setStyleSheet("color: #22c55e; font-weight: bold;")
-        elif source == "simulated":
-            self.lbl_model_status.setText("⚠ SIMULATED")
-            self.lbl_model_status.setStyleSheet("color: #ef4444; font-weight: bold;")
-        else:
-            self.lbl_model_status.setText("● PAUSED")
-            self.lbl_model_status.setStyleSheet("color: #f59e0b; font-weight: bold;")
 
         # Update status label
         self.lbl_status.setText(status)

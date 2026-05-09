@@ -388,6 +388,8 @@ def evaluate_model(model, X_test, y_test):
 
 def main():
     """Main training pipeline for audio-based drone detection"""
+    import datetime
+    
     print("=" * 60)
     print("AUDIO-BASED DRONE DETECTION - MODEL TRAINING")
     print("=" * 60)
@@ -397,11 +399,16 @@ def main():
     # Xác định đường dẫn tuyệt đối
     script_dir = os.path.dirname(os.path.abspath(__file__))
     project_root = os.path.abspath(os.path.join(script_dir, '..', '..'))
-    
+
     # Paths
     processed_dir = os.path.join(project_root, "data", "processed")
-    model_save_path = os.path.join(project_root, "models", "drone_model_v1.keras")
-    plot_save_path = os.path.join(project_root, "models", "training_history.png")
+    
+    # Generate timestamp for trained model filename to avoid overwrites
+    timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+    model_filename = f"drone_model_{timestamp}.keras"
+    
+    model_save_path = os.path.join(project_root, "models", model_filename)
+    plot_save_path = os.path.join(project_root, "models", f"training_history_{timestamp}.png")
     
     print(f"Project root: {project_root}")
     print(f"Processed data: {processed_dir}")

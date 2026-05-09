@@ -182,8 +182,8 @@ def load_audio_dataset(data_dir, metadata_path, augment=False, augment_factor=3,
             else:
                 filenames.append(row['filename'])
             
-            # Apply data augmentation if enabled
-            if augment:
+            # Apply data augmentation if enabled (only for DRONE class)
+            if augment and label == 1:
                 for aug_idx in range(augment_factor):
                     # Apply random augmentation
                     audio_aug = add_noise(audio_seg, noise_factor=np.random.uniform(0.0002, 0.001))
@@ -201,8 +201,8 @@ def load_audio_dataset(data_dir, metadata_path, augment=False, augment_factor=3,
                     else:
                         filenames.append(f"{row['filename']}_aug{aug_idx+1}")
         
-        if augment and use_segmentation:
-            print(f"  -> Generated {len(audio_segments) * augment_factor} augmented versions")
+        if augment and label == 1 and use_segmentation:
+            print(f"  -> Generated {len(audio_segments) * augment_factor} augmented versions for DRONE class")
     
     print(f"\nTotal samples loaded: {len(features)}")
     print(f"  - Original files: {len(metadata)}")
@@ -306,12 +306,13 @@ if __name__ == "__main__":
     print("\nLoading dataset with SEGMENTATION and AUGMENTATION...")
     print("Configuration:")
     print("   - Segmentation: 1.0s segments with 50% overlap")
-    print("   - Augmentation: DISABLED\n")
+    print("   - Augmentation: ENABLED (factor=3)\n")
     
     try:
         X, y, filenames, source_file_indices = load_audio_dataset(
             data_dir, metadata_path, 
-            augment=False, 
+            augment=True,
+            augment_factor=3,
             use_segmentation=True,
             segment_duration=1.0,
             segment_overlap=0.5
