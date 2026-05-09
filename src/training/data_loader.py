@@ -153,56 +153,52 @@ def load_audio_dataset(data_dir, metadata_path, augment=False, augment_factor=3,
         
         # Convert label to binary (1=DRONE, 0=NOT_DRONE)
         label = 1 if row['label'].upper() == 'DRONE' else 0
-        
-        # Decide whether to segment or process whole file
-        if use_segmentation:
-            # Cắt audio thành các đoạn nhỏ
-            audio_segments = segment_audio(audio, sr=16000, 
-                                          segment_duration=segment_duration, 
-                                          overlap=segment_overlap)
-            print(f"  -> Segmented into {len(audio_segments)} segments ({segment_duration}s each)")
-        else:
-            # Xử lý toàn bộ file
-            audio_segments = [audio]
-        
-        # Process each segment
-        for seg_idx, audio_seg in enumerate(audio_segments):
-            # Extract mel-spectrogram features
-            mel_spec = extract_mel_spectrogram(audio_seg)
-            
-            # Pad or truncate to fixed length
-            mel_spec = pad_or_truncate_spectrogram(mel_spec, target_length)
-            
-            # Add segment sample
-            features.append(mel_spec)
-            labels.append(label)
-            source_file_indices.append(idx)  # Track source file index
-            if use_segmentation and len(audio_segments) > 1:
-                filenames.append(f"{row['filename']}_seg{seg_idx+1}")
+
+        # Mảng lưu trữ các phiên bản audio nguyên tác và augmentation
+        audio_versions = [(audio, "")]
+
+        # Thực hiện data augmentation trên âm thanh gốc TRƯỚC
+        if augment and label == 1:
+            for aug_idx in range(augment_factor):
+                # Apply random augmentation on the full audio
+                audio_aug = add_noise(audio, noise_factor=np.random.uniform(0.0002, 0.001))
+                audio_aug = pitch_shift(audio_aug, sr=16000, steps=np.random.randint(-4, 5))
+                audio_aug = time_shift(audio_aug, shift_max=0.4)
+                audio_versions.append((audio_aug, f"_aug{aug_idx+1}"))
+            print(f"  -> Generated {augment_factor} augmented full-audio versions for DRONE class")
+
+        segment_count = 0
+        for current_audio, aug_suffix in audio_versions:
+            # Decide whether to segment or process whole audio
+            if use_segmentation:
+                # Cắt audio thành các đoạn nhỏ
+                audio_segments = segment_audio(current_audio, sr=16000, 
+                                              segment_duration=segment_duration, 
+                                              overlap=segment_overlap)
             else:
-                filenames.append(row['filename'])
+                # Xử lý toàn bộ file
+                audio_segments = [current_audio]
             
-            # Apply data augmentation if enabled (only for DRONE class)
-            if augment and label == 1:
-                for aug_idx in range(augment_factor):
-                    # Apply random augmentation
-                    audio_aug = add_noise(audio_seg, noise_factor=np.random.uniform(0.0002, 0.001))
-                    audio_aug = pitch_shift(audio_aug, sr=16000, steps=np.random.randint(-4, 5))
-                    audio_aug = time_shift(audio_aug, shift_max=0.4)
-                    
-                    mel_spec_aug = extract_mel_spectrogram(audio_aug)
-                    mel_spec_aug = pad_or_truncate_spectrogram(mel_spec_aug, target_length)
-                    
-                    features.append(mel_spec_aug)
-                    labels.append(label)
-                    source_file_indices.append(idx)  # Same source file for augmented versions
-                    if use_segmentation and len(audio_segments) > 1:
-                        filenames.append(f"{row['filename']}_seg{seg_idx+1}_aug{aug_idx+1}")
-                    else:
-                        filenames.append(f"{row['filename']}_aug{aug_idx+1}")
-        
-        if augment and label == 1 and use_segmentation:
-            print(f"  -> Generated {len(audio_segments) * augment_factor} augmented versions for DRONE class")
+            segment_count += len(audio_segments)
+
+            # Process each segment
+            for seg_idx, audio_seg in enumerate(audio_segments):
+                # Extract mel-spectrogram features
+                mel_spec = extract_mel_spectrogram(audio_seg)
+                
+                # Pad or truncate to fixed length
+                mel_spec = pad_or_truncate_spectrogram(mel_spec, target_length)
+                
+                # Add segment sample
+                features.append(mel_spec)
+                labels.append(label)
+                source_file_indices.append(idx)  # Track source file index
+                
+                seg_suffix = f"_seg{seg_idx+1}" if (use_segmentation and len(audio_segments) > 1) else ""
+                filenames.append(f"{row['filename']}{seg_suffix}{aug_suffix}")
+                
+        if use_segmentation:
+            print(f"  -> Segmented into {segment_count} segments total ({segment_duration}s each)")
     
     print(f"\nTotal samples loaded: {len(features)}")
     print(f"  - Original files: {len(metadata)}")
