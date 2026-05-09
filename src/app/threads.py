@@ -7,9 +7,11 @@ import numpy as np
 from PyQt6.QtCore import QThread, pyqtSignal
 import sys
 
-# Add parent directory to path for imports
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
+# Configure which model to load here
+# Example: "drone_model_20260507_143000.keras"
+MODEL_FILENAME = "drone_model_v1.keras"
 
+# Add parent directory to path for imports
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
 
 
@@ -50,32 +52,21 @@ class DataWorker(QThread):
         # Load model and setup
         self._load_model()
         self._init_audio_source()
-        self._init_audio_source()
 
     def _load_model(self):
         """Load the trained CNN model"""
         try:
             import tensorflow as tf
 
-
             # Get model path
             script_dir = os.path.dirname(os.path.abspath(__file__))
             project_root = os.path.abspath(os.path.join(script_dir, "../.."))
-            model_path = os.path.join(project_root, "models", "drone_model_v1.keras")
-
-            project_root = os.path.abspath(os.path.join(script_dir, "../.."))
-            model_path = os.path.join(project_root, "models", "drone_model_v1.keras")
+            model_path = os.path.join(project_root, "models", MODEL_FILENAME)
 
             if os.path.exists(model_path):
                 self.model = tf.keras.models.load_model(model_path)
                 print(f"✓ Model loaded successfully from: {model_path}")
-                print(f"✓ Model loaded successfully from: {model_path}")
             else:
-                print(f"✗ ERROR: Model not found at: {model_path}")
-                print(f"   Expected path: {model_path}")
-                print(
-                    "   USING SIMULATED PREDICTIONS - no real detections are running!"
-                )
                 print(f"✗ ERROR: Model not found at: {model_path}")
                 print(f"   Expected path: {model_path}")
                 print(
@@ -86,13 +77,8 @@ class DataWorker(QThread):
             print(f"✗ ERROR: Failed to load model: {e}")
             print(f"   Error type: {type(e).__name__}")
             print("   USING SIMULATED PREDICTIONS - no real detections are running!")
-            print(f"✗ ERROR: Failed to load model: {e}")
-            print(f"   Error type: {type(e).__name__}")
-            print("   USING SIMULATED PREDICTIONS - no real detections are running!")
             self.model = None
 
-    def _init_audio_source(self):
-        """Initialize UDP audio source"""
     def _init_audio_source(self):
         """Initialize UDP audio source"""
         try:
@@ -110,23 +96,7 @@ class DataWorker(QThread):
             print(
                 f"UDP audio source listening on {self.audio_source.get_device_info()}"
             )
-            from src.app.hardware import UdpAudioSource
-
-            self.audio_source = UdpAudioSource(
-                port=5555,
-                chunk_frames=1024,
-                sample_rate=self.source_sr,
-                channels=1,
-                sample_width_bytes=2,
-                timeout_s=0.05,
-            )
-            self.audio_source.start()
-            print(
-                f"UDP audio source listening on {self.audio_source.get_device_info()}"
-            )
         except Exception as e:
-            print(f"Warning: Error initializing UDP source: {e}")
-            self.audio_source = None
             print(f"Warning: Error initializing UDP source: {e}")
             self.audio_source = None
 
@@ -280,13 +250,6 @@ class DataWorker(QThread):
         """Simulate prediction when model is not available"""
         confidence = random.uniform(0.60, 0.95)
         return {
-            "confidence": confidence,
-            "status": "DRONE" if confidence > 0.65 else "-",
-            "source": "simulated",
-            "file": "N/A",
-            "device_info": device_info or "N/A",
-            "sample_rate": sample_rate or self.source_sr,
-            "paused": False,
             "confidence": confidence,
             "status": "DRONE" if confidence > 0.65 else "-",
             "source": "simulated",

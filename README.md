@@ -1,103 +1,101 @@
-# He thong phat hien va dinh vi drone bang am thanh
+# Hệ Thống Phát Hiện Và Định Vị UAV (Drone) Bằng Âm Thanh
 
-He thong phat hien drone dua tren phan tich am thanh voi giao dien PyQt6 va mo hinh CNN. Ung dung ho tro nhan audio tu UDP stream (raw PCM) va chay nhan dien theo thoi gian thuc.
+Dự án máy học phân tích dải âm thanh thời gian thực để nhận diện Drone (UAV) bằng mô hình Mạng Nơ-ron Tích Chập (CNN) kết hợp cùng Giao diện Giám sát Real-time. Xây dựng và liên kết với Hardware thông qua giao thức UDP Stream để tiếp nhận và phân tích raw PCM liên tục.
 
-## Tinh nang
+## Tính Năng Nổi Bật
 
-- Phat hien drone tu am thanh va hien thi do tin cay
-- Dashboard real time (PyQt6 + pyqtgraph)
-- Tien xu ly am thanh: normalize, silence removal, mel-spectrogram
-- Audio segmentation va data augmentation cho train
-- Dau vao UDP audio (raw PCM 16-bit mono, 16 kHz)
+- **Mô Hình Âm Học (CNN):** Phân loại nhị phân Âm thanh Drone và Background Noise với cấu trúc 4 khối Conv2D (32, 64, 128, 256 filters), tích hợp BatchNormalization, MaxPooling và Dropout.
+- **Xử Lý Tín Hiệu Số (DSP):** Chuyển đổi chuỗi thời gian sang dải tần số đặc trưng (Mel-spectrogram) bằng `librosa`. Thông số chuyên sâu: `sr=16000`, `n_fft=2048`, `hop_length=512`, `n_mels=128`.
+- **Hệ Vi Phân Cửa Sổ Trượt (Sliding Window & Voting):** Cắt luồng âm thanh thành các đoạn 1 giây, chồng lấn (overlap) 0.5 giây. Cơ chế **Temporal Majority Voting** (chốt kết quả dựa trên $\ge$ 2/3 khung cửa sổ) giúp triệt tiêu nhiễu giả (false positives).
+- **Trực Quan Hóa (Dashboard):** Giao diện GUI được xây dựng bằng `PyQt6` và `pyqtgraph`, hỗ trợ hiển thị biểu đồ tần số âm thanh (Waveform) và biểu đồ đo lường độ tin cậy (Confidence Signal).
+- **Hỗ Trợ Data Augmentation & Nghiên Cứu:** Các script tạo dữ liệu nhiễu (Noise Mixing), dịch tần (Pitch Shifting), và biểu đồ đồ họa hỗ trợ đưa vào báo cáo khoa học/luận văn.
 
-## Cau truc du an
+## Cấu Trúc Dự Án
 
 ```
 GUI-ML-Project/
 ├── data/
-│   ├── raw/                     # File am thanh goc (.wav)
-│   ├── processed/               # Du lieu da xu ly (.npy)
-│   └── metadata.csv             # Thong tin file
+│   ├── raw/                 # Dữ liệu âm thanh gốc (.wav) - Drone & Background
+│   ├── processed/           # Dữ liệu mảng numpy đã trích xuất đặc trưng (.npy)
+│   └── metadata.csv         # Bảng nhãn, nguồn, thời lượng của file âm thanh
 ├── models/
-│   ├── drone_model_v1.keras     # Model CNN da train
-│   └── README.md
-├── scripts/
-│   ├── add_background_samples.py
-│   ├── count_samples.py
-│   ├── count_samples_simple.py
-│   └── test_segmentation.py
+│   └── drone_model_v1.keras # File Model CNN đã huấn luyện & test thành công
 ├── src/
-│   ├── app/
-│   │   ├── main.py              # Entry point
-│   │   ├── threads.py           # DataWorker (UDP stream + inference)
-│   │   ├── hardware.py          # UdpAudioSource
-│   │   └── ui/
-│   ├── common/
-│   │   └── processor.py         # Tien xu ly va mel-spectrogram
-│   └── training/
-│       ├── data_loader.py
-│       └── train.py
-├── styles/
-│   └── style.qss
-├── udp_test2                    # Script UDP test (tham khao giao thuc)
-└── README.md
+│   ├── app/                 # UI và Luồng chính (GUI, Threads, UDP Socket)
+│   ├── common/              # Module tiền xử lý DSP & Feature Extraction
+│   └── training/            # Pipeline Data Loader & Build / Train Model
+├── scripts/
+│   ├── count_samples*.py                # Đếm và thống kê dữ liệu
+│   ├── export_misclassified_audio.py    # Kiểm thử và xuất các file bị nhận dạng sai
+│   ├── generate_augmentation_comparison.py # Render biểu đồ so sánh Data Augmentation
+│   ├── generate_figure_4_3.py           # Render biểu đồ Waveform/Spectrogram cho báo cáo
+│   ├── generate_snr_distance_graph.py   # Render đồ thị tương quan SPL, Distance và SNR
+│   └── visualize_mel_filters.py         # Render biểu đồ phân bố bộ lọc Mel-filterbank
+├── assets/                  # Lưu trữ các file đồ họa (.png) xuất ra từ scripts
+├── styles/                  # File giao diện (CSS/QSS)
+├── udp_test2                # Script UDP test thiết bị ngoại vi
+└── *.md                     # Tài liệu kỹ thuật (ARCHITECTURE, MODEL_SPECS, v.v.)
 ```
 
-## Cai dat
+## Cài Đặt Khởi Tạo
+
+Yêu cầu: Python 3.9+
 
 ```bash
+# Tạo môi trường ảo
 python -m venv venv
+
+# Kích hoạt venv (Windows)
 venv\Scripts\activate
+
+# Cài đặt các thư viện cần thiết
 pip install -r requirements.txt
 ```
 
-## Su dung
+## Hướng Dẫn Sử Dụng
 
-### Chay dashboard
+### 1. Khởi chạy Giao Diện Giám Sát (Dashboard)
 
 ```bash
 python -m src.app.main
 ```
 
-### UDP audio input
+Ứng dụng sẽ mở port `5555` lắng nghe thiết bị truyền luồng:
 
-Ung dung lang nghe UDP tren port 5555 va nhan raw PCM tu thiet bi:
+- Định dạng: Raw PCM 16-bit little-endian (Mono)
+- Tần số lấy mẫu: 16000 Hz
+- Packet Size: 1024 frames (2048 bytes)
 
-- Format: PCM 16-bit little-endian
-- Channels: 1 (mono)
-- Sample rate: 16000 Hz
-- Packet size: 1024 frames (2048 bytes)
+### 2. Huấn Luyện (Training) Model
 
-Trong `src/app/threads.py`, audio duoc buffer de tao cua so du lieu, sau do duoc xu ly o 16000 Hz cho pipeline mel-spectrogram. Neu khong co du lieu, dashboard hien "PAUSED".
-
-File `udp_test2` la script UDP test de tham khao giao thuc va kiem tra stream tu mach.
-
-## Train model
+Tiến hành load dữ liệu từ raw sang mel-spectrogram, sau đó huấn luyện mô hình:
 
 ```bash
+# B1: Trích xuất đặc trưng từ âm thanh (.wav -> .npy)
 python -m src.training.data_loader
+
+# B2: Cấu trúc hóa mạng nơ-ron và tiến hành Train
 python -m src.training.train
 ```
 
-## Du lieu
+### 3. Kết xuất Đồ Họa & Báo Cáo
 
-### Dinh dang metadata.csv
+Nếu bạn đang thực hiện đồ án/luận văn, các tệp ở thư mục `scripts/` hỗ trợ vẽ biểu đồ bằng `matplotlib` với độ phân giải cực cao (300 DPI):
 
-```csv
-filename;label;source;duration_sec;notes
-drone/DRONE_001.wav;DRONE;Recording;Unknown;Sample audio
-background/city_traffic_01.wav;NOT_DRONE;freesound;15;City traffic
+```bash
+python -m scripts.generate_snr_distance_graph
+python -m scripts.generate_figure_4_3
+python -m scripts.generate_augmentation_comparison
+# Ảnh sẽ tự động lưu vào /assets/
 ```
 
-### Tien xu ly
+## Tài Liệu Tham Khảo (Docs)
 
-1. Load audio WAV (mau 16000 Hz trong tap train)
-2. Normalize amplitude ve [-1, 1]
-3. Silence removal (top_db=20)
-4. Mel-spectrogram (n_fft=2048, hop_length=512, n_mels=128)
-5. Pad/truncate ve 128 time steps
+Dự án đi kèm các tài liệu phân tích sâu bên trong mã nguồn:
 
-## Scripts ho tro
+- [`ARCHITECTURE_AND_VOTING.md`](./ARCHITECTURE_AND_VOTING.md) - Chi tiết Thuật toán Biểu quyết, Sliding Window.
+- [`MODEL_SPECS.md`](./MODEL_SPECS.md) - Cấu trúc tham số Mạng học sâu (CNN).
+- [`WINDOW_TECHNIQUES.md`](./WINDOW_TECHNIQUES.md) - Kỹ thuật Chia khung và Chồng lấn thời gian.
 
 - `scripts/count_samples.py`: thong ke metadata va du lieu da xu ly
 - `scripts/count_samples_simple.py`: thong ke nhanh (khong can pandas)
