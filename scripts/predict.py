@@ -5,14 +5,21 @@ Usage: python scripts/predict.py --audio data/raw/ten_file_test.wav
 
 import argparse
 import os
+import random
 import sys
 from pathlib import Path
 import numpy as np
 
 os.environ["TF_ENABLE_ONEDNN_OPTS"] = "0"
 os.environ["TF_CPP_MIN_LOG_LEVEL"] = "2"
+os.environ['PYTHONHASHSEED'] = '42'
 
 import tensorflow as tf
+
+# Set seeds for reproducibility
+random.seed(42)
+np.random.seed(42)
+tf.random.set_seed(42)
 
 # Đảm bảo import được các module trong dự án
 PROJECT_ROOT = Path(__file__).resolve().parent.parent

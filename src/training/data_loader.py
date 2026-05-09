@@ -5,6 +5,7 @@ Load and prepare audio datasets for drone detection training
 """
 
 import os
+import random
 import numpy as np
 import pandas as pd
 from pathlib import Path
@@ -255,6 +256,9 @@ def save_processed_features(features, labels, output_dir, source_file_indices=No
 
 
 if __name__ == "__main__":
+    # Set seeds for reproducibility of augmentation random ops
+    random.seed(42)
+    np.random.seed(42)
     # Example usage: Load and process audio dataset
     # Xác định đường dẫn tuyệt đối
     script_dir = os.path.dirname(os.path.abspath(__file__))  # src/training/

@@ -5,8 +5,10 @@ Train CNN models from preprocessed mel-spectrograms for drone sound classificati
 """
 
 import os
+import random
 os.environ["TF_ENABLE_ONEDNN_OPTS"] = "0"
 os.environ["TF_CPP_MIN_LOG_LEVEL"] = "2"
+os.environ['PYTHONHASHSEED'] = '42'
 
 import sys
 import numpy as np
@@ -19,6 +21,11 @@ import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras import layers, models
 from tensorflow.keras.callbacks import ModelCheckpoint, EarlyStopping, ReduceLROnPlateau
+
+# Set seeds for reproducibility across runs
+random.seed(42)
+np.random.seed(42)
+tf.random.set_seed(42)
 
 # Add parent directory to path for imports
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
