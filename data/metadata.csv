@@ -1,321 +1,1531 @@
-﻿"filename";"label";"source";"duration_sec";"notes";"class_id"
-"drone/DRONE_001.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 001";"1"
-"drone/DRONE_002.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 002";"1"
-"drone/DRONE_003.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 003";"1"
-"drone/DRONE_004.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 004";"1"
-"drone/DRONE_005.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 005";"1"
-"drone/DRONE_006.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 006";"1"
-"drone/DRONE_007.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 007";"1"
-"drone/DRONE_008.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 008";"1"
-"drone/DRONE_009.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 009";"1"
-"drone/DRONE_010.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 010";"1"
-"drone/DRONE_011.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 011";"1"
-"drone/DRONE_012.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 012";"1"
-"drone/DRONE_013.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 013";"1"
-"drone/DRONE_014.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 014";"1"
-"drone/DRONE_015.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 015";"1"
-"drone/DRONE_016.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 016";"1"
-"drone/DRONE_017.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 017";"1"
-"drone/DRONE_018.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 018";"1"
-"drone/DRONE_019.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 019";"1"
-"drone/DRONE_020.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 020";"1"
-"drone/DRONE_021.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 021";"1"
-"drone/DRONE_022.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 022";"1"
-"drone/DRONE_023.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 023";"1"
-"drone/DRONE_024.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 024";"1"
-"drone/DRONE_025.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 025";"1"
-"drone/DRONE_026.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 026";"1"
-"drone/DRONE_027.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 027";"1"
-"drone/DRONE_028.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 028";"1"
-"drone/DRONE_029.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 029";"1"
-"drone/DRONE_030.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 030";"1"
-"drone/DRONE_031.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 031";"1"
-"drone/DRONE_032.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 032";"1"
-"drone/DRONE_033.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 033";"1"
-"drone/DRONE_034.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 034";"1"
-"drone/DRONE_035.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 035";"1"
-"drone/DRONE_036.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 036";"1"
-"drone/DRONE_037.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 037";"1"
-"drone/DRONE_038.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 038";"1"
-"drone/DRONE_039.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 039";"1"
-"drone/DRONE_040.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 040";"1"
-"drone/DRONE_041.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 041";"1"
-"drone/DRONE_042.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 042";"1"
-"drone/DRONE_043.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 043";"1"
-"drone/DRONE_044.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 044";"1"
-"drone/DRONE_045.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 045";"1"
-"drone/DRONE_046.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 046";"1"
-"drone/DRONE_047.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 047";"1"
-"drone/DRONE_048.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 048";"1"
-"drone/DRONE_049.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 049";"1"
-"drone/DRONE_050.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 050";"1"
-"drone/DRONE_051.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 051";"1"
-"drone/DRONE_052.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 052";"1"
-"drone/DRONE_053.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 053";"1"
-"drone/DRONE_054.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 054";"1"
-"drone/DRONE_055.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 055";"1"
-"drone/DRONE_056.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 056";"1"
-"drone/DRONE_057.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 057";"1"
-"drone/DRONE_058.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 058";"1"
-"drone/DRONE_059.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 059";"1"
-"drone/DRONE_060.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 060";"1"
-"drone/DRONE_061.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 061";"1"
-"drone/DRONE_062.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 062";"1"
-"drone/DRONE_063.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 063";"1"
-"drone/DRONE_064.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 064";"1"
-"drone/DRONE_065.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 065";"1"
-"drone/DRONE_066.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 066";"1"
-"drone/DRONE_067.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 067";"1"
-"drone/DRONE_068.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 068";"1"
-"drone/DRONE_069.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 069";"1"
-"drone/DRONE_070.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 070";"1"
-"drone/DRONE_071.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 071";"1"
-"drone/DRONE_072.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 072";"1"
-"drone/DRONE_073.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 073";"1"
-"drone/DRONE_074.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 074";"1"
-"drone/DRONE_075.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 075";"1"
-"drone/DRONE_076.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 076";"1"
-"drone/DRONE_077.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 077";"1"
-"drone/DRONE_078.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 078";"1"
-"drone/DRONE_079.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 079";"1"
-"drone/DRONE_080.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 080";"1"
-"drone/DRONE_081.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 081";"1"
-"drone/DRONE_082.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 082";"1"
-"drone/DRONE_083.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 083";"1"
-"drone/DRONE_084.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 084";"1"
-"drone/DRONE_085.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 085";"1"
-"drone/DRONE_086.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 086";"1"
-"drone/DRONE_087.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 087";"1"
-"drone/DRONE_088.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 088";"1"
-"drone/DRONE_089.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 089";"1"
-"drone/DRONE_090.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 090";"1"
-"drone/DRONE_091.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 091";"1"
-"drone/DRONE_092.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 092";"1"
-"drone/DRONE_093.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 093";"1"
-"drone/DRONE_094.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 094";"1"
-"drone/DRONE_095.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 095";"1"
-"drone/DRONE_096.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 096";"1"
-"drone/DRONE_097.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 097";"1"
-"drone/DRONE_098.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 098";"1"
-"drone/DRONE_099.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 099";"1"
-"drone/DRONE_100.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 100";"1"
-"drone/DRONE_101.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 101";"1"
-"drone/DRONE_102.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 102";"1"
-"drone/DRONE_103.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 103";"1"
-"drone/DRONE_104.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 104";"1"
-"drone/DRONE_105.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 105";"1"
-"drone/DRONE_106.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 106";"1"
-"drone/DRONE_107.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 107";"1"
-"drone/DRONE_108.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 108";"1"
-"drone/DRONE_109.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 109";"1"
-"drone/DRONE_110.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 110";"1"
-"drone/DRONE_111.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 111";"1"
-"drone/DRONE_112.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 112";"1"
-"drone/DRONE_113.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 113";"1"
-"drone/DRONE_114.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 114";"1"
-"drone/DRONE_115.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 115";"1"
-"drone/DRONE_116.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 116";"1"
-"drone/DRONE_117.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 117";"1"
-"drone/DRONE_118.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 118";"1"
-"drone/DRONE_119.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 119";"1"
-"drone/DRONE_120.wav";"DRONE";"Recording";"Unknown";"Drone audio sample 120";"1"
-"background/BACKGROUND_001.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_002.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_003.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_004.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_005.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_006.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_007.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_008.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_009.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_010.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_011.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_012.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_013.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_014.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_015.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_016.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_017.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_018.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_019.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_020.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_021.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_022.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_023.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_024.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_025.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_026.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_027.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_028.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_029.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_030.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_031.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_032.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_033.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_034.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_035.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_036.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_037.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_038.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_039.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_040.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_041.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_042.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_043.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_044.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_045.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_046.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_047.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_048.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_049.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_050.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_051.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_052.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_053.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_054.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_055.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_056.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_057.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_058.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_059.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_060.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_061.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_062.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_063.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_064.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_065.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_066.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_067.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_068.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_069.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_070.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_071.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_072.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_073.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_074.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_075.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_076.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_077.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_078.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_079.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_080.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_081.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_082.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_083.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_084.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_085.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_086.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_087.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_088.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_089.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_090.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_091.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_092.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_093.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_094.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_095.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_096.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_097.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_098.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_099.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_100.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_101.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_102.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_103.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_104.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_105.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_106.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_107.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_108.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_109.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_110.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_111.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_112.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_113.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_114.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_115.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_116.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_117.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_118.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_119.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_120.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_121.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_122.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_123.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_124.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_125.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_126.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_127.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_128.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_129.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_130.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_131.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_132.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/BACKGROUND_133.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/HELICOPTER_001.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/HELICOPTER_002.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/HELICOPTER_003.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/HELICOPTER_004.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/HELICOPTER_005.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/HELICOPTER_006.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/HELICOPTER_007.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/HELICOPTER_008.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/HELICOPTER_009.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/HELICOPTER_010.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/HELICOPTER_011.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/HELICOPTER_012.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/HELICOPTER_013.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/HELICOPTER_014.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/HELICOPTER_015.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/HELICOPTER_016.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/HELICOPTER_017.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/HELICOPTER_018.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/HELICOPTER_019.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/HELICOPTER_020.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/HELICOPTER_021.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/HELICOPTER_022.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/HELICOPTER_023.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/HELICOPTER_024.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/HELICOPTER_025.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/HELICOPTER_026.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/HELICOPTER_027.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/HELICOPTER_028.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/HELICOPTER_029.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/HELICOPTER_030.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/OPERA_01.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/OPERA_02.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/OPERA_03.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/OPERA_04.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/OPERA_05.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/OPERA_06.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/OPERA_07.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/OPERA_08.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/OPERA_09.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/OPERA_10.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/SILENCE_001.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/SILENCE_002.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/SILENCE_003.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/SILENCE_004.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/SILENCE_005.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/SILENCE_006.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/SILENCE_007.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/SILENCE_008.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/SILENCE_009.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/SILENCE_010.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/SILENCE_011.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/SILENCE_012.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/SILENCE_013.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/SILENCE_014.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/SILENCE_015.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/WHITE_NOISE_000.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/WHITE_NOISE_001.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/WHITE_NOISE_002.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/WHITE_NOISE_003.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/WHITE_NOISE_004.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/WHITE_NOISE_005.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/WHITE_NOISE_006.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/WHITE_NOISE_007.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/WHITE_NOISE_008.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/WHITE_NOISE_009.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/WHITE_NOISE_010.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
-"background/WHITE_NOISE_011.wav";"NOT_DRONE";"background";"";"Background noise sample";"0"
+﻿filename;label;source;duration_sec;notes;class_id
+drone/DRONE_001.wav;DRONE;Recording;Unknown;Drone audio sample 001;1
+drone/DRONE_002.wav;DRONE;Recording;Unknown;Drone audio sample 002;1
+drone/DRONE_003.wav;DRONE;Recording;Unknown;Drone audio sample 003;1
+drone/DRONE_004.wav;DRONE;Recording;Unknown;Drone audio sample 004;1
+drone/DRONE_005.wav;DRONE;Recording;Unknown;Drone audio sample 005;1
+drone/DRONE_006.wav;DRONE;Recording;Unknown;Drone audio sample 006;1
+drone/DRONE_007.wav;DRONE;Recording;Unknown;Drone audio sample 007;1
+drone/DRONE_008.wav;DRONE;Recording;Unknown;Drone audio sample 008;1
+drone/DRONE_009.wav;DRONE;Recording;Unknown;Drone audio sample 009;1
+drone/DRONE_010.wav;DRONE;Recording;Unknown;Drone audio sample 010;1
+drone/DRONE_011.wav;DRONE;Recording;Unknown;Drone audio sample 011;1
+drone/DRONE_012.wav;DRONE;Recording;Unknown;Drone audio sample 012;1
+drone/DRONE_013.wav;DRONE;Recording;Unknown;Drone audio sample 013;1
+drone/DRONE_014.wav;DRONE;Recording;Unknown;Drone audio sample 014;1
+drone/DRONE_015.wav;DRONE;Recording;Unknown;Drone audio sample 015;1
+drone/DRONE_016.wav;DRONE;Recording;Unknown;Drone audio sample 016;1
+drone/DRONE_017.wav;DRONE;Recording;Unknown;Drone audio sample 017;1
+drone/DRONE_018.wav;DRONE;Recording;Unknown;Drone audio sample 018;1
+drone/DRONE_019.wav;DRONE;Recording;Unknown;Drone audio sample 019;1
+drone/DRONE_020.wav;DRONE;Recording;Unknown;Drone audio sample 020;1
+drone/DRONE_021.wav;DRONE;Recording;Unknown;Drone audio sample 021;1
+drone/DRONE_022.wav;DRONE;Recording;Unknown;Drone audio sample 022;1
+drone/DRONE_023.wav;DRONE;Recording;Unknown;Drone audio sample 023;1
+drone/DRONE_024.wav;DRONE;Recording;Unknown;Drone audio sample 024;1
+drone/DRONE_025.wav;DRONE;Recording;Unknown;Drone audio sample 025;1
+drone/DRONE_026.wav;DRONE;Recording;Unknown;Drone audio sample 026;1
+drone/DRONE_027.wav;DRONE;Recording;Unknown;Drone audio sample 027;1
+drone/DRONE_028.wav;DRONE;Recording;Unknown;Drone audio sample 028;1
+drone/DRONE_029.wav;DRONE;Recording;Unknown;Drone audio sample 029;1
+drone/DRONE_030.wav;DRONE;Recording;Unknown;Drone audio sample 030;1
+drone/DRONE_031.wav;DRONE;Recording;Unknown;Drone audio sample 031;1
+drone/DRONE_032.wav;DRONE;Recording;Unknown;Drone audio sample 032;1
+drone/DRONE_033.wav;DRONE;Recording;Unknown;Drone audio sample 033;1
+drone/DRONE_034.wav;DRONE;Recording;Unknown;Drone audio sample 034;1
+drone/DRONE_035.wav;DRONE;Recording;Unknown;Drone audio sample 035;1
+drone/DRONE_036.wav;DRONE;Recording;Unknown;Drone audio sample 036;1
+drone/DRONE_037.wav;DRONE;Recording;Unknown;Drone audio sample 037;1
+drone/DRONE_038.wav;DRONE;Recording;Unknown;Drone audio sample 038;1
+drone/DRONE_039.wav;DRONE;Recording;Unknown;Drone audio sample 039;1
+drone/DRONE_040.wav;DRONE;Recording;Unknown;Drone audio sample 040;1
+drone/DRONE_041.wav;DRONE;Recording;Unknown;Drone audio sample 041;1
+drone/DRONE_042.wav;DRONE;Recording;Unknown;Drone audio sample 042;1
+drone/DRONE_043.wav;DRONE;Recording;Unknown;Drone audio sample 043;1
+drone/DRONE_044.wav;DRONE;Recording;Unknown;Drone audio sample 044;1
+drone/DRONE_045.wav;DRONE;Recording;Unknown;Drone audio sample 045;1
+drone/DRONE_046.wav;DRONE;Recording;Unknown;Drone audio sample 046;1
+drone/DRONE_047.wav;DRONE;Recording;Unknown;Drone audio sample 047;1
+drone/DRONE_048.wav;DRONE;Recording;Unknown;Drone audio sample 048;1
+drone/DRONE_049.wav;DRONE;Recording;Unknown;Drone audio sample 049;1
+drone/DRONE_050.wav;DRONE;Recording;Unknown;Drone audio sample 050;1
+drone/DRONE_051.wav;DRONE;Recording;Unknown;Drone audio sample 051;1
+drone/DRONE_052.wav;DRONE;Recording;Unknown;Drone audio sample 052;1
+drone/DRONE_053.wav;DRONE;Recording;Unknown;Drone audio sample 053;1
+drone/DRONE_054.wav;DRONE;Recording;Unknown;Drone audio sample 054;1
+drone/DRONE_055.wav;DRONE;Recording;Unknown;Drone audio sample 055;1
+drone/DRONE_056.wav;DRONE;Recording;Unknown;Drone audio sample 056;1
+drone/DRONE_057.wav;DRONE;Recording;Unknown;Drone audio sample 057;1
+drone/DRONE_058.wav;DRONE;Recording;Unknown;Drone audio sample 058;1
+drone/DRONE_059.wav;DRONE;Recording;Unknown;Drone audio sample 059;1
+drone/DRONE_060.wav;DRONE;Recording;Unknown;Drone audio sample 060;1
+drone/DRONE_061.wav;DRONE;Recording;Unknown;Drone audio sample 061;1
+drone/DRONE_062.wav;DRONE;Recording;Unknown;Drone audio sample 062;1
+drone/DRONE_063.wav;DRONE;Recording;Unknown;Drone audio sample 063;1
+drone/DRONE_064.wav;DRONE;Recording;Unknown;Drone audio sample 064;1
+drone/DRONE_065.wav;DRONE;Recording;Unknown;Drone audio sample 065;1
+drone/DRONE_066.wav;DRONE;Recording;Unknown;Drone audio sample 066;1
+drone/DRONE_067.wav;DRONE;Recording;Unknown;Drone audio sample 067;1
+drone/DRONE_068.wav;DRONE;Recording;Unknown;Drone audio sample 068;1
+drone/DRONE_069.wav;DRONE;Recording;Unknown;Drone audio sample 069;1
+drone/DRONE_070.wav;DRONE;Recording;Unknown;Drone audio sample 070;1
+drone/DRONE_071.wav;DRONE;Recording;Unknown;Drone audio sample 071;1
+drone/DRONE_072.wav;DRONE;Recording;Unknown;Drone audio sample 072;1
+drone/DRONE_073.wav;DRONE;Recording;Unknown;Drone audio sample 073;1
+drone/DRONE_074.wav;DRONE;Recording;Unknown;Drone audio sample 074;1
+drone/DRONE_075.wav;DRONE;Recording;Unknown;Drone audio sample 075;1
+drone/DRONE_076.wav;DRONE;Recording;Unknown;Drone audio sample 076;1
+drone/DRONE_077.wav;DRONE;Recording;Unknown;Drone audio sample 077;1
+drone/DRONE_078.wav;DRONE;Recording;Unknown;Drone audio sample 078;1
+drone/DRONE_079.wav;DRONE;Recording;Unknown;Drone audio sample 079;1
+drone/DRONE_080.wav;DRONE;Recording;Unknown;Drone audio sample 080;1
+drone/DRONE_081.wav;DRONE;Recording;Unknown;Drone audio sample 081;1
+drone/DRONE_082.wav;DRONE;Recording;Unknown;Drone audio sample 082;1
+drone/DRONE_083.wav;DRONE;Recording;Unknown;Drone audio sample 083;1
+drone/DRONE_084.wav;DRONE;Recording;Unknown;Drone audio sample 084;1
+drone/DRONE_085.wav;DRONE;Recording;Unknown;Drone audio sample 085;1
+drone/DRONE_086.wav;DRONE;Recording;Unknown;Drone audio sample 086;1
+drone/DRONE_087.wav;DRONE;Recording;Unknown;Drone audio sample 087;1
+drone/DRONE_088.wav;DRONE;Recording;Unknown;Drone audio sample 088;1
+drone/DRONE_089.wav;DRONE;Recording;Unknown;Drone audio sample 089;1
+drone/DRONE_090.wav;DRONE;Recording;Unknown;Drone audio sample 090;1
+drone/DRONE_091.wav;DRONE;Recording;Unknown;Drone audio sample 091;1
+drone/DRONE_092.wav;DRONE;Recording;Unknown;Drone audio sample 092;1
+drone/DRONE_093.wav;DRONE;Recording;Unknown;Drone audio sample 093;1
+drone/DRONE_094.wav;DRONE;Recording;Unknown;Drone audio sample 094;1
+drone/DRONE_095.wav;DRONE;Recording;Unknown;Drone audio sample 095;1
+drone/DRONE_096.wav;DRONE;Recording;Unknown;Drone audio sample 096;1
+drone/DRONE_097.wav;DRONE;Recording;Unknown;Drone audio sample 097;1
+drone/DRONE_098.wav;DRONE;Recording;Unknown;Drone audio sample 098;1
+drone/DRONE_099.wav;DRONE;Recording;Unknown;Drone audio sample 099;1
+drone/DRONE_100.wav;DRONE;Recording;Unknown;Drone audio sample 100;1
+drone/DRONE_101.wav;DRONE;Recording;Unknown;Drone audio sample 101;1
+drone/DRONE_102.wav;DRONE;Recording;Unknown;Drone audio sample 102;1
+drone/DRONE_103.wav;DRONE;Recording;Unknown;Drone audio sample 103;1
+drone/DRONE_104.wav;DRONE;Recording;Unknown;Drone audio sample 104;1
+drone/DRONE_105.wav;DRONE;Recording;Unknown;Drone audio sample 105;1
+drone/DRONE_106.wav;DRONE;Recording;Unknown;Drone audio sample 106;1
+drone/DRONE_107.wav;DRONE;Recording;Unknown;Drone audio sample 107;1
+drone/DRONE_108.wav;DRONE;Recording;Unknown;Drone audio sample 108;1
+drone/DRONE_109.wav;DRONE;Recording;Unknown;Drone audio sample 109;1
+drone/DRONE_110.wav;DRONE;Recording;Unknown;Drone audio sample 110;1
+drone/DRONE_111.wav;DRONE;Recording;Unknown;Drone audio sample 111;1
+drone/DRONE_112.wav;DRONE;Recording;Unknown;Drone audio sample 112;1
+drone/DRONE_113.wav;DRONE;Recording;Unknown;Drone audio sample 113;1
+drone/DRONE_114.wav;DRONE;Recording;Unknown;Drone audio sample 114;1
+drone/DRONE_115.wav;DRONE;Recording;Unknown;Drone audio sample 115;1
+drone/DRONE_116.wav;DRONE;Recording;Unknown;Drone audio sample 116;1
+drone/DRONE_117.wav;DRONE;Recording;Unknown;Drone audio sample 117;1
+drone/DRONE_118.wav;DRONE;Recording;Unknown;Drone audio sample 118;1
+drone/DRONE_119.wav;DRONE;Recording;Unknown;Drone audio sample 119;1
+drone/DRONE_120.wav;DRONE;Recording;Unknown;Drone audio sample 120;1
+background/BACKGROUND_001.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_002.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_003.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_004.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_005.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_006.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_007.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_008.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_009.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_010.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_011.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_012.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_013.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_014.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_015.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_016.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_017.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_018.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_019.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_020.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_021.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_022.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_023.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_024.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_025.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_026.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_027.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_028.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_029.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_030.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_031.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_032.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_033.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_034.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_035.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_036.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_037.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_038.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_039.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_040.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_041.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_042.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_043.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_044.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_045.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_046.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_047.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_048.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_049.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_050.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_051.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_052.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_053.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_054.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_055.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_056.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_057.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_058.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_059.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_060.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_061.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_062.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_063.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_064.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_065.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_066.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_067.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_068.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_069.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_070.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_071.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_072.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_073.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_074.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_075.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_076.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_077.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_078.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_079.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_080.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_081.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_082.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_083.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_084.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_085.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_086.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_087.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_088.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_089.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_090.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_091.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_092.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_093.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_094.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_095.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_096.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_097.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_098.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_099.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_100.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_101.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_102.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_103.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_104.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_105.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_106.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_107.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_108.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_109.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_110.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_111.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_112.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_113.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_114.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_115.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_116.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_117.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_118.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_119.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_120.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_121.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_122.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_123.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_124.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_125.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_126.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_127.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_128.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_129.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_130.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_131.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_132.wav;NOT_DRONE;background;;Background noise sample;0
+background/BACKGROUND_133.wav;NOT_DRONE;background;;Background noise sample;0
+background/HELICOPTER_001.wav;NOT_DRONE;background;;Background noise sample;0
+background/HELICOPTER_002.wav;NOT_DRONE;background;;Background noise sample;0
+background/HELICOPTER_003.wav;NOT_DRONE;background;;Background noise sample;0
+background/HELICOPTER_004.wav;NOT_DRONE;background;;Background noise sample;0
+background/HELICOPTER_005.wav;NOT_DRONE;background;;Background noise sample;0
+background/HELICOPTER_006.wav;NOT_DRONE;background;;Background noise sample;0
+background/HELICOPTER_007.wav;NOT_DRONE;background;;Background noise sample;0
+background/HELICOPTER_008.wav;NOT_DRONE;background;;Background noise sample;0
+background/HELICOPTER_009.wav;NOT_DRONE;background;;Background noise sample;0
+background/HELICOPTER_010.wav;NOT_DRONE;background;;Background noise sample;0
+background/HELICOPTER_011.wav;NOT_DRONE;background;;Background noise sample;0
+background/HELICOPTER_012.wav;NOT_DRONE;background;;Background noise sample;0
+background/HELICOPTER_013.wav;NOT_DRONE;background;;Background noise sample;0
+background/HELICOPTER_014.wav;NOT_DRONE;background;;Background noise sample;0
+background/HELICOPTER_015.wav;NOT_DRONE;background;;Background noise sample;0
+background/HELICOPTER_016.wav;NOT_DRONE;background;;Background noise sample;0
+background/HELICOPTER_017.wav;NOT_DRONE;background;;Background noise sample;0
+background/HELICOPTER_018.wav;NOT_DRONE;background;;Background noise sample;0
+background/HELICOPTER_019.wav;NOT_DRONE;background;;Background noise sample;0
+background/HELICOPTER_020.wav;NOT_DRONE;background;;Background noise sample;0
+background/HELICOPTER_021.wav;NOT_DRONE;background;;Background noise sample;0
+background/HELICOPTER_022.wav;NOT_DRONE;background;;Background noise sample;0
+background/HELICOPTER_023.wav;NOT_DRONE;background;;Background noise sample;0
+background/HELICOPTER_024.wav;NOT_DRONE;background;;Background noise sample;0
+background/HELICOPTER_025.wav;NOT_DRONE;background;;Background noise sample;0
+background/HELICOPTER_026.wav;NOT_DRONE;background;;Background noise sample;0
+background/HELICOPTER_027.wav;NOT_DRONE;background;;Background noise sample;0
+background/HELICOPTER_028.wav;NOT_DRONE;background;;Background noise sample;0
+background/HELICOPTER_029.wav;NOT_DRONE;background;;Background noise sample;0
+background/HELICOPTER_030.wav;NOT_DRONE;background;;Background noise sample;0
+background/OPERA_01.wav;NOT_DRONE;background;;Background noise sample;0
+background/OPERA_02.wav;NOT_DRONE;background;;Background noise sample;0
+background/OPERA_03.wav;NOT_DRONE;background;;Background noise sample;0
+background/OPERA_04.wav;NOT_DRONE;background;;Background noise sample;0
+background/OPERA_05.wav;NOT_DRONE;background;;Background noise sample;0
+background/OPERA_06.wav;NOT_DRONE;background;;Background noise sample;0
+background/OPERA_07.wav;NOT_DRONE;background;;Background noise sample;0
+background/OPERA_08.wav;NOT_DRONE;background;;Background noise sample;0
+background/OPERA_09.wav;NOT_DRONE;background;;Background noise sample;0
+background/OPERA_10.wav;NOT_DRONE;background;;Background noise sample;0
+background/SILENCE_001.wav;NOT_DRONE;background;;Background noise sample;0
+background/SILENCE_002.wav;NOT_DRONE;background;;Background noise sample;0
+background/SILENCE_003.wav;NOT_DRONE;background;;Background noise sample;0
+background/SILENCE_004.wav;NOT_DRONE;background;;Background noise sample;0
+background/SILENCE_005.wav;NOT_DRONE;background;;Background noise sample;0
+background/SILENCE_006.wav;NOT_DRONE;background;;Background noise sample;0
+background/SILENCE_007.wav;NOT_DRONE;background;;Background noise sample;0
+background/SILENCE_008.wav;NOT_DRONE;background;;Background noise sample;0
+background/SILENCE_009.wav;NOT_DRONE;background;;Background noise sample;0
+background/SILENCE_010.wav;NOT_DRONE;background;;Background noise sample;0
+background/SILENCE_011.wav;NOT_DRONE;background;;Background noise sample;0
+background/SILENCE_012.wav;NOT_DRONE;background;;Background noise sample;0
+background/SILENCE_013.wav;NOT_DRONE;background;;Background noise sample;0
+background/SILENCE_014.wav;NOT_DRONE;background;;Background noise sample;0
+background/SILENCE_015.wav;NOT_DRONE;background;;Background noise sample;0
+background/WHITE_NOISE_000.wav;NOT_DRONE;background;;Background noise sample;0
+background/WHITE_NOISE_001.wav;NOT_DRONE;background;;Background noise sample;0
+background/WHITE_NOISE_002.wav;NOT_DRONE;background;;Background noise sample;0
+background/WHITE_NOISE_003.wav;NOT_DRONE;background;;Background noise sample;0
+background/WHITE_NOISE_004.wav;NOT_DRONE;background;;Background noise sample;0
+background/WHITE_NOISE_005.wav;NOT_DRONE;background;;Background noise sample;0
+background/WHITE_NOISE_006.wav;NOT_DRONE;background;;Background noise sample;0
+background/WHITE_NOISE_007.wav;NOT_DRONE;background;;Background noise sample;0
+background/WHITE_NOISE_008.wav;NOT_DRONE;background;;Background noise sample;0
+background/WHITE_NOISE_009.wav;NOT_DRONE;background;;Background noise sample;0
+background/WHITE_NOISE_010.wav;NOT_DRONE;background;;Background noise sample;0
+background/WHITE_NOISE_011.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_001.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_002.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_003.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_004.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_005.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_006.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_007.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_008.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_009.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_010.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_011.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_012.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_013.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_014.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_015.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_016.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_017.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_018.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_019.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_020.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_021.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_022.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_023.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_024.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_025.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_026.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_027.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_028.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_029.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_030.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_031.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_032.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_033.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_034.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_035.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_036.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_037.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_038.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_039.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_040.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_041.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_042.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_043.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_044.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_045.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_046.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_047.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_048.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_049.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_050.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_051.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_052.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_053.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_054.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_055.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_056.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_057.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_058.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_059.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_060.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_061.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_062.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_063.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_064.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_065.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_066.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_067.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_068.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_069.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_070.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_071.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_072.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_073.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_074.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_075.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_076.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_077.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_078.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_079.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_080.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_081.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_082.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_083.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_084.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_085.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_086.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_087.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_088.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_089.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_090.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_091.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_092.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_093.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_094.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_095.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_096.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_097.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_098.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_099.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_100.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1000.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1001.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1002.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1003.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1004.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1005.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1006.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1007.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1008.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1009.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_101.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1010.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1011.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1012.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1013.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1014.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1015.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1016.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1017.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1018.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1019.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_102.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1020.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1021.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1022.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1023.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1024.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1025.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1026.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1027.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1028.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1029.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_103.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1030.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1031.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1032.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1033.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1034.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1035.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1036.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1037.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1038.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1039.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_104.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1040.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1041.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1042.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1043.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1044.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1045.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1046.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1047.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1048.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1049.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_105.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1050.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1051.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1052.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1053.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1054.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1055.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1056.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1057.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1058.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1059.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_106.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1060.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1061.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1062.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1063.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1064.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1065.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1066.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1067.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1068.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1069.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_107.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1070.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1071.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1072.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1073.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1074.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1075.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1076.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1077.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1078.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1079.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_108.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1080.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1081.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1082.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1083.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1084.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1085.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1086.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1087.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1088.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1089.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_109.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1090.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1091.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1092.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1093.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1094.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1095.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1096.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1097.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1098.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1099.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_110.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1100.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1101.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1102.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1103.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1104.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1105.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1106.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1107.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1108.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1109.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_111.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1110.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1111.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1112.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1113.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1114.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1115.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1116.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1117.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1118.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1119.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_112.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1120.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1121.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1122.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1123.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1124.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1125.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1126.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1127.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1128.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1129.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_113.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1130.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1131.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1132.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1133.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1134.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1135.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1136.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1137.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1138.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1139.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_114.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1140.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1141.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1142.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1143.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1144.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1145.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1146.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1147.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1148.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1149.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_115.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1150.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1151.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1152.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1153.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1154.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1155.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1156.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1157.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1158.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1159.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_116.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1160.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1161.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1162.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1163.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1164.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1165.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1166.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1167.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1168.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1169.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_117.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1170.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1171.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1172.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1173.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1174.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1175.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1176.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1177.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1178.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1179.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_118.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1180.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1181.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1182.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1183.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1184.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1185.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1186.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1187.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1188.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1189.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_119.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1190.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1191.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1192.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1193.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1194.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1195.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1196.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1197.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1198.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1199.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_120.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1200.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1201.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1202.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1203.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1204.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1205.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1206.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1207.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1208.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1209.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_121.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_1210.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_122.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_123.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_124.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_125.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_126.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_127.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_128.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_129.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_130.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_131.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_132.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_133.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_134.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_135.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_136.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_137.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_138.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_139.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_140.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_141.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_142.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_143.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_144.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_145.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_146.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_147.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_148.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_149.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_150.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_151.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_152.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_153.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_154.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_155.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_156.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_157.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_158.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_159.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_160.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_161.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_162.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_163.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_164.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_165.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_166.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_167.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_168.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_169.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_170.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_171.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_172.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_173.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_174.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_175.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_176.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_177.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_178.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_179.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_180.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_181.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_182.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_183.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_184.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_185.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_186.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_187.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_188.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_189.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_190.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_191.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_192.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_193.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_194.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_195.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_196.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_197.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_198.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_199.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_200.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_201.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_202.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_203.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_204.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_205.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_206.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_207.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_208.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_209.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_210.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_211.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_212.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_213.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_214.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_215.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_216.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_217.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_218.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_219.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_220.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_221.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_222.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_223.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_224.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_225.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_226.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_227.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_228.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_229.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_230.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_231.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_232.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_233.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_234.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_235.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_236.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_237.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_238.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_239.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_240.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_241.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_242.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_243.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_244.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_245.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_246.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_247.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_248.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_249.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_250.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_251.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_252.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_253.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_254.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_255.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_256.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_257.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_258.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_259.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_260.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_261.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_262.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_263.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_264.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_265.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_266.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_267.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_268.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_269.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_270.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_271.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_272.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_273.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_274.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_275.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_276.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_277.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_278.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_279.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_280.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_281.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_282.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_283.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_284.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_285.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_286.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_287.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_288.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_289.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_290.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_291.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_292.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_293.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_294.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_295.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_296.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_297.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_298.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_299.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_300.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_301.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_302.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_303.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_304.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_305.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_306.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_307.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_308.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_309.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_310.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_311.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_312.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_313.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_314.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_315.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_316.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_317.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_318.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_319.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_320.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_321.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_322.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_323.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_324.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_325.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_326.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_327.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_328.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_329.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_330.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_331.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_332.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_333.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_334.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_335.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_336.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_337.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_338.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_339.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_340.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_341.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_342.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_343.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_344.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_345.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_346.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_347.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_348.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_349.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_350.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_351.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_352.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_353.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_354.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_355.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_356.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_357.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_358.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_359.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_360.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_361.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_362.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_363.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_364.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_365.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_366.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_367.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_368.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_369.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_370.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_371.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_372.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_373.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_374.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_375.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_376.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_377.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_378.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_379.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_380.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_381.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_382.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_383.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_384.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_385.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_386.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_387.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_388.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_389.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_390.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_391.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_392.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_393.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_394.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_395.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_396.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_397.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_398.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_399.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_400.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_401.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_402.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_403.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_404.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_405.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_406.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_407.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_408.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_409.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_410.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_411.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_412.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_413.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_414.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_415.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_416.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_417.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_418.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_419.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_420.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_421.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_422.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_423.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_424.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_425.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_426.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_427.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_428.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_429.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_430.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_431.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_432.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_433.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_434.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_435.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_436.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_437.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_438.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_439.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_440.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_441.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_442.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_443.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_444.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_445.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_446.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_447.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_448.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_449.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_450.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_451.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_452.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_453.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_454.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_455.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_456.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_457.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_458.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_459.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_460.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_461.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_462.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_463.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_464.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_465.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_466.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_467.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_468.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_469.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_470.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_471.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_472.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_473.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_474.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_475.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_476.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_477.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_478.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_479.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_480.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_481.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_482.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_483.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_484.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_485.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_486.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_487.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_488.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_489.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_490.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_491.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_492.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_493.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_494.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_495.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_496.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_497.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_498.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_499.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_500.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_501.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_502.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_503.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_504.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_505.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_506.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_507.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_508.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_509.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_510.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_511.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_512.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_513.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_514.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_515.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_516.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_517.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_518.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_519.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_520.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_521.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_522.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_523.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_524.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_525.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_526.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_527.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_528.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_529.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_530.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_531.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_532.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_533.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_534.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_535.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_536.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_537.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_538.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_539.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_540.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_541.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_542.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_543.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_544.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_545.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_546.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_547.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_548.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_549.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_550.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_551.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_552.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_553.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_554.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_555.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_556.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_557.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_558.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_559.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_560.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_561.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_562.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_563.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_564.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_565.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_566.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_567.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_568.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_569.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_570.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_571.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_572.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_573.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_574.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_575.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_576.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_577.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_578.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_579.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_580.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_581.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_582.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_583.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_584.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_585.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_586.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_587.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_588.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_589.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_590.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_591.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_592.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_593.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_594.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_595.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_596.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_597.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_598.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_599.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_600.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_601.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_602.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_603.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_604.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_605.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_606.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_607.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_608.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_609.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_610.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_611.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_612.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_613.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_614.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_615.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_616.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_617.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_618.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_619.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_620.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_621.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_622.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_623.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_624.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_625.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_626.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_627.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_628.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_629.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_630.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_631.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_632.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_633.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_634.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_635.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_636.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_637.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_638.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_639.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_640.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_641.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_642.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_643.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_644.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_645.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_646.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_647.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_648.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_649.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_650.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_651.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_652.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_653.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_654.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_655.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_656.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_657.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_658.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_659.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_660.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_661.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_662.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_663.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_664.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_665.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_666.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_667.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_668.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_669.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_670.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_671.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_672.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_673.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_674.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_675.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_676.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_677.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_678.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_679.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_680.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_681.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_682.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_683.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_684.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_685.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_686.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_687.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_688.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_689.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_690.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_691.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_692.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_693.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_694.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_695.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_696.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_697.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_698.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_699.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_700.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_701.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_702.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_703.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_704.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_705.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_706.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_707.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_708.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_709.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_710.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_711.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_712.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_713.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_714.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_715.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_716.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_717.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_718.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_719.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_720.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_721.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_722.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_723.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_724.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_725.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_726.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_727.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_728.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_729.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_730.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_731.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_732.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_733.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_734.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_735.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_736.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_737.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_738.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_739.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_740.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_741.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_742.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_743.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_744.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_745.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_746.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_747.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_748.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_749.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_750.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_751.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_752.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_753.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_754.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_755.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_756.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_757.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_758.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_759.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_760.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_761.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_762.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_763.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_764.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_765.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_766.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_767.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_768.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_769.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_770.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_771.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_772.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_773.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_774.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_775.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_776.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_777.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_778.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_779.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_780.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_781.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_782.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_783.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_784.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_785.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_786.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_787.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_788.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_789.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_790.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_791.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_792.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_793.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_794.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_795.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_796.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_797.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_798.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_799.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_800.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_801.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_802.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_803.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_804.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_805.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_806.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_807.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_808.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_809.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_810.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_811.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_812.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_813.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_814.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_815.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_816.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_817.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_818.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_819.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_820.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_821.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_822.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_823.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_824.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_825.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_826.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_827.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_828.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_829.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_830.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_831.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_832.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_833.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_834.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_835.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_836.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_837.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_838.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_839.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_840.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_841.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_842.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_843.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_844.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_845.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_846.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_847.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_848.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_849.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_850.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_851.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_852.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_853.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_854.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_855.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_856.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_857.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_858.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_859.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_860.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_861.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_862.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_863.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_864.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_865.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_866.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_867.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_868.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_869.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_870.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_871.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_872.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_873.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_874.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_875.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_876.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_877.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_878.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_879.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_880.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_881.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_882.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_883.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_884.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_885.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_886.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_887.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_888.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_889.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_890.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_891.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_892.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_893.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_894.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_895.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_896.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_897.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_898.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_899.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_900.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_901.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_902.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_903.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_904.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_905.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_906.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_907.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_908.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_909.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_910.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_911.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_912.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_913.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_914.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_915.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_916.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_917.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_918.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_919.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_920.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_921.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_922.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_923.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_924.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_925.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_926.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_927.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_928.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_929.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_930.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_931.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_932.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_933.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_934.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_935.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_936.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_937.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_938.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_939.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_940.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_941.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_942.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_943.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_944.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_945.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_946.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_947.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_948.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_949.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_950.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_951.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_952.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_953.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_954.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_955.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_956.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_957.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_958.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_959.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_960.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_961.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_962.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_963.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_964.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_965.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_966.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_967.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_968.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_969.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_970.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_971.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_972.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_973.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_974.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_975.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_976.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_977.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_978.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_979.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_980.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_981.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_982.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_983.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_984.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_985.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_986.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_987.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_988.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_989.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_990.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_991.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_992.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_993.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_994.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_995.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_996.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_997.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_998.wav;NOT_DRONE;background;;Background noise sample;0
+background\BACKGROUND_999.wav;NOT_DRONE;background;;Background noise sample;0
