@@ -1,18 +1,19 @@
 # FILE: src/app/threads.py
 import time
 import os
+import gc
 import random
 from collections import deque
 import numpy as np
 from PyQt6.QtCore import QThread, pyqtSignal
-import sys
+
+# Limit TF threads for single-sample inference predictability
+os.environ["TF_NUM_INTEROP_THREADS"] = "1"
+os.environ["TF_NUM_INTRAOP_THREADS"] = "1"
 
 # Configure which model to load here
 # Example: "drone_model_20260507_143000.keras"
 MODEL_FILENAME = "drone_model_20260509_065114.keras"
-
-# Add parent directory to path for imports
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
 
 
 class DataWorker(QThread):
@@ -49,6 +50,8 @@ class DataWorker(QThread):
         self.inference_interval_seconds = 0.5
         self.voting_history = deque(maxlen=self.voting_window_size)
 
+        # Track whether model was ever successfully loaded
+        self.model_loaded = False
         # Load model and setup
         self._load_model()
         self._init_audio_source()
@@ -65,6 +68,7 @@ class DataWorker(QThread):
 
             if os.path.exists(model_path):
                 self.model = tf.keras.models.load_model(model_path)
+                self.model_loaded = True
                 print(f"Model loaded successfully from: {model_path}")
             else:
                 print(f"ERROR: Model not found at: {model_path}")
@@ -73,11 +77,13 @@ class DataWorker(QThread):
                     "   USING SIMULATED PREDICTIONS - no real detections are running!"
                 )
                 self.model = None
+                self.model_loaded = False
         except Exception as e:
             print(f"✗ ERROR: Failed to load model: {e}")
             print(f"   Error type: {type(e).__name__}")
             print("   USING SIMULATED PREDICTIONS - no real detections are running!")
             self.model = None
+            self.model_loaded = False
 
     def _init_audio_source(self):
         """Initialize UDP audio source"""
@@ -100,79 +106,104 @@ class DataWorker(QThread):
             print(f"Warning: Error initializing UDP source: {e}")
             self.audio_source = None
 
-    def _get_prediction(self):
-        """Get prediction from model or simulate"""
-        device_info = "N/A"
-        sample_rate = self.source_sr
+    def _ensure_audio_source(self):
+        """Recreate UDP socket if the audio source has failed (e.g. network down)."""
+        if self.audio_source is None:
+            self._init_audio_source()
+            return
+        if not hasattr(self, '_udp_fail_count'):
+            self._udp_fail_count = 0
+        try:
+            test = self.audio_source.read_available(max_reads=1)
+            # Nếu không có exception, source còn sống
+            self._udp_fail_count = 0
+        except Exception:
+            self._udp_fail_count += 1
+            if self._udp_fail_count >= 3:
+                print(f"[UDP] Source appears dead (fail_count={self._udp_fail_count}), restarting...")
+                try:
+                    self.audio_source.stop()
+                except Exception:
+                    pass
+                self.audio_source = None
+                self._init_audio_source()
+                self._udp_fail_count = 0
 
-        if self.audio_source:
-            device_info = self.audio_source.get_device_info()
-            sample_rate = self.audio_source.sample_rate
-            chunks = self.audio_source.read_available(max_reads=50)
-            for chunk in chunks:
-                self.audio_buffer.extend(chunk)
-            if self.debug:
-                now = time.time()
-                if now - self._last_debug_ts >= 1.0:
-                    total_bytes = sum(len(chunk) for chunk in chunks)
-                    print(
-                        f"[UDP] packets={len(chunks)}, bytes={total_bytes}, buffer_size={len(self.audio_buffer)}/{self.required_input_bytes}"
-                    )
-                    self._last_debug_ts = now
-        else:
-            print("✗ Audio source not initialized!")
-            return self._paused_prediction(device_info, sample_rate)
-
+    def _read_and_buffer(self):
+        """Read chunks from UDP, trim buffer, return (device_info, sample_rate) or None."""
+        if self.audio_source is None:
+            return None
+        device_info = self.audio_source.get_device_info()
+        sample_rate = self.audio_source.sample_rate
+        chunks = self.audio_source.read_available(max_reads=50)
+        for chunk in chunks:
+            self.audio_buffer.extend(chunk)
+        if self.debug:
+            now = time.time()
+            if now - self._last_debug_ts >= 1.0:
+                total_bytes = sum(len(c) for c in chunks)
+                print(
+                    f"[UDP] packets={len(chunks)}, bytes={total_bytes}, "
+                    f"buffer={len(self.audio_buffer)}/{self.required_input_bytes}"
+                )
+                self._last_debug_ts = now
+        # LUÔN trim buffer TRƯỚC early-return — tránh memory leak
+        if len(self.audio_buffer) > self.required_input_bytes * 2:
+            self.audio_buffer = self.audio_buffer[-self.required_input_bytes:]
         if len(self.audio_buffer) < self.required_input_bytes:
             if self.debug:
                 now = time.time()
                 if now - self._last_debug_ts >= 1.0:
-                    print(
-                        f"[BUFFER] Waiting for data: have {len(self.audio_buffer)} bytes, need {self.required_input_bytes} bytes"
-                    )
+                    print(f"[BUFFER] have {len(self.audio_buffer)}/{self.required_input_bytes} bytes")
                     self._last_debug_ts = now
-            return self._paused_prediction(device_info, sample_rate)
+            return None
+        return device_info, sample_rate
+
+    def _preprocess_to_mel(self, window_bytes):
+        """Convert raw PCM bytes to mel-spectrogram, or None on failure."""
+        from src.common.processor import preprocess_pcm_audio, extract_mel_spectrogram
+        from src.training.data_loader import pad_or_truncate_spectrogram
+
+        audio = preprocess_pcm_audio(
+            window_bytes,
+            input_sr=self.source_sr,
+            target_sr=self.target_sr,
+            trim_silence=False,
+        )
+        if audio.size == 0:
+            return None
+        mel_spec = extract_mel_spectrogram(audio, sr=self.target_sr)
+        return pad_or_truncate_spectrogram(mel_spec, target_length=self.target_mel_length)
+
+    def _get_prediction(self):
+        """Orchestrate: read audio → preprocess → inference → return result dict."""
+        self._ensure_audio_source()
+
+        result = self._read_and_buffer()
+        if result is None:
+            device_info = getattr(self.audio_source, 'get_device_info', lambda: "N/A")()
+            return self._paused_prediction(device_info, self.source_sr)
+        device_info, sample_rate = result
 
         if self.model is None:
             if self.debug:
-                print("[MODEL] No model loaded - using SIMULATED predictions")
+                print("[MODEL] No model — SIMULATED predictions")
             return self._simulate_prediction(device_info, sample_rate)
 
         try:
-            from src.common.processor import (
-                preprocess_pcm_audio,
-                extract_mel_spectrogram,
-            )
-            from src.training.data_loader import pad_or_truncate_spectrogram
-
-            window_bytes = self.audio_buffer[-self.required_input_bytes :]
-            if len(self.audio_buffer) > self.required_input_bytes * 2:
-                self.audio_buffer = self.audio_buffer[-self.required_input_bytes :]
-
-            audio = preprocess_pcm_audio(
-                window_bytes,
-                input_sr=self.source_sr,
-                target_sr=self.target_sr,
-                trim_silence=False,
-            )
-            if audio.size == 0:
+            window_bytes = self.audio_buffer[-self.required_input_bytes:]
+            mel_spec = self._preprocess_to_mel(window_bytes)
+            if mel_spec is None:
                 if self.debug:
                     print("[AUDIO] Preprocessed audio is empty!")
                 return self._paused_prediction(device_info, sample_rate)
 
-            mel_spec = extract_mel_spectrogram(audio, sr=self.target_sr)
-            mel_spec = pad_or_truncate_spectrogram(
-                mel_spec,
-                target_length=self.target_mel_length,
-            )
-
             X = mel_spec.reshape(1, self.target_mel_length, self.target_mel_length, 1)
-
-            prediction = self.model.predict(X, verbose=0)[0][0]
+            pred = self.model.predict_on_batch(X).numpy()[0, 0]
 
             return {
-                "confidence": float(prediction),
-                "status": "DRONE" if prediction > 0.5 else "-",
+                "confidence": float(pred),
+                "status": "DRONE" if pred > 0.5 else "-",
                 "source": "real_model",
                 "file": "UDP",
                 "device_info": device_info,
@@ -182,7 +213,6 @@ class DataWorker(QThread):
         except Exception as e:
             print(f"✗ ERROR in prediction: {e}")
             import traceback
-
             traceback.print_exc()
             return self._paused_prediction(device_info, sample_rate)
 
@@ -261,6 +291,7 @@ class DataWorker(QThread):
 
     def run(self):
         self.is_running = True
+        cleanup_counter = 0
         while self.is_running:
             try:
                 # Get prediction (real or simulated)
@@ -274,6 +305,12 @@ class DataWorker(QThread):
                 time.sleep(self.inference_interval_seconds)
 
                 self.counter += 1
+
+                # Periodic GC cleanup every ~5 minutes (600 * 0.5s)
+                cleanup_counter += 1
+                if cleanup_counter >= 600:
+                    gc.collect()
+                    cleanup_counter = 0
             except Exception as e:
                 print(f"✗ CRITICAL ERROR in worker thread: {e}")
                 import traceback

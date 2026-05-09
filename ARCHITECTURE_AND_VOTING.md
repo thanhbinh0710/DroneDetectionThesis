@@ -25,7 +25,7 @@ Bao gồm **4 khối chập (Convolutional Blocks)** nối tiếp nhau. Mỗi kh
 
 ### 2.3. Lớp Output và Tối ưu hóa
 * **Lớp Output**: Chỉ có **1 node** duy nhất do đây là bài toán phân loại nhị phân (Binary Classification: Drone vs. Not_Drone).
-* **Hàm kích hoạt Output**: **Sigmoid**. Cung cấp một giá trị xác suất (Confidence) nằm trong khoảng $[0, 1]$. Ngưỡng đánh giá (Threshold) để gán nhãn DRONE đang được thiết lập là $> 0.4$.
+* **Hàm kích hoạt Output**: **Sigmoid**. Cung cấp một giá trị xác suất (Confidence) nằm trong khoảng $[0, 1]$. Ngưỡng đánh giá (Threshold) để gán nhãn DRONE đang được thiết lập là $> 0.5$.
 * **Hàm mất mát (Loss function)**: **Binary Cross-Entropy** (`binary_crossentropy`).
 * **Thuật toán tối ưu (Optimizer)**: **Adam** với `learning_rate = 0.001` kết hợp callback giảm LR (ReduceLROnPlateau) nếu quá trình đo kiểm validation loss không tiến triển.
 

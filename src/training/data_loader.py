@@ -234,9 +234,9 @@ def save_processed_features(features, labels, output_dir, source_file_indices=No
     features = np.asarray(features, dtype=np.float32)
     labels = np.asarray(labels)
 
-    # Desired feature shape: (N, 20, 128)
+    # Desired feature shape: (N, 128, 128)
     if features.ndim == 3:
-        # If axes are swapped (N, 128, 20), transpose to (N,20,128)
+        # If axes are swapped (N, 128, 20), transpose to (N, 20, 128)
         if features.shape[1] == 128 and features.shape[2] == 20:
             features = features.transpose(0, 2, 1)
 

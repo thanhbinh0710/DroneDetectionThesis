@@ -5,6 +5,11 @@ import os
 os.environ["TF_ENABLE_ONEDNN_OPTS"] = "0"
 os.environ["TF_CPP_MIN_LOG_LEVEL"] = "2"
 
+# Ensure project root is on sys.path so `src.*` imports work
+_project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), "../.."))
+if _project_root not in sys.path:
+    sys.path.insert(0, _project_root)
+
 import pyqtgraph as pg
 from PyQt6.QtWidgets import (
     QApplication,
@@ -204,15 +209,23 @@ class DashboardApp(QMainWindow):
         self.lbl_time_display.setText(now.toString("HH:mm:ss"))
         self.lbl_date_display.setText(now.toString("dddd, d MMMM yyyy"))
 
-        # Get prediction data
-        confidence = prediction_data["confidence"]
-        status = prediction_data["status"]
+        # Get prediction data with safe defaults
+        confidence = prediction_data.get("confidence", 0.0)
+        status = prediction_data.get("status", "-")
         source = prediction_data.get("source", "unknown")
         device_info = prediction_data.get("device_info")
         sample_rate = prediction_data.get("sample_rate")
         paused = prediction_data.get("paused", False)
 
-        if device_info and sample_rate:
+        # Guard: ensure confidence is a valid number
+        try:
+            confidence_f = float(confidence)
+        except (TypeError, ValueError):
+            confidence_f = 0.0
+
+        if source == "simulated":
+            self.lbl_audio_source.setText("⚠️ SIMULATED (no model loaded)")
+        elif device_info and sample_rate:
             self.lbl_audio_source.setText(f"UDP {device_info} | {sample_rate} Hz")
         elif sample_rate:
             self.lbl_audio_source.setText(f"UDP {sample_rate} Hz")
@@ -223,20 +236,23 @@ class DashboardApp(QMainWindow):
             self.lbl_status.setObjectName("StatusDrone")
         else:
             self.lbl_status.setObjectName("StatusNone")
-        self.lbl_status.style().unpolish(self.lbl_status)
-        self.lbl_status.style().polish(self.lbl_status)
+        try:
+            self.lbl_status.style().unpolish(self.lbl_status)
+            self.lbl_status.style().polish(self.lbl_status)
+        except RuntimeError:
+            pass  # Widget may have been deleted during shutdown
 
         # Update confidence (display as decimal 0.00-1.00)
-        self.lbl_confidence.setText(f"{confidence:.2f}")
+        self.lbl_confidence.setText(f"{confidence_f:.2f}")
 
         # Update detection count (only count real detections)
         if status == "DRONE" and not paused and source == "real_model":
             self.detection_count += 1
             self.lbl_detection_count.setText(str(self.detection_count))
 
-        # Update confidence history graph (use decimal 0.00-1.00)
+        # Update confidence history graph
         current_time = len(self.confidence_history)
-        self.confidence_history.append(confidence)
+        self.confidence_history.append(confidence_f)
         self.time_history.append(current_time)
 
         # Keep only last 60 data points
@@ -249,7 +265,12 @@ class DashboardApp(QMainWindow):
         self.plot_line.setData(self.time_history, self.confidence_history)
 
     def closeEvent(self, event):
-        self.worker.stop()
+        self.worker.is_running = False
+        self.worker.quit()
+        if not self.worker.wait(3000):
+            print("[MAIN] Worker thread did not stop gracefully, terminating...")
+            self.worker.terminate()
+            self.worker.wait()
         event.accept()
 
 
