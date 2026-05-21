@@ -13,7 +13,7 @@ os.environ["TF_NUM_INTRAOP_THREADS"] = "1"
 
 # Configure which model to load here
 # Example: "drone_model_20260507_143000.keras"
-MODEL_FILENAME = "drone_model_20260509_065114.keras"
+MODEL_FILENAME = "drone_model_20260509_111413.keras"
 
 
 class DataWorker(QThread):

@@ -168,19 +168,23 @@ def load_audio_dataset(data_dir, metadata_path, augment=False, augment_factor=3,
                 audio_versions.append((audio_aug, f"_aug{aug_idx+1}"))
             print(f"  -> Generated {augment_factor} augmented full-audio versions for DRONE class")
 
-        segment_count = 0
+        original_segments = 0
+        augmented_segments = 0
         for current_audio, aug_suffix in audio_versions:
             # Decide whether to segment or process whole audio
             if use_segmentation:
                 # Cắt audio thành các đoạn nhỏ
-                audio_segments = segment_audio(current_audio, sr=16000, 
-                                              segment_duration=segment_duration, 
-                                              overlap=segment_overlap)
+                audio_segments = segment_audio(current_audio, sr=16000,
+                                               segment_duration=segment_duration,
+                                               overlap=segment_overlap)
             else:
                 # Xử lý toàn bộ file
                 audio_segments = [current_audio]
-            
-            segment_count += len(audio_segments)
+
+            if aug_suffix == "":
+                original_segments += len(audio_segments)
+            else:
+                augmented_segments += len(audio_segments)
 
             # Process each segment
             for seg_idx, audio_seg in enumerate(audio_segments):
@@ -199,14 +203,21 @@ def load_audio_dataset(data_dir, metadata_path, augment=False, augment_factor=3,
                 filenames.append(f"{row['filename']}{seg_suffix}{aug_suffix}")
                 
         if use_segmentation:
-            print(f"  -> Segmented into {segment_count} segments total ({segment_duration}s each)")
+            print(f"  -> Original segments: {original_segments} ({segment_duration}s each)")
+            if augment:
+                print(f"  -> Augmented segments: {augmented_segments}")
+                print(f"  -> Total after augmentation: {original_segments + augmented_segments}")
     
-    print(f"\nTotal samples loaded: {len(features)}")
+    print(f"\n{'='*60}")
+    print("DATASET COMPOSITION")
+    print(f"{'='*60}")
+    print(f"Total samples loaded: {len(features)}")
     print(f"  - Original files: {len(metadata)}")
     if use_segmentation:
-        print(f"  - After segmentation: {len([f for f in filenames if '_seg' in f and '_aug' not in f])}")
+        print(f"  - Segmentation: {segment_duration}s windows, {segment_overlap*100:.0f}% overlap")
     if augment:
-        print(f"  - After augmentation: {len(features)}")
+        print(f"  - Augmentation factor: {augment_factor}x")
+    print(f"  - Final dataset size: {len(features)} samples")
     
     # Convert lists to numpy arrays with explicit dtypes
     features_np = np.array(features, dtype=np.float32)
@@ -327,6 +338,25 @@ if __name__ == "__main__":
             print(f"Label distribution:")
             print(f"  - DRONE: {np.sum(y == 1)}")
             print(f"  - NOT_DRONE: {np.sum(y == 0)}")
+            
+            # Compute 70/15/15 split by groups
+            from sklearn.model_selection import GroupShuffleSplit
+            
+            gss_train = GroupShuffleSplit(n_splits=1, train_size=0.7, random_state=42)
+            train_idx, temp_idx = next(gss_train.split(X, y, source_file_indices))
+            
+            temp_groups = source_file_indices[temp_idx]
+            gss_val_test = GroupShuffleSplit(n_splits=1, test_size=0.5, random_state=43)
+            val_rel_idx, test_rel_idx = next(gss_val_test.split(X[temp_idx], y[temp_idx], temp_groups))
+            val_idx = temp_idx[val_rel_idx]
+            test_idx = temp_idx[test_rel_idx]
+            
+            print(f"\n{'='*60}")
+            print("TRAIN/VAL/TEST SPLIT (70/15/15)")
+            print(f"{'='*60}")
+            print(f"  - Train:      {len(train_idx):6d} samples  ({np.sum(y[train_idx] == 1):4d} drone / {np.sum(y[train_idx] == 0):4d} non-drone)")
+            print(f"  - Validation: {len(val_idx):6d} samples  ({np.sum(y[val_idx] == 1):4d} drone / {np.sum(y[val_idx] == 0):4d} non-drone)")
+            print(f"  - Test:       {len(test_idx):6d} samples  ({np.sum(y[test_idx] == 1):4d} drone / {np.sum(y[test_idx] == 0):4d} non-drone)")
             
             # Save processed features with source file indices
             save_processed_features(X, y, output_dir, source_file_indices)
