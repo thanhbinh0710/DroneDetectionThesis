@@ -5,10 +5,10 @@ runs the trained model on the test set, identifies misclassified samples, and
 copies the corresponding source .wav files to an output folder.
 
 Usage:
-    python scripts/export_misclassified_audio.py
+    python scripts/export_misclassified.py
 
 Optional:
-    python scripts/export_misclassified_audio.py --output-dir data/review/misclassified --max-files 16
+    python scripts/export_misclassified.py --output-dir data/review/misclassified --max-files 16
 """
 
 from __future__ import annotations

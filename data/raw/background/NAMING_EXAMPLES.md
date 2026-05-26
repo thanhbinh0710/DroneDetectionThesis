@@ -98,7 +98,7 @@ background/highway_traffic_night.wav;NOT_DRONE;freesound;22;Highway at night
 Khi bạn chạy:
 
 ```bash
-python scripts/add_background_samples.py
+python scripts/update_metadata.py
 ```
 
 Script sẽ **TỰ ĐỘNG** tìm TẤT CẢ file `.wav` trong `data/raw/background/` và thêm vào metadata, **KHÔNG quan tâm** tên file là gì!

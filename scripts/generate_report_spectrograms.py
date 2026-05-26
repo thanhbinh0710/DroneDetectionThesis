@@ -1,3 +1,8 @@
+"""
+Generate Waveform & Spectrogram figures for thesis/report (Figure 4.3 equivalent).
+Usage: python -m scripts.generate_report_spectrograms
+"""
+
 import os
 import librosa
 import librosa.display

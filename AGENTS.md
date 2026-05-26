@@ -17,16 +17,16 @@ python -m src.training.train         # train → models/drone_model_*.keras
 python scripts/predict.py --audio path/to/file.wav
 
 # Helper scripts (output to assets/)
-python -m scripts.generate_figure_4_3
+python -m scripts.generate_report_spectrograms
 python -m scripts.generate_snr_distance_graph
 python -m scripts.generate_augmentation_comparison
 python -m scripts.visualize_mel_filters
 
 # Data helpers
-python -m scripts.count_samples         # detailed metadata stats
-python -m scripts.count_samples_simple   # quick stats (no pandas)
-python -m scripts.add_background_samples
-python -m scripts.export_misclassified_audio
+python -m scripts.count_samples           # detailed metadata stats
+python -m scripts.count_samples_fast      # quick stats (no pandas)
+python -m scripts.update_metadata
+python -m scripts.export_misclassified
 python -m scripts.test_segmentation
 ```
 

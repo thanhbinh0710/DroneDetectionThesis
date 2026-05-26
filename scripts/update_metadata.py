@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 Script to automatically detect background audio files and update metadata.csv
-Usage: python scripts/add_background_samples.py
+Usage: python scripts/update_metadata.py
 """
 
 import os
