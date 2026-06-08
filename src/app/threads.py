@@ -198,7 +198,7 @@ class DataWorker(QThread):
                 return self._paused_prediction(device_info, sample_rate)
 
             X = mel_spec.reshape(1, self.target_mel_length, self.target_mel_length, 1)
-            pred = self.model.predict_on_batch(X).numpy()[0, 0]
+            pred = self.model.predict_on_batch(X)[0, 0]
 
             return {
                 "confidence": float(pred),
