@@ -107,30 +107,9 @@ class DataWorker(QThread):
             self.audio_source = None
 
     def _ensure_audio_source(self):
-        """Recreate UDP socket if the audio source has failed (e.g. network down)."""
+        """Ensure audio source exists; does NOT consume any data."""
         if self.audio_source is None:
             self._init_audio_source()
-            return
-        if not hasattr(self, '_udp_fail_count'):
-            self._udp_fail_count = 0
-        try:
-            chunks = self.audio_source.read_available(max_reads=1)
-            if self.audio_buffer and len(chunks) == 0 and len(self.audio_buffer) < self.required_input_bytes:
-                self._udp_fail_count += 1
-            else:
-                self._udp_fail_count = 0
-        except Exception:
-            self._udp_fail_count += 1
-        if self._udp_fail_count >= 3:
-            print(f"[UDP] Source appears dead (fail_count={self._udp_fail_count}), restarting...")
-            try:
-                self.audio_source.stop()
-            except Exception:
-                pass
-            self.audio_source = None
-            self.audio_buffer.clear()
-            self._init_audio_source()
-            self._udp_fail_count = 0
 
     def _read_and_buffer(self):
         """Read chunks from UDP, trim buffer, return (device_info, sample_rate) or None."""
@@ -138,20 +117,37 @@ class DataWorker(QThread):
             return None
         device_info = self.audio_source.get_device_info()
         sample_rate = self.audio_source.sample_rate
+        old_len = len(self.audio_buffer)
         chunks = self.audio_source.read_available(max_reads=50)
         for chunk in chunks:
             self.audio_buffer.extend(chunk)
+        new_len = len(self.audio_buffer)
         if self.debug:
             now = time.time()
             if now - self._last_debug_ts >= 1.0:
                 total_bytes = sum(len(c) for c in chunks)
                 print(
                     f"[UDP] packets={len(chunks)}, bytes={total_bytes}, "
-                    f"buffer={len(self.audio_buffer)}/{self.required_input_bytes}"
+                    f"buffer={new_len}/{self.required_input_bytes}"
                 )
                 self._last_debug_ts = now
+        # Detect stalled buffer: no data progress for >= 10 seconds (20 cycles)
+        if len(chunks) == 0 and new_len == old_len and new_len < self.required_input_bytes:
+            self._stall_count = getattr(self, '_stall_count', 0) + 1
+        else:
+            self._stall_count = 0
+        if self._stall_count >= 20:
+            print(f"[UDP] Buffer stalled ({self._stall_count} cycles), recreating socket...")
+            try:
+                self.audio_source.stop()
+            except Exception:
+                pass
+            self.audio_source = None
+            self.audio_buffer.clear()
+            self._init_audio_source()
+            return None
         # LUÔN trim buffer TRƯỚC early-return — tránh memory leak
-        if len(self.audio_buffer) > self.required_input_bytes * 2:
+        if new_len > self.required_input_bytes * 2:
             self.audio_buffer = self.audio_buffer[-self.required_input_bytes:]
         if len(self.audio_buffer) < self.required_input_bytes:
             if self.debug:
