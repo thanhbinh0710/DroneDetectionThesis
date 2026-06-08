@@ -114,20 +114,23 @@ class DataWorker(QThread):
         if not hasattr(self, '_udp_fail_count'):
             self._udp_fail_count = 0
         try:
-            test = self.audio_source.read_available(max_reads=1)
-            # Nếu không có exception, source còn sống
-            self._udp_fail_count = 0
+            chunks = self.audio_source.read_available(max_reads=1)
+            if self.audio_buffer and len(chunks) == 0 and len(self.audio_buffer) < self.required_input_bytes:
+                self._udp_fail_count += 1
+            else:
+                self._udp_fail_count = 0
         except Exception:
             self._udp_fail_count += 1
-            if self._udp_fail_count >= 3:
-                print(f"[UDP] Source appears dead (fail_count={self._udp_fail_count}), restarting...")
-                try:
-                    self.audio_source.stop()
-                except Exception:
-                    pass
-                self.audio_source = None
-                self._init_audio_source()
-                self._udp_fail_count = 0
+        if self._udp_fail_count >= 3:
+            print(f"[UDP] Source appears dead (fail_count={self._udp_fail_count}), restarting...")
+            try:
+                self.audio_source.stop()
+            except Exception:
+                pass
+            self.audio_source = None
+            self.audio_buffer.clear()
+            self._init_audio_source()
+            self._udp_fail_count = 0
 
     def _read_and_buffer(self):
         """Read chunks from UDP, trim buffer, return (device_info, sample_rate) or None."""

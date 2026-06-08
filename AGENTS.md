@@ -21,6 +21,7 @@ python -m scripts.generate_report_spectrograms
 python -m scripts.generate_snr_distance_graph
 python -m scripts.generate_augmentation_comparison
 python -m scripts.visualize_mel_filters
+python -m scripts.generate_sliding_window_diagram
 
 # Data helpers
 python -m scripts.count_samples           # detailed metadata stats
